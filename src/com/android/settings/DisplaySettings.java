@@ -41,6 +41,7 @@ import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.DropDownPreference;
 import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
@@ -100,6 +101,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final int SHOW_NETWORK_NAME_ON = 1;
     private static final int SHOW_NETWORK_NAME_OFF = 0;
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+    private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -108,6 +111,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private Preference mFontSizePref;
     private PreferenceScreen mDisplayRotationPreference;
+    private SwitchPreference mWakeUpWhenPluggedOrUnplugged;
+    private PreferenceCategory mWakeUpOptions;
 
     private TimeoutListPreference mScreenTimeoutPreference;
     private ListPreference mNightModePreference;
@@ -141,6 +146,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -260,6 +267,21 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         int volumeRockerWake = Settings.System.getInt(getContentResolver(),
                 VOLUME_ROCKER_WAKE, 0);
         mVolumeRockerWake.setChecked(volumeRockerWake != 0);
+
+        mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKEUP_CATEGORY);
+        mWakeUpWhenPluggedOrUnplugged =
+            (SwitchPreference) findPreference(KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
+
+        // hide option if device is already set to never wake up
+        if(!getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
+                mWakeUpOptions.removePreference(mWakeUpWhenPluggedOrUnplugged);
+                prefSet.removePreference(mWakeUpOptions);
+        } else {
+            mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
+            mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
+        }
     }
 
     private static boolean allowAllRotations(Context context) {
@@ -506,6 +528,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOZE_ENABLED, value ? 1 : 0);
         }
+
         if (preference == mTapToWakePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOUBLE_TAP_TO_WAKE, value ? 1 : 0);
@@ -530,11 +553,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.e(TAG, "could not persist night mode setting", e);
             }
         }
+
         if (preference == mVolumeRockerWake) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(), VOLUME_ROCKER_WAKE,
                     value ? 1 : 0);
         }
+
+        if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
+                    (Boolean) objValue ? 1 : 0);
+        }
+
         return true;
     }
 
