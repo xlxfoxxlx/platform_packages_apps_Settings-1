@@ -55,6 +55,7 @@ import com.android.settings.aosip.advanced.AppsidebarCategory;
 import com.android.settings.aosip.advanced.AppCircleBar;
 import com.android.settings.aosip.advanced.AnimationControls;
 import com.android.settings.aosip.advanced.cLock;
+import com.android.settings.aosip.advanced.Halo;
 import com.android.settings.aosip.advanced.MultiWindow;
 import com.android.settings.widget.SwitchBar;
 import com.android.settings.aosip.advanced.MiscSettings;
@@ -115,8 +116,9 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
             frags[0] = new AnimationSettings();
             frags[1] = new AppCircleBar();
             frags[2] = new cLock();
-            frags[3] = new MiscSettings();
-            frags[4] = new MultiWindow();
+            frags[3] = new Halo();
+            frags[4] = new MiscSettings();
+            frags[5] = new MultiWindow();
 
         }
 
@@ -142,6 +144,7 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
                     getString(R.string.animation_title),
                     getString(R.string.category_app_circle_bar_title),
                     getString(R.string.lock_clock_title),
+                    getString(R.string.halo_settings_title),
                     getString(R.string.misc_title),
                     getString(R.string.multiwindow_settings_title)};
         return titleString;
