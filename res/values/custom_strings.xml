@@ -24,7 +24,6 @@
     <string name="header_category_owlsnest">AOSiP Tweaks</string>
 
     <!-- AOSiP device info settings -->
-    <string name="cpu_info">CPU</string>
     <string name="mem_info">Memory</string>
     <string name="aosip_version">AOSiP Build</string>
     <string name="build_date">Build date</string>
@@ -121,6 +120,9 @@
 
     <!-- Phone info shortcut -->
     <string name="device_info_title">Phone info</string>
+
+    <!-- About phone screen, processor info label  [CHAR LIMIT=40] -->
+    <string name="processor_info">Processor</string>
 
     <!-- Density category -->
     <string name="density_category">Density options</string>
