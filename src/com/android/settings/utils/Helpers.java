@@ -1,5 +1,5 @@
 
-package com.android.settings.util;
+package com.android.settings.utils;
 
 import android.content.Context;
 import android.content.pm.PackageManager;

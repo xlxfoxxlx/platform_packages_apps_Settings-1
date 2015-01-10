@@ -77,7 +77,7 @@ import com.android.settings.fuelgauge.InactiveApps;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.widget.SwitchBar;
-import com.android.settings.util.Helpers;
+import com.android.settings.utils.Helpers;
 
 import dalvik.system.VMRuntime;
 
