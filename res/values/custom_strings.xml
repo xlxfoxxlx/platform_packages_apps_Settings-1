@@ -18,6 +18,9 @@
     <string name="smartbar_interface">SmartBar</string>
     <string name="icon_pack_picker_dialog_title">Icon packs</string>
 
+    <!--  BitSyko Layers header name -->
+    <string name="bitsyko_layers">Layers</string>
+
     <!-- Expanded desktop -->
     <string name="expanded_desktop_category">Expanded Desktop</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
