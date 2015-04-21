@@ -152,6 +152,7 @@
     <string name="fling_longpress_title">Long press delay</string>
     <string name="fling_longpress_summary">Increase or decrease the time it takes to execute a long press</string>
 
+<<<<<<< HEAD
     <!-- Navbar height -->
     <string name="navigation_bar_size_title">Bar size</string>
     <string name="portrait_title">Portrait height</string>
@@ -218,4 +219,11 @@
     <string name="mem_info">Memory</string>
     <string name="aosip_version">AOSiP Layers Build</string>
     <string name="build_date">Build date</string>
+
+    <!-- Heads up -->
+    <string name="headsup_section_header">Heads up notifications</string>
+    <string name="heads_up_notifications">Heads up</string>
+    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
+    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
+
 </resources>
