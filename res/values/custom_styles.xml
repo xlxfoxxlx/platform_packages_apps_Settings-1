@@ -24,4 +24,7 @@
     <style name="Theme.SettingsDialog" parent="@android:style/Theme.Material.Light.Dialog.NoActionBar" />
 
     <style name="Theme.SettingsAlertDialog" parent="@*android:style/Theme.Material.Light.Dialog.Alert" />
+
+    <!-- Dashboard Category Margin Bottom -->
+    <dimen name="dashboard_category_margin_bottom">8dip</dimen>
 </resources>
