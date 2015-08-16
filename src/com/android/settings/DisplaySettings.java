@@ -41,6 +41,9 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
@@ -49,6 +52,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.RemoteException;
 import android.os.SystemProperties;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -91,6 +95,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private static final String DASHBOARD_COLUMNS = "dashboard_columns";
     private static final String DASHBOARD_SWITCHES = "dashboard_switches";
+    private static final String CUSTOM_HEADER_IMAGE = "status_bar_custom_header";
+    private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
+    private static final String DEFAULT_HEADER_PACKAGE = "com.android.systemui";
+
+    private ListPreference mDaylightHeaderPack;
+    private CheckBoxPreference mCustomHeaderImage;
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -149,6 +159,33 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_dreamsSupported) == false) {
             getPreferenceScreen().removePreference(mScreenSaverPreference);
         }
+
+        final boolean customHeaderImage = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1;
+        mCustomHeaderImage = (CheckBoxPreference) findPreference(CUSTOM_HEADER_IMAGE);
+        mCustomHeaderImage.setChecked(customHeaderImage);
+
+        String settingHeaderPackage = Settings.System.getString(getContentResolver(),
+                Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK);
+        if (settingHeaderPackage == null) {
+            settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
+        }
+        mDaylightHeaderPack = (ListPreference) findPreference(DAYLIGHT_HEADER_PACK);
+        mDaylightHeaderPack.setEntries(getAvailableHeaderPacksEntries());
+        mDaylightHeaderPack.setEntryValues(getAvailableHeaderPacksValues());
+
+        int valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
+        if (valueIndex == -1) {
+            // no longer found
+            settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, settingHeaderPackage);
+            valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
+        }
+        mDaylightHeaderPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntry());
+        mDaylightHeaderPack.setOnPreferenceChangeListener(this);
+        mDaylightHeaderPack.setEnabled(customHeaderImage);
 
         mScreenTimeoutPreference = (ListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         final long currentTimeout = Settings.System.getLong(resolver, SCREEN_OFF_TIMEOUT,
@@ -504,6 +541,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mCustomHeaderImage) {
+            final boolean value = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
+            mDaylightHeaderPack.setEnabled(value);
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -580,7 +624,50 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     (Boolean) objValue ? 1 : 0);
         }
 
+        if (preference == mDaylightHeaderPack) {
+            String value = (String) objValue;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
+            int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
+            mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
+        }
         return true;
+    }
+
+    private String[] getAvailableHeaderPacksValues() {
+        List<String> headerPacks = new ArrayList<String>();
+        Intent i = new Intent();
+        PackageManager packageManager = getPackageManager();
+        i.setAction("org.omnirom.DaylightHeaderPack");
+        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+            String packageName = r.activityInfo.packageName;
+            if (packageName.equals(DEFAULT_HEADER_PACKAGE)) {
+                headerPacks.add(0, packageName);
+            } else {
+                headerPacks.add(packageName);
+            }
+        }
+        return headerPacks.toArray(new String[headerPacks.size()]);
+    }
+
+    private String[] getAvailableHeaderPacksEntries() {
+        List<String> headerPacks = new ArrayList<String>();
+        Intent i = new Intent();
+        PackageManager packageManager = getPackageManager();
+        i.setAction("org.omnirom.DaylightHeaderPack");
+        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+            String packageName = r.activityInfo.packageName;
+            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
+            if (label == null) {
+                label = r.activityInfo.packageName;
+            }
+            if (packageName.equals(DEFAULT_HEADER_PACKAGE)) {
+                headerPacks.add(0, label);
+            } else {
+                headerPacks.add(label);
+            }
+        }
+        return headerPacks.toArray(new String[headerPacks.size()]);
     }
 
     @Override
