@@ -2,6 +2,7 @@
  * Copyright (C) 2011 Sergey Margaritov
  * Copyright (C) 2013 Slimroms
  * Copyright (C) 2015 DarkKat
+ * Copyright (C) 2015 The TeamEos Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +30,10 @@ import android.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import com.android.settings.R;
 
 /**
  * A preference type that allows a user to choose a color
@@ -55,6 +55,12 @@ public class ColorPickerPreference extends DialogPreference implements
     private boolean mAlphaSliderEnabled = true;
 
     private static final String androidns = "http://schemas.android.com/apk/res/android";
+
+    // if we return -6, button is not enabled
+    static final String SETTINGS_NS = "http://schemas.android.com/apk/res/com.android.settings";
+    static final int DEF_VALUE_DEFAULT = -6;
+    boolean mUsesDefaultButton = false;
+    int mDefValue = -1;
 
     private EditText mEditText;
 
@@ -96,6 +102,11 @@ public class ColorPickerPreference extends DialogPreference implements
                 }
             }
             mAlphaSliderEnabled = attrs.getAttributeBooleanValue(null, "alphaSlider", false);
+            int defVal = attrs.getAttributeIntValue(SETTINGS_NS, "defaultColorValue", DEF_VALUE_DEFAULT);
+            if (defVal != DEF_VALUE_DEFAULT) {
+                mUsesDefaultButton =  true;
+                mDefValue = defVal;
+            }
         }
         mValue = mDefaultValue;
     }
@@ -108,7 +119,65 @@ public class ColorPickerPreference extends DialogPreference implements
         widgetFrameView = ((LinearLayout) view
                 .findViewById(android.R.id.widget_frame));
 
+        if (mUsesDefaultButton) {
+            setDefaultButton();
+        }
+
         setPreviewColor();
+    }
+
+    /**
+     * Restore a default value, not necessarily a color
+     * For example: Set default value to -1 to remove a color filter
+     *
+     * @author Randall Rushing aka Bigrushdog
+     */
+    private void setDefaultButton() {
+        if (mView == null)
+            return;
+
+        LinearLayout widgetFrameView = ((LinearLayout) mView
+                .findViewById(android.R.id.widget_frame));
+        if (widgetFrameView == null)
+            return;
+
+        ImageView defView = new ImageView(getContext());
+        widgetFrameView.setOrientation(LinearLayout.HORIZONTAL);
+
+        // remove already created default button
+        int count = widgetFrameView.getChildCount();
+        if (count > 0) {
+            View oldView = widgetFrameView.findViewWithTag("default");
+            View spacer = widgetFrameView.findViewWithTag("spacer");
+            if (oldView != null) {
+                widgetFrameView.removeView(oldView);
+            }
+            if (spacer != null) {
+                widgetFrameView.removeView(spacer);
+            }
+        }
+
+        widgetFrameView.addView(defView);
+        widgetFrameView.setMinimumWidth(0);
+        defView.setBackground(getContext().getDrawable(android.R.drawable.ic_menu_revert));
+        defView.setTag("default");
+        defView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    getOnPreferenceChangeListener().onPreferenceChange(ColorPickerPreference.this,
+                            Integer.valueOf(mDefValue));
+                } catch (NullPointerException e) {
+                }
+            }
+        });
+
+        // sorcery for a linear layout ugh
+        View spacer = new View(getContext());
+        spacer.setTag("spacer");
+        spacer.setLayoutParams(new LinearLayout.LayoutParams((int) (mDensity * 16),
+                LayoutParams.MATCH_PARENT));
+        widgetFrameView.addView(spacer);
     }
 
     private void setPreviewColor() {
@@ -131,12 +200,22 @@ public class ColorPickerPreference extends DialogPreference implements
         // remove already create preview image
         int count = widgetFrameView.getChildCount();
         if (count > 0) {
-            widgetFrameView.removeViews(0, count);
+            View preview = widgetFrameView.findViewWithTag("preview");
+            if (preview != null) {
+                widgetFrameView.removeView(preview);
+            }
         }
         widgetFrameView.addView(iView);
         widgetFrameView.setMinimumWidth(0);
         iView.setBackgroundDrawable(new AlphaPatternDrawable((int) (5 * mDensity)));
         iView.setImageBitmap(getPreviewBitmap());
+        iView.setTag("preview");
+        iView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(null);
+            }
+        });
     }
 
     private Bitmap getPreviewBitmap() {
@@ -193,6 +272,13 @@ public class ColorPickerPreference extends DialogPreference implements
         super.showDialog(state);
 
         final ColorPickerDialog pickerDialog = (ColorPickerDialog) getDialog();
+
+    }
+
+    public boolean onPreferenceClick(Preference preference) {
+        //showDialog(null);
+        return false;
+
     }
 
     @Override
