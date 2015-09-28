@@ -37,6 +37,22 @@
                 android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
         </PreferenceScreen>
 
+        <com.android.settings.preference.SystemSettingSwitchPreference
+                android:key="lockscreen_see_through"
+                android:title="@string/lockscreen_see_through_title"
+                android:summary="@string/lockscreen_see_through_summary"
+                android:defaultValue="false" />
+
+        <com.android.settings.aosip.seekbar.SeekBarPreference
+                android:key="lockscreen_blur_radius"
+                android:title="@string/lockscreen_blur_radius"
+                android:max="25"
+                settings:minimum="0"
+                settings:unitsLeft=""
+                settings:unitsRight=""
+                android:persistent="false"
+                android:dependency="lockscreen_see_through" />
+
          <com.android.settings.preference.SystemSettingSwitchPreference
                 android:key="double_tap_sleep_lock_screen"
                 android:title="@string/double_tap_to_sleep_lockscreen_title"
