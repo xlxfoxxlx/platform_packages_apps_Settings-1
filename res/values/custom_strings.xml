@@ -1191,6 +1191,11 @@
     <string name="lockscreen_colors_reset_message">Are you sure you want to reset these colors to default?</string>
     <string name="yes">YES</string>
 
+    <!-- Lockscreen blur/see through -->
+    <string name="lockscreen_see_through_title">Blur</string>
+    <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen</string>
+    <string name="lockscreen_blur_radius">Blur effect intensity</string>
+
     <!-- Statusbar AOSIP logo -->
     <string name="aosip_logo">AOSIP logo</string>
     <string name="status_bar_aosip_logo_title">AOSIP logo</string>
