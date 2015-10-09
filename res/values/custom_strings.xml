@@ -38,6 +38,11 @@
     <string name="aosip_about_mention2_title">Sean Grondin</string>
     <string name="aosip_about_mention2_summary">AOSiP visionary, the man behind the owl logo/images.</string>
 
+    <!-- Changelog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">Since the last update</string>
+    <string name="changelog_error">Unable to load changelog</string>
+
     <!-- Color picker -->
     <string name="dialog_color_picker_title">Color Picker</string>
     <string name="edit_hex_title">HEX Value</string>
