@@ -29,6 +29,12 @@
 		android:summary="@string/device_info_default"
                 android:icon="@drawable/kronic_logo" />
 
+        <!-- Changelog -->
+        <PreferenceScreen android:key="changelog"
+                android:title="@string/changelog_title"
+                android:summary="@string/changelog_summary"
+                android:fragment="com.android.settings.aosip.Changelog" />
+
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"
                 android:enabled="false"
