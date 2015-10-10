@@ -1453,5 +1453,11 @@
     <!-- Button dashboard title -->
     <string name="button_pref_title">Buttons</string>
     <string name="hardware_keys_power_key_title">Power button</string>
-	
+    <!-- Media ducking -->
+    <string name="interruptions_ignore_while_media_title">Prevent audio ducking</string>
+    <string name="interruptions_ignore_while_media_summary">Do not reduce media playback volume when a notification arrives</string>
+
+    <string name="equalizer_settings_title">Equalizer</string>
+    <string name="kernel_settings_title">Kernel</string>
+
 </resources>
