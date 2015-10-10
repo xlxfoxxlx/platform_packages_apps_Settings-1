@@ -1354,6 +1354,35 @@ public class SettingsActivity extends Activity
                     if (!supported) {
                         removeTile = true;
                     }
+                                  } else if (id == R.id.equalizer_settings) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.vipercn.viper4android_v2", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.kernel_auditor_mod) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.kerneladiutor.mod", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                }
+                } else if (id == R.id.kernel_auditor) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.grarak.kerneladiutor", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                }
                 } else if (id == R.id.google_settings) {
                     // Embedding into Settings is supported from Google Settings
                     boolean supported = false;
@@ -1364,8 +1393,6 @@ public class SettingsActivity extends Activity
                     if (!supported) {
                         removeTile = true;
                     }
-                }
-
                 if (UserHandle.MU_ENABLED && UserHandle.myUserId() != 0
                         && !ArrayUtils.contains(SETTINGS_FOR_RESTRICTED, id)) {
                     removeTile = true;
