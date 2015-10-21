@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2007 The Android Open Source Project
+<!-- Copyright (C) 2012-2014 SlimRoms Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -213,4 +213,9 @@
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>
 
+    <!-- AOSiP device info settings -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
+    <string name="aosip_version">AOSiP Layers Build</string>
+    <string name="build_date">Build date</string>
 </resources>
