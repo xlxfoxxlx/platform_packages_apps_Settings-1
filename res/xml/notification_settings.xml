@@ -144,6 +144,18 @@
                     android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </PreferenceScreen>
 
+        <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="battery_saver_notification"
+        android:title="@string/battery_saver_notif_title"
+        android:summary="@string/battery_saver_notif_summary"
+        android:defaultValue="true" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="battery_low_notification"
+        android:title="@string/battery_low_notif_title"
+        android:summary="@string/battery_low_notif_summary"
+        android:defaultValue="true" />
+
         <com.android.settings.preference.GlobalSettingSwitchPreference
         android:key="zen_disable_ducking_during_media_playback"
         android:title="@string/interruptions_ignore_while_media_title"

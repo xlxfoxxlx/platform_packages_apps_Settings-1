@@ -1388,4 +1388,11 @@
     <string name="lcd_density_unsupported">Unsupported</string>
     <string name="lcd_density_restarting_ui">Restarting UI\u2026</string>
 
+    <!-- Battery saver notification toggle -->
+    <string name="battery_saver_notif_title">Battery saver notification</string>
+    <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
+    <!-- low battery notification toggle -->
+    <string name="battery_low_notif_title">Low battery notification</string>
+    <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
+
 </resources>
