@@ -155,12 +155,24 @@
                     android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </PreferenceScreen>
 
+        <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="battery_saver_notification"
+        android:title="@string/battery_saver_notif_title"
+        android:summary="@string/battery_saver_notif_summary"
+        android:defaultValue="true" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="battery_low_notification"
+        android:title="@string/battery_low_notif_title"
+        android:summary="@string/battery_low_notif_summary"
+        android:defaultValue="true" />
+
 	<!-- Heads up -->
         <com.android.settings.preference.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"
-            android:summaryOn="@string/summary_heads_up_enabled"
-            android:summaryOff="@string/summary_heads_up_disabled" />
+        android:key="heads_up_notifications_enabled"
+        android:title="@string/heads_up_notifications"
+        android:summaryOn="@string/summary_heads_up_enabled"
+        android:summaryOff="@string/summary_heads_up_disabled" />
 
     </PreferenceCategory>
 
@@ -181,19 +193,6 @@
                 android:title="@string/manage_zen_access_title"
                 android:persistent="false"
                 android:fragment="com.android.settings.notification.ZenAccessSettings" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="headsup"
-        android:title="@string/headsup_section_header" >
-
-        <!-- Heads up -->
-        <com.android.settings.preference.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"
-            android:summaryOn="@string/summary_heads_up_enabled"
-            android:summaryOff="@string/summary_heads_up_disabled" />
 
     </PreferenceCategory>
 
