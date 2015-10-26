@@ -157,9 +157,13 @@
     <string name="network_traffic_hide_traffic_summary">Enable to hide the indicator if there is no traffic</string>
     <string name="options_title">Options</string>
     <string name="colors_title">Colors</string>
+    <string name="color_title">Color</string>
+    <string name="color_dark_mode_title">Color (light status bar)</string>
     <string name="disabled_title">Disabled</string>
     <string name="icon_title">Icon</string>
+    <string name="icon_color_dark_mode_title">Icon (light status bar)</string>
     <string name="text_title">Text</string>
+    <string name="text_color_dark_mode_title">Text (light status bar)</string>
     <string name="status_bar_network_traffic_settings_title">Network traffic</string>
     <string name="status_bar_network_traffic_settings_summary">Customize the network traffic</string>
 
