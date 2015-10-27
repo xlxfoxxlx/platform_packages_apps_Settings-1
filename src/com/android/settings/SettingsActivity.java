@@ -71,6 +71,7 @@ import com.android.settings.accessibility.CaptionPropertiesFragment;
 import com.android.settings.accounts.AccountSettings;
 import com.android.settings.accounts.AccountSyncSettings;
 import com.android.settings.aosip.OwlsNestSettings;
+import com.android.settings.aosip.advanced.WakelockBlocker;
 import com.android.settings.applications.DrawOverlayDetails;
 import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.solo.FlingSettings;
@@ -366,6 +367,7 @@ public class SettingsActivity extends Activity
             DrawOverlayDetails.class.getName(),
             WriteSettingsDetails.class.getName(),
             OwlsNestSettings.class.getName(),
+            WakelockBlocker.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
             BlacklistSettings.class.getName(),
             NavbarSettings.class.getName(),
