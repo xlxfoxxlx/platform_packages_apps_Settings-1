@@ -57,15 +57,15 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             "battery_status_cut_out_text";
     private static final String PREF_BATTERY_COLOR =
             "battery_status_battery_color";
-//    private static final String PREF_BATTERY_COLOR_DARK_MODE =
-//            "battery_status_battery_color_dark_mode";
+    private static final String PREF_BATTERY_COLOR_DARK_MODE =
+            "battery_status_battery_color_dark_mode";
     private static final String PREF_TEXT_COLOR =
             "battery_status_text_color";
-//    private static final String PREF_TEXT_COLOR_DARK_MODE =
-//            "battery_status_text_color_dark_mode";
+    private static final String PREF_TEXT_COLOR_DARK_MODE =
+            "battery_status_text_color_dark_mode";
 
     private static final int WHITE             = 0xffffffff;
-//    private static final int TRANSLUCENT_BLACK = 0x7a000000;
+    private static final int TRANSLUCENT_BLACK = 0x7a000000;
     private static final int HOLO_BLUE_LIGHT   = 0xff33b5e5;
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -75,9 +75,9 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
     private SwitchPreference mShowText;
     private SwitchPreference mCutOutText;
     private ColorPickerPreference mBatteryColor;
-//    private ColorPickerPreference mBatteryColorDarkMode;
+    private ColorPickerPreference mBatteryColorDarkMode;
     private ColorPickerPreference mTextColor;
-//    private ColorPickerPreference mTextColorDarkMode;
+    private ColorPickerPreference mTextColorDarkMode;
 
     private ContentResolver mResolver;
 
@@ -135,16 +135,17 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             mBatteryColor.setDefaultColors(WHITE, HOLO_BLUE_LIGHT);
             mBatteryColor.setOnPreferenceChangeListener(this);
 
-//            mBatteryColorDarkMode =
-//                    (ColorPickerPreference) findPreference(PREF_BATTERY_COLOR_DARK_MODE);
-//            intColor = Settings.System.getInt(mResolver,
-//                    Settings.System.STATUS_BAR_BATTERY_STATUS_BATTERY_COLOR_DARK_MODE,
-//                    TRANSLUCENT_BLACK); 
-//            mBatteryColorDarkMode.setNewPreviewColor(intColor);
-//            hexColor = String.format("#%08x", (0xffffffff & intColor));
-//            mBatteryColorDarkMode.setSummary(hexColor);
-//            mBatteryColorDarkMode.setDefaultColors(TRANSLUCENT_BLACK, TRANSLUCENT_BLACK);
-//            mBatteryColorDarkMode.setOnPreferenceChangeListener(this);
+            mBatteryColorDarkMode =
+                    (ColorPickerPreference) findPreference(PREF_BATTERY_COLOR_DARK_MODE);
+            intColor = Settings.System.getInt(mResolver,
+                    Settings.System.STATUS_BAR_BATTERY_STATUS_BATTERY_COLOR_DARK_MODE,
+                    TRANSLUCENT_BLACK); 
+            mBatteryColorDarkMode.setNewPreviewColor(intColor);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mBatteryColorDarkMode.setSummary(hexColor);
+            mBatteryColorDarkMode.setDefaultColors(TRANSLUCENT_BLACK, TRANSLUCENT_BLACK);
+            mBatteryColorDarkMode.setOnPreferenceChangeListener(this);
+            catColors.removePreference(findPreference(PREF_BATTERY_COLOR_DARK_MODE));
 
             mTextColor =
                     (ColorPickerPreference) findPreference(PREF_TEXT_COLOR);
@@ -157,27 +158,28 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             mTextColor.setDefaultColors(WHITE, HOLO_BLUE_LIGHT);
             mTextColor.setOnPreferenceChangeListener(this);
 
-//            if (showText) {
-//                mTextColorDarkMode =
-//                        (ColorPickerPreference) findPreference(PREF_TEXT_COLOR_DARK_MODE);
-//                intColor = Settings.System.getInt(mResolver,
-//                        Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR_DARK_MODE,
-//                        TRANSLUCENT_BLACK); 
-//                mTextColorDarkMode.setNewPreviewColor(intColor);
-//                hexColor = String.format("#%08x", (0xffffffff & intColor));
-//                mTextColorDarkMode.setSummary(hexColor);
-//                mTextColorDarkMode.setDefaultColors(TRANSLUCENT_BLACK, TRANSLUCENT_BLACK);
-//                mTextColorDarkMode.setOnPreferenceChangeListener(this);
-//            } else {
-//                catColors.removePreference(findPreference(PREF_TEXT_COLOR_DARK_MODE));
-//            }
+            if (showText) {
+                mTextColorDarkMode =
+                        (ColorPickerPreference) findPreference(PREF_TEXT_COLOR_DARK_MODE);
+                intColor = Settings.System.getInt(mResolver,
+                        Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR_DARK_MODE,
+                        TRANSLUCENT_BLACK); 
+                mTextColorDarkMode.setNewPreviewColor(intColor);
+                hexColor = String.format("#%08x", (0xffffffff & intColor));
+                mTextColorDarkMode.setSummary(hexColor);
+                mTextColorDarkMode.setDefaultColors(TRANSLUCENT_BLACK, TRANSLUCENT_BLACK);
+                mTextColorDarkMode.setOnPreferenceChangeListener(this);
+                catColors.removePreference(findPreference(PREF_TEXT_COLOR_DARK_MODE));
+            } else {
+                catColors.removePreference(findPreference(PREF_TEXT_COLOR_DARK_MODE));
+            }
         } else {
             removePreference(PREF_SHOW_TEXT);
             catTextChargingSymbol.removePreference(findPreference(PREF_CUT_OUT_TEXT));
             catColors.removePreference(findPreference(PREF_BATTERY_COLOR));
-//            catColors.removePreference(findPreference(PREF_BATTERY_COLOR_DARK_MODE));
+            catColors.removePreference(findPreference(PREF_BATTERY_COLOR_DARK_MODE));
             catColors.removePreference(findPreference(PREF_TEXT_COLOR));
-//            catColors.removePreference(findPreference(PREF_TEXT_COLOR_DARK_MODE));
+            catColors.removePreference(findPreference(PREF_TEXT_COLOR_DARK_MODE));
             removePreference(PREF_CAT_TEXT_CHARGING_SYMBOL);
             removePreference(PREF_CAT_COLORS);
         }
@@ -236,15 +238,15 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_BATTERY_STATUS_BATTERY_COLOR, intHex);
             preference.setSummary(hex);
             return true;
-//        } else if (preference == mBatteryColorDarkMode) {
-//            hex = ColorPickerPreference.convertToARGB(
-//                    Integer.valueOf(String.valueOf(newValue)));
-//            intHex = ColorPickerPreference.convertToColorInt(hex);
-//            Settings.System.putInt(mResolver,
-//                    Settings.System.STATUS_BAR_BATTERY_STATUS_BATTERY_COLOR_DARK_MODE,
-//                    intHex);
-//            preference.setSummary(hex);
-//            return true;
+        } else if (preference == mBatteryColorDarkMode) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_BATTERY_STATUS_BATTERY_COLOR_DARK_MODE,
+                    intHex);
+            preference.setSummary(hex);
+            return true;
         } else if (preference == mTextColor) {
             hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
@@ -253,15 +255,15 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR, intHex);
             preference.setSummary(hex);
             return true;
-//        } else if (preference == mTextColorDarkMode) {
-//            hex = ColorPickerPreference.convertToARGB(
-//                    Integer.valueOf(String.valueOf(newValue)));
-//            intHex = ColorPickerPreference.convertToColorInt(hex);
-//            Settings.System.putInt(mResolver,
-//                    Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR_DARK_MODE,
-//                    intHex);
-//            preference.setSummary(hex);
-//            return true;
+        } else if (preference == mTextColorDarkMode) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR_DARK_MODE,
+                    intHex);
+            preference.setSummary(hex);
+            return true;
         }
         return false;
     }
