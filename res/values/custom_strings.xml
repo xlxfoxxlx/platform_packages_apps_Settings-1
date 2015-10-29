@@ -18,6 +18,21 @@
     <string name="aosip_version">AOSiP Build</string>
     <string name="build_date">Build date</string>
 
+    <!-- About AOSiP -->
+    <string name="aosip_about_title">About AOSiP</string>
+    <string name="aosip_about_info">ROM</string>
+    <string name="aosip_gplus_title">AOSiP G+</string>
+    <string name="aosip_gplus_summary">Visit AOSiP G+ Community</string>
+    <string name="aosip_about_info_summary">AOSiP stands for Android Open Source illusion Project. We are an AOSP based custom ROM, twisted with the latest features from all over the Android development community. Quality and stability is our first priority as we are dedicated to bringing you the best Android has to offer.</string>
+    <string name="aosip_about_devs">Developer</string>
+    <string name="aosip_about_dev_title">Josh Fox</string>
+    <string name="aosip_about_dev_summary">Otherwise known as XlxFoXxlX.</string>
+    <string name="aosip_about_mentions">Mentions</string>
+    <string name="aosip_about_mention1_title">Mike Williams</string>
+    <string name="aosip_about_mention1_summary">Former dev of AOSiP</string>
+    <string name="aosip_about_mention2_title">Sean Grondin</string>
+    <string name="aosip_about_mention2_summary">AOSiP visionary, the man behind the owl logo/images.</string>
+
     <!-- Color picker -->
     <string name="dialog_color_picker_title">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
@@ -75,6 +90,7 @@
     <string name="carrier_category">Carrier label</string>
     <string name="traffic_category">Network traffic</string>
     <string name="extra_category">Extras</string>
+
     <!-- Battery-->
     <string name="status_bar_battery_percentage_title">Show battery percentage</string>
     <string name="status_bar_battery_percentage_default">Hidden</string>
@@ -93,6 +109,7 @@
     <string name="battery_icon_color">Icon (While Charging Only)</string>
     <string name="battery_text_color">Text</string>
     <string name="statusbar_color_switch_summary">Enable/Disable Custom Icon Colors</string>
+
     <!-- Battery Bar -->
     <string name="battery_bar_style_title">Style</string>
     <string name="battery_bar_location">Battery bar location</string>
@@ -102,6 +119,7 @@
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">Enable bar animation while charging</string>
     <string name="battery_bar_color">Battery bar color</string>
+
     <!-- clock and date-->
     <string name="status_bar_clock_date_settings_title">Clock &amp; date</string>
     <string name="status_bar_clock_date_settings_summary">Customize the clock &amp; the date</string>
@@ -123,6 +141,7 @@
     <string name="clock_date_date_custom_java_format">Custom java format</string>
     <string name="clock_date_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
     <string name="clock_date_date_string_edittext_summary">Enter string</string>
+
     <!-- Carrier label settings -->
     <string name="carrier_label_cat_notification_icons_title">Notification icons</string>
     <string name="carrier_label_show_title">Show</string>
