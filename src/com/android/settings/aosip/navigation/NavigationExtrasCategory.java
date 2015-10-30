@@ -56,5 +56,5 @@ public class NavigationExtrasCategory extends SettingsPreferenceFragment impleme
         return false;
         }
     }
-}
+
 

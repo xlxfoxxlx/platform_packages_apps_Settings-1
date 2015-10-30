@@ -865,7 +865,10 @@
     <string name="header_weather_title">Header view weather</string>
     <string name="header_weather_summary">Enable notification panel header weather display</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
-</resources>
+
+    <!-- Double tap to sleep -->
+    <string name="double_tap_sleep_nav_bar_title">DT2S on Navbar</string>
+    <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>
 
     <!-- Restart SystemUI -->
     <string name="restart_systemui">Restart SystemUI</string>
