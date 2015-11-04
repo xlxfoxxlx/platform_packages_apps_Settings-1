@@ -20,60 +20,52 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/clock_category" >
 
-    <ListPreference
-        android:key="clock_date_position"
-        android:dialogTitle="@string/position_title"
-        android:title="@string/position_title"
-        android:entries="@array/clock_date_position_entries"
-        android:entryValues="@array/clock_date_position_values" />
+       <SwitchPreference
+            android:key="status_bar_show_clock"
+            android:title="@string/status_bar_show_clock_title"
+            android:defaultValue="true" />
 
-    <SwitchPreference
-        android:key="clock_date_show_date"
-        android:title="@string/clock_date_show_date_title"
-        android:summary="@string/clock_date_show_date_summary" />
-
-    <PreferenceCategory
-        android:key="clock_date_cat_clock"
-        android:title="@string/clock_date_cat_clock_title">
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="clock_color"
+            android:title="@string/clock_color_title"
+            android:defaultValue="0xffffff"
+            android:dependency="status_bar_show_clock" />
 
         <ListPreference
-            android:key="clock_date_am_pm"
-            android:dialogTitle="@string/clock_date_am_pm_title"
-            android:title="@string/clock_date_am_pm_title"
-            android:entries="@array/clock_date_am_pm_entries"
-            android:entryValues="@array/clock_date_am_pm_values" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="clock_date_cat_date"
-        android:title="@string/clock_date_cat_date_title">
-
-        <SwitchPreference
-            android:key="clock_date_date_size"
-            android:title="@string/clock_date_date_size_title"
-            android:summary="@string/clock_date_date_size_summary" />
+            android:key="clock_style"
+            android:entries="@array/clock_style_entries"
+            android:entryValues="@array/clock_style_values"
+            android:title="@string/clock_title_enable"
+            android:dependency="status_bar_show_clock" />
 
         <ListPreference
-            android:key="clock_date_date_style"
-            android:title="@string/clock_date_date_style_title"
-            android:entries="@array/clock_date_date_style_entries"
-            android:entryValues="@array/clock_date_date_style_values" />
+            android:key="status_bar_am_pm"
+            android:dialogTitle="@string/status_bar_am_pm_title"
+            android:title="@string/status_bar_am_pm_title"
+            android:entries="@array/entries_status_bar_am_pm"
+            android:entryValues="@array/values_status_bar_am_pm"
+            android:dependency="status_bar_show_clock" />
 
         <ListPreference
-            android:key="clock_date_date_format"
-            android:title="@string/clock_date_date_format_title"
-            android:entries="@array/clock_date_date_format_entries"
-            android:entryValues="@array/clock_date_date_format_values" /> 
-    </PreferenceCategory>
+            android:key="clock_date_display"
+            android:title="@string/clock_date_display"
+            android:summary="@string/clock_date_display_summary"
+            android:entries="@array/clock_date_display_entries"
+            android:entryValues="@array/clock_date_display_values"
+            android:dependency="status_bar_show_clock" />
 
-    <PreferenceCategory
-        android:key="clock_date_cat_clock_date"
-        android:title="@string/clock_date_cat_clock_date_title">
+        <ListPreference
+            android:key="clock_date_style"
+            android:title="@string/clock_date_style"
+            android:entries="@array/clock_date_style_entries"
+            android:entryValues="@array/clock_date_style_values"
+            android:dependency="status_bar_show_clock" />
 
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="clock_date_clock_date_color"
-            android:title="@string/color_title"
-            android:defaultValue="0xffffffff" />
-    </PreferenceCategory>
+        <ListPreference
+            android:key="clock_date_format"
+            android:title="@string/clock_date_format"
+            android:entries="@array/clock_date_format_entries_values"
+            android:entryValues="@array/clock_date_format_entries_values"
+            android:dependency="status_bar_show_clock" />
 </PreferenceScreen>
 
