@@ -39,7 +39,10 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class IconsCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-
+    private static final String PREF_COLOR =
+            "notification_icons_color";
+    private static final String PREF_COLOR_DARK =
+            "notification_icons_color_dark_mode";
     private static final String PREF_SIGNAL =
             "network_status_icons_signal_color";
     private static final String PREF_SIGNAL_DARK =
@@ -74,6 +77,8 @@ public class IconsCategory extends SettingsPreferenceFragment implements
     private ColorPickerPreference mAirplaneModeDark;
     private ColorPickerPreference mStatus;
     private ColorPickerPreference mStatusDark;
+    private ColorPickerPreference mColor;
+    private ColorPickerPreference mColorDark;
 
     private ContentResolver mResolver;
 
@@ -183,6 +188,28 @@ public class IconsCategory extends SettingsPreferenceFragment implements
         mStatusDark.setDefaultColors(BLACK_TRANSLUCENT, BLACK_TRANSLUCENT);
         mStatusDark.setOnPreferenceChangeListener(this);
 
+        mColor =
+                (ColorPickerPreference) findPreference(PREF_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR,
+                WHITE); 
+        mColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mColor.setSummary(hexColor);
+        mColor.setDefaultColors(WHITE, HOLO_BLUE_LIGHT);
+        mColor.setOnPreferenceChangeListener(this);
+
+        mColorDark =
+                (ColorPickerPreference) findPreference(PREF_COLOR_DARK);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR_DARK_MODE,
+                BLACK_TRANSLUCENT); 
+        mColorDark.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mColorDark.setSummary(hexColor);
+        mColorDark.setDefaultColors(BLACK_TRANSLUCENT, BLACK_TRANSLUCENT);
+        mColorDark.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
     }
 
@@ -208,7 +235,24 @@ public class IconsCategory extends SettingsPreferenceFragment implements
         String hex;
         int intHex;
 
-        if (preference == mSignal) {
+        if (preference == mColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mColorDark) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR_DARK_MODE,
+                    intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mSignal) {
             hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -338,6 +382,12 @@ public class IconsCategory extends SettingsPreferenceFragment implements
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_STATUS_ICONS_COLOR_DARK_MODE,
                                     BLACK_TRANSLUCENT);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR,
+                                    WHITE);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR_DARK_MODE,
+                                    BLACK_TRANSLUCENT);
                             getOwner().refreshSettings();
                         }
                     })
@@ -367,6 +417,12 @@ public class IconsCategory extends SettingsPreferenceFragment implements
                                     HOLO_BLUE_LIGHT);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_STATUS_ICONS_COLOR_DARK_MODE,
+                                    BLACK_TRANSLUCENT);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR,
+                                    HOLO_BLUE_LIGHT);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_NOTIFICATION_ICONS_COLOR_DARK_MODE,
                                     BLACK_TRANSLUCENT);
                             getOwner().refreshSettings();
                         }
