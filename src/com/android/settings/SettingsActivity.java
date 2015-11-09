@@ -1329,7 +1329,17 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
-                }
+                } else if (id == R.id.google_settings) {
+                    // Embedding into Settings is supported from Google Settings
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.google.android.gms", 0).versionCode >= 1);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+               }
 
                 if (UserHandle.MU_ENABLED && UserHandle.myUserId() != 0
                         && !ArrayUtils.contains(SETTINGS_FOR_RESTRICTED, id)) {
