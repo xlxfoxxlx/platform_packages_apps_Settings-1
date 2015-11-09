@@ -1101,6 +1101,9 @@
     <!-- Warning for Adb over Network -->
     <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks, including GSM data network!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
 
+    <!-- Google -->
+    <string name="google_title">Google</string>
+
     <!-- AOSP MultiWindow -->
     <string name="multiwindow_settings_title">Multi-window</string>
     <string name="enable_multi_window">Multi-window mode</string>
