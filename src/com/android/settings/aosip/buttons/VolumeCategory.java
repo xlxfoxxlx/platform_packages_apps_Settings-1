@@ -42,10 +42,10 @@ import android.view.WindowManagerGlobal;
 import android.view.IWindowManager;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import com.android.settings.aosip.seekbar.SeekBarPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.Utils;
 
@@ -104,6 +104,20 @@ public class VolumeCategory extends SettingsPreferenceFragment implements
         Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
     }
 
+    private void updateBarModeSettings(int mode) {
+        mNavbarMode.setValue(String.valueOf(mode));
+        mNavbarSettings.setEnabled(mode == 0);
+        mNavbarSettings.setSelectable(mode == 0);
+        mFlingSettings.setEnabled(mode == 1);
+        mFlingSettings.setSelectable(mode == 1);
+    }
+
+    private void updateBarVisibleAndUpdatePrefs(boolean showing) {
+        mNavbarVisibility.setChecked(showing);
+        mNavInterface.setEnabled(mNavbarVisibility.isChecked());
+        mNavGeneral.setEnabled(mNavbarVisibility.isChecked());
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -126,6 +140,18 @@ public class VolumeCategory extends SettingsPreferenceFragment implements
             int alpha = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
+            return true;
+        } else if (preference.equals(mNavbarMode)) {
+            int mode = Integer.parseInt(((String) newValue).toString());
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_MODE, mode);
+            updateBarModeSettings(mode);
+            return true;
+        } else if (preference.equals(mNavbarVisibility)) {
+            boolean showing = ((Boolean)newValue);
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_VISIBLE,
+                    showing ? 1 : 0);
+            updateBarVisibleAndUpdatePrefs(showing);
             return true;
         }
         return false;
