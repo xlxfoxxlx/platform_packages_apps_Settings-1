@@ -122,6 +122,7 @@
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
     <string name="default_string">Default</string>
     <string name="reset">Reset</string>
+
     <!-- Carrier label settings -->
     <string name="carrier_label_cat_notification_icons_title">Notification icons</string>
     <string name="carrier_label_show_title">Show</string>
@@ -145,6 +146,7 @@
     <string name="number_of_notifications_four_title">4</string>
     <string name="number_of_notifications_five_title">5</string>
     <string name="number_of_notifications_six_title">6</string>
+
     <!-- Status bar Network traffic settings -->
     <string name="network_traffic_activity_title">Activity</string>
     <string name="network_traffic_activity_down">Download</string>
@@ -167,11 +169,14 @@
     <string name="text_color_dark_mode_title">Text (light status bar)</string>
     <string name="status_bar_network_traffic_settings_title">Network traffic</string>
     <string name="status_bar_network_traffic_settings_summary">Customize the network traffic</string>
+
     <!-- Status bar battery status settings -->
     <string name="battery_status_text_charging_symbol_title">Battery percentage &amp; charging symbol</string>
     <string name="battery_status_show_battery_summary">Enable to show the battery status</string>
     <string name="battery_status_show_text_title">Show battery percentage</string>
     <string name="battery_status_show_text_summary">Enable to show the percentage text</string>
+    <string name="battery_status_show_charge_animation_title">Show charge animation</string>
+    <string name="battery_status_show_charge_animation_summary">Enable to show a charge animation</string>
     <string name="battery_status_cut_out_title">Cut out</string>
     <string name="battery_status_cut_out_summary">Enable to cut the battery percentage or charging symbol out of the battery icon, if the battery fill reaches the battery percentage or charging symbol.</string>
     <string name="battery_status_text_charging_symbol_color_dark_mode_title">Battery percentage &amp; charging symbol (light status bar)</string>
