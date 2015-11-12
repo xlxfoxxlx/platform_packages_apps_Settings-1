@@ -1263,4 +1263,5 @@
     <string name="lock_screen_show_current">Charging Current</string>
     <string name="lock_screen_show_current_summary">Show Charging Current rate on lock screen</string>
 
+    <string name="omniswitch_category">OmniSwitch</string>
 </resources>
