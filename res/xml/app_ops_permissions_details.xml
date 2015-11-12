@@ -21,7 +21,7 @@
         android:key="app_ops_settings_switch" />
 
     <Preference
-        android:key="app_ops_settings_preference" />
+        android:key="app_ops_settings_preference" />l
 
     <Preference
         android:key="app_ops_settings_description"
