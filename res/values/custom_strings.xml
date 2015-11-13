@@ -357,9 +357,9 @@
 
     <!--Owlsnest lockscreen-->
     <string name="lockscreen_title">Lockscreen</string>
-    <string name="lockscreen_summary">Options for weather</string>
+    <string name="lockscreen_summary">Options for Colors,Shortcuts,weather and Wall</string>
     <string name="weather_category">Weather</string>
-    <string name="shortcut_category">Shortcuts</string>
+    <string name="shortcut_category">Shortcuts &amp; Options</string>
     <string name="lockcolors_category">Colors</string>
     <!-- CM Lockscreen shortcuts -->
     <string name="lockscreen_targets_message">Bottom corner shortcuts</string>
@@ -1196,4 +1196,11 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
     <string name="attention">Attention</string>
+
+    <!-- Quick settings disable on lockscreen -->
+    <string name="block_on_secure_keyguard_title">Disable quick settings</string>
+    <string name="block_on_secure_keyguard_summary">Disables quick settings in the keyguard for a secure lock only</string>
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
 </resources>
