@@ -66,6 +66,7 @@
     <string name="show_title">Show</string>
     <string name="choose_app">Choose app</string>
     <string name="allow_lights_title">Lights in do not disturb mode</string>
+    <string name="notification_light_screen_on">Lights with screen on</string>
 
     <!--Owlsnest statusbar-->
     <string name="statusbar_bar_title">Statusbar options</string>
