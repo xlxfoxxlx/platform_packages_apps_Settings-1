@@ -26,6 +26,7 @@ import android.content.res.Resources;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
@@ -48,16 +49,22 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
 
     private static final String PREF_CAT_ICON =
             "battery_status_cat_icon";
+    private static final String PREF_CAT_CIRCLE_DOTTED =
+            "battery_status_cat_circle_dotted";
     private static final String PREF_CAT_TEXT_CHARGE_ICON =
             "battery_status_cat_text_charge_icon";
     private static final String PREF_CAT_CHARGE_ANIMATION =
             "battery_status_cat_charge_animation";
     private static final String PREF_CAT_COLORS =
             "battery_status_cat_colors";
-    private static final String PREF_SHOW_BATTERY_ICON =
-            "battery_status_show_battery_icon";
+    private static final String PREF_ICON_INDICATOR =
+            "battery_status_icon_indicator";
     private static final String PREF_SHOW_TEXT =
             "battery_status_show_text";
+    private static final String PREF_CIRCLE_DOT_INTERVAL =
+            "battery_status_circle_dot_interval";
+    private static final String PREF_CIRCLE_DOT_LENGTH =
+            "battery_status_circle_dot_length";
     private static final String PREF_CUT_OUT_TEXT =
             "battery_status_cut_out_text";
     private static final String PREF_SHOW_CHARGE_ANIMATION =
@@ -79,8 +86,10 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET  = 0;
 
-    private SwitchPreference mShowBatteryIcon;
+    private ListPreference mIconIndicator;
     private SwitchPreference mShowText;
+    private ListPreference mCircleDotInterval;
+    private ListPreference mCircleDotLength;
     private SwitchPreference mCutOutText;
     private SwitchPreference mShowChargeAnimation;
     private ColorPickerPreference mBatteryColor;
@@ -102,16 +111,22 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             prefs.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.status_bar_battery_status_settings);
+        addPreferencesFromResource(R.xml.aosip_battery);
         mResolver = getActivity().getContentResolver();
 
         final boolean showBatteryIcon = Settings.System.getInt(mResolver,
-               Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_BATTERY, 1) == 1;
+               Settings.System.STATUS_BAR_BATTERY_STATUS_ICON_INDICATOR, 0) != 3;
+        final boolean isBatteryIconCircle = Settings.System.getInt(mResolver,
+               Settings.System.STATUS_BAR_BATTERY_STATUS_ICON_INDICATOR, 0) == 2;
         final boolean showText = Settings.System.getInt(mResolver,
                Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_TEXT, 0) == 1;
+        final boolean showCircleDotted = Settings.System.getInt(mResolver,
+               Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL, 0) != 0;
 
         PreferenceCategory catIcon =
                 (PreferenceCategory) findPreference(PREF_CAT_ICON);
+        PreferenceCategory catCircleDotted =
+                (PreferenceCategory) findPreference(PREF_CAT_CIRCLE_DOTTED);
         PreferenceCategory catTextChargeIcon =
                 (PreferenceCategory) findPreference(PREF_CAT_TEXT_CHARGE_ICON);
         PreferenceCategory catChargeAnimation =
@@ -119,9 +134,12 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
         PreferenceCategory catColors =
                 (PreferenceCategory) findPreference(PREF_CAT_COLORS);
 
-        mShowBatteryIcon = (SwitchPreference) findPreference(PREF_SHOW_BATTERY_ICON);
-        mShowBatteryIcon.setChecked(showBatteryIcon);
-        mShowBatteryIcon.setOnPreferenceChangeListener(this);
+        mIconIndicator = (ListPreference) findPreference(PREF_ICON_INDICATOR);
+        int iconIndicator = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_BATTERY_STATUS_ICON_INDICATOR, 0);
+        mIconIndicator.setValue(String.valueOf(iconIndicator));
+        mIconIndicator.setSummary(mIconIndicator.getEntry());
+        mIconIndicator.setOnPreferenceChangeListener(this);
 
         int intColor;
         String hexColor;
@@ -130,6 +148,30 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             mShowText = (SwitchPreference) findPreference(PREF_SHOW_TEXT);
             mShowText.setChecked(showText);
             mShowText.setOnPreferenceChangeListener(this);
+
+            if (isBatteryIconCircle) {
+                mCircleDotInterval = (ListPreference) findPreference(PREF_CIRCLE_DOT_INTERVAL);
+                int circleDotInterval = Settings.System.getInt(mResolver,
+                        Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL, 0);
+                mCircleDotInterval.setValue(String.valueOf(circleDotInterval));
+                mCircleDotInterval.setOnPreferenceChangeListener(this);
+                updateCircleDotIntervalSummary(circleDotInterval);
+
+                if (showCircleDotted) {
+                    mCircleDotLength = (ListPreference) findPreference(PREF_CIRCLE_DOT_LENGTH);
+                    int circleDotLength = Settings.System.getInt(mResolver,
+                            Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH, 0);
+                    mCircleDotLength.setValue(String.valueOf(circleDotLength));
+                    mCircleDotLength.setSummary(mCircleDotLength.getEntry());
+                    mCircleDotLength.setOnPreferenceChangeListener(this);
+                } else {
+                    catCircleDotted.removePreference(findPreference(PREF_CIRCLE_DOT_LENGTH));
+                }
+            } else {
+                catCircleDotted.removePreference(findPreference(PREF_CIRCLE_DOT_INTERVAL));
+                catCircleDotted.removePreference(findPreference(PREF_CIRCLE_DOT_LENGTH));
+                removePreference(PREF_CAT_CIRCLE_DOTTED);
+            }
 
             mCutOutText = (SwitchPreference) findPreference(PREF_CUT_OUT_TEXT);
             mCutOutText.setChecked(Settings.System.getInt(mResolver,
@@ -159,17 +201,16 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             mTextColorDarkMode.setOnPreferenceChangeListener(this);
         } else {
             catIcon.removePreference(findPreference(PREF_SHOW_TEXT));
+            catCircleDotted.removePreference(findPreference(PREF_CIRCLE_DOT_INTERVAL));
+            catCircleDotted.removePreference(findPreference(PREF_CIRCLE_DOT_LENGTH));
             catTextChargeIcon.removePreference(findPreference(PREF_CUT_OUT_TEXT));
             catColors.removePreference(findPreference(PREF_TEXT_COLOR));
             catColors.removePreference(findPreference(PREF_TEXT_COLOR_DARK_MODE));
+            removePreference(PREF_CAT_CIRCLE_DOTTED);
             removePreference(PREF_CAT_TEXT_CHARGE_ICON);
         }
 
         if (showBatteryIcon) {
-            mShowChargeAnimation = (SwitchPreference) findPreference(PREF_SHOW_CHARGE_ANIMATION);
-            mShowChargeAnimation.setChecked(Settings.System.getInt(mResolver,
-                   Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_CHARGE_ANIMATION, 0) == 1);
-            mShowChargeAnimation.setOnPreferenceChangeListener(this);
 
             mBatteryColor =
                     (ColorPickerPreference) findPreference(PREF_BATTERY_COLOR);
@@ -225,14 +266,18 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean value;
+        int intValue;
+        int index;
         String hex;
         int intHex;
 
-        if (preference == mShowBatteryIcon) {
-            value = (Boolean) newValue;
+        if (preference == mIconIndicator) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mIconIndicator.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
-                    Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_BATTERY,
-                    value ? 1 : 0);
+                    Settings.System.STATUS_BAR_BATTERY_STATUS_ICON_INDICATOR,
+                    intValue);
+            mIconIndicator.setSummary(mIconIndicator.getEntries()[index]);
             refreshSettings();
             return true;
         } else if (preference == mShowText) {
@@ -240,6 +285,22 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             Settings.System.putInt(mResolver,
                     Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_TEXT,
                     value ? 1 : 0);
+            return true;
+        } else if (preference == mCircleDotInterval) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mCircleDotInterval.findIndexOfValue((String) newValue);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL,
+                    intValue);
+            refreshSettings();
+            return true;
+        } else if (preference == mCircleDotLength) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mCircleDotLength.findIndexOfValue((String) newValue);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH,
+                    intValue);
+            mCircleDotLength.setSummary(mCircleDotLength.getEntries()[index]);
             return true;
         } else if (preference == mCutOutText) {
             value = (Boolean) newValue;
@@ -324,9 +385,13 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
                             new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_BATTERY, 1);
+                                    Settings.System.STATUS_BAR_BATTERY_STATUS_ICON_INDICATOR, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_TEXT, 0);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL, 0);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CUT_OUT_TEXT, 1);
                             Settings.System.putInt(getOwner().mResolver,
@@ -350,9 +415,13 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
                             new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_BATTERY, 1);
+                                    Settings.System.STATUS_BAR_BATTERY_STATUS_ICON_INDICATOR, 2);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_TEXT, 1);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL, 2);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH, 3);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CUT_OUT_TEXT, 0);
                             Settings.System.putInt(getOwner().mResolver,
@@ -382,6 +451,17 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
 
         }
     }
+
+    private void updateCircleDotIntervalSummary(int circleDotInterval) {
+        CharSequence summary;
+        if (circleDotInterval != 0) {
+            summary = mCircleDotInterval.getEntry();
+        } else {
+            summary = getResources().getString(R.string.battery_status_circle_dot_no_dot_summary);
+        }
+        mCircleDotInterval.setSummary(summary);
+    }
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.OWLSNEST;
