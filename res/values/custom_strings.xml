@@ -104,7 +104,7 @@
     <string name="statusbar_bar_summary">Adjust items like battery,clock,icons,and colors</string>
     <string name="clock_category">Clock</string>
     <string name="battery_category">Battery</string>
-    <string name="icon_category">Icons</string>
+    <string name="icon_category">Colors &amp; Options</string>
     <string name="carrier_category">Carrier label</string>
     <string name="traffic_category">Network traffic</string>
     <string name="extra_category">Extras</string>
@@ -116,6 +116,11 @@
     <string name="status_bar_custom_header_shadow_title">Shadow header image</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
     <string name="unit_percent">\u0025</string>
+
+    <!-- Status bar brightness control -->
+    <string name="status_bar_brightness_control_title">Brightness control</string>
+    <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across status bar</string>
+    <string name="status_bar_brightness_control_info">Automatic brightness must be disabled</string>
 
     <!-- Statusbar Clock options -->
     <string name="status_bar_title">Status bar</string>
