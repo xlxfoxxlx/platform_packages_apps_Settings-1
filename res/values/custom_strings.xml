@@ -104,10 +104,15 @@
     <string name="statusbar_bar_summary">Adjust items like battery,clock,icons,and colors</string>
     <string name="clock_category">Clock</string>
     <string name="battery_category">Battery</string>
-    <string name="icon_category">Icons</string>
+    <string name="icon_category">Colors &amp; Options</string>
     <string name="carrier_category">Carrier label</string>
     <string name="traffic_category">Network traffic</string>
     <string name="extra_category">Extras</string>
+
+    <!-- Status bar brightness control -->
+    <string name="status_bar_brightness_control_title">Brightness control</string>
+    <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across status bar</string>
+    <string name="status_bar_brightness_control_info">Automatic brightness must be disabled</string>
 
     <!-- Battery-->
     <string name="status_bar_battery_percentage_title">Show battery percentage</string>
@@ -121,7 +126,7 @@
     <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
     <string name="status_bar_battery_style_text">Text</string>
     <string name="status_bar_battery_style_hidden">Hidden</string>
-    <string name="status_bar_color_enable">Statusbar Colors</string>
+    <string name="status_bar_color_enable">Statusbar Options</string>
     <string name="statusbar_color_switch">Custom Icon Colors</string>
     <string name="battery_color">Battery</string>
     <string name="battery_icon_color">Icon (While Charging Only)</string>

@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException; 
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -49,6 +50,7 @@ public class IconsCategory extends SettingsPreferenceFragment implements
             "notification_icons_color";
     private static final String PREF_STATUS =
             "network_status_icons_status_color";
+    private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
     private static final int WHITE                  = 0xffffffff;
     private static final int HOLO_BLUE_LIGHT        = 0xff33b5e5;
@@ -64,6 +66,7 @@ public class IconsCategory extends SettingsPreferenceFragment implements
     private ColorPickerPreference mAirplaneMode;
     private ColorPickerPreference mColor;
     private ColorPickerPreference mStatus;
+    private SwitchPreference mStatusBarBrightnessControl;
 
     private ContentResolver mResolver;
 
@@ -75,6 +78,21 @@ public class IconsCategory extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final ContentResolver resolver = getActivity().getContentResolver();
+
+        mStatusBarBrightnessControl = (SwitchPreference) findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
+        mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
+        int statusBarBrightnessControl = Settings.System.getInt(getContentResolver(),
+                STATUS_BAR_BRIGHTNESS_CONTROL, 0);
+        mStatusBarBrightnessControl.setChecked(statusBarBrightnessControl != 0);
+        try {
+            if (Settings.System.getInt(getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
+                mStatusBarBrightnessControl.setEnabled(false);
+                mStatusBarBrightnessControl.setSummary(R.string.status_bar_brightness_control_info);
+            }
+        } catch (SettingNotFoundException e) {
+        }
         refreshSettings();
     }
 
@@ -211,6 +229,11 @@ public class IconsCategory extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_STATUS_ICONS_COLOR,
                     intHex);
             preference.setSummary(hex);
+            return true;
+          } else if (preference == mStatusBarBrightnessControl) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(), STATUS_BAR_BRIGHTNESS_CONTROL,
+                    value ? 1 : 0);
             return true;
         }
         return false;
