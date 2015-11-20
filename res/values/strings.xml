@@ -7107,4 +7107,10 @@
     <!-- Toast message letting the user know the color temperature setting is not immediate -->
     <string name="color_temperature_toast">To apply color change, turn off screen</string>
 
+    <!-- MediaScanner behavior on boot -->
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
+
 </resources>
