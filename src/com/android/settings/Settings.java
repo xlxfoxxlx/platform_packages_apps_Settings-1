@@ -168,6 +168,7 @@ public class Settings extends SettingsActivity {
     public static class FlingSettingsActivity extends SettingsActivity { /* empty */ }
     public static class SmartbarSettingsActivity extends SettingsActivity { /* empty */ }
     public static class PulseSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class DisplayRotationActivity extends SettingsActivity { /* empty */ }
 
     // Categories.
     public static class WirelessSettings extends SettingsActivity { /* empty */ }
@@ -175,4 +176,5 @@ public class Settings extends SettingsActivity {
     public static class PersonalSettings extends SettingsActivity { /* empty */ }
     public static class SystemSettings extends SettingsActivity { /* empty */ }
     public static class OwlsNestActivity extends SettingsActivity { /* empty */ }
+
 }
