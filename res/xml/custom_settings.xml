@@ -23,4 +23,10 @@
             android:fragment="com.android.settings.custom.nav.NavbarSettings"
             android:title="@string/aosp_navigation_bar" />
 
+        <PreferenceScreen
+            android:title="@string/quick_settings_title" >
+                <intent android:action="android.intent.action.MAIN"
+                        android:targetPackage="com.android.systemui"
+                        android:targetClass="com.android.systemui.tuner.QsTunerActivity" />
+        </PreferenceScreen>
 </PreferenceScreen>
