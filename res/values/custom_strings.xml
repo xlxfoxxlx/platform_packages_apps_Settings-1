@@ -1317,4 +1317,8 @@
     <string name="omniswitch_settings_title">OmniSwitch</string>
     <string name="omniswitch_category">OmniSwitch</string>
     <string name="stock_recents">Stock Recents</string>
+
+    <!-- Battery saver color -->
+    <string name="battery_saver_color_title">Warning color</string>
+    <string name="battery_saver_color_summary">Enable orange status and navigation bars when battery saver is activated</string>
 </resources>
