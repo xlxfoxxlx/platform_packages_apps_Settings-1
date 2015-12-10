@@ -186,6 +186,8 @@
     <string name="network_status_icons_cat_status_colors_title">Status colors</string>
     <string name="status_bar_network_status_icons_settings_title">Netw.- &amp; status icons</string>
     <string name="status_bar_network_status_icons_settings_summary">Customize the network- &amp; status icons</string>
+    <string name="status_bar_icon_blacklist_title">Visible</string>
+    <string name="status_bar_icon_blacklist_summary">Adjust visible icons</string>
 
     <!--Owlsnest navigation-->
     <string name="navigation_title">Navigation bar options</string>
@@ -196,7 +198,10 @@
     <!--Owlsnest Quick settings-->
     <string name="quicksettings_title">Quick settings</string>
     <string name="quicksettings_summary">Manage your quick tiles and expanded statusbar</string>
-    <string name="expanded_category">Statusbar expanded</string>
+    <string name="expanded_category">Statusbar area</string>
+    <string name="tile_category">Tile area</string>
+    <string name="quick_settings_title">Tiles</string>
+    <string name="quick_settings_summary">Add or remove tiles</string>
 
     <!--Owlsnest buttons-->
     <string name="buttons_title">Hardware buttons</string>
