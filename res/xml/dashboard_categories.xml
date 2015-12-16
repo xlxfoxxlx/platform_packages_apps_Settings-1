@@ -77,6 +77,15 @@
             android:id="@+id/custom_section"
             android:title="@string/custom_title" >
 
+        <!-- OwlsNest -->
+       <dashboard-tile
+            android:id="@+id/Owlsnest"
+            android:title="@string/custom_title"
+            android:fragment="com.android.settings.aosip.OwlsNestSettings"
+            android:icon="@drawable/ic_settings_illusion"
+            />
+        </dashboard-tile>
+
         <!-- Custom settings -->
         <dashboard-tile
                 android:id="@+id/custom_settings"
@@ -95,8 +104,6 @@
                 android:targetPackage="projekt.substratum"
                 android:targetClass="projekt.substratum.LaunchActivity" />
         </dashboard-tile>
-
-
     </dashboard-category>
 
     <!-- DEVICE -->
