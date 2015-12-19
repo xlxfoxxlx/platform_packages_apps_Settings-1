@@ -51,6 +51,10 @@
     <string name="aosip_about_mention6_title">Sri Harsha (srisurya95)</string>
     <string name="aosip_about_mention6_summary">Caf-Dev and Kenzo Maintainer</string>
 
+    <!-- About phone screen, AOSiP device maintainer name -->
+    <string name="device_maintainer">Device maintainer</string>
+    <string name="device_maintainers">Device maintainers</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
