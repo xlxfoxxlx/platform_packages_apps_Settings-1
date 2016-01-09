@@ -124,4 +124,5 @@ public class Settings extends SettingsActivity {
     public static class FlingSettingsActivity extends SettingsActivity { /* empty */ }
     public static class SmartbarSettingsActivity extends SettingsActivity { /* empty */ }
     public static class OwlsNestSettings extends SettingsActivity { /* empty */ }
+    public static class OwlsNestSettingsActivity extends SettingsActivity { /* empty */ }
 }
