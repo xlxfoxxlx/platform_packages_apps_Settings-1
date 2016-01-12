@@ -1260,7 +1260,7 @@
     <!-- Lock clock -->
     <string name="lock_clock_title">Clock widget</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' Home  widget will display</string>
-     <string name="lock_clock_clock_section_title">Clock and alarm</string>
+    <string name="lock_clock_clock_section_title">Clock and alarm</string>
     <string name="lock_clock_clock_section_summary">View or change how the clock of the \'cLock\' Home  widget will display</string>
     <string name="lock_clock_weather_section_title">Weather panel</string>
     <string name="lock_clock_weather_section_summary">View or change how the weather of the \'cLock\' Home  widget will display</string>
@@ -1301,6 +1301,8 @@
     <string name="navbar_tint_switch">Navigation Button Tint</string>
     <string name="navbar_button_color">Navigation Bar Buttons</string>
 
+    <string name="block_on_secure_keyguard_title">Disable quick settings</string>
+    <string name="block_on_secure_keyguard_summary">Disables quick settings on secure lockscreen</string>
     <string name="lock_screen_show_current">Charging Current</string>
     <string name="lock_screen_show_current_summary">Show Charging Current rate on lock screen</string>
 
