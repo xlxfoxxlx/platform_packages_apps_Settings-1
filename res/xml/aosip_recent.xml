@@ -50,11 +50,12 @@
         android:id="@+id/stock_section"
         android:title="@string/stock_recents" >
 
-    <com.android.settings.preference.SystemSettingSwitchPreference
-        android:key="recents_full_screen"
-        android:title="@string/recents_show_fullscreen"
-        android:summary="@string/recents_fullscreen_summary"
-        android:defaultValue="false" />
+    <ListPreference
+        android:key="immersive_recents"
+        android:title="@string/immersive_recents_title"
+        android:entries="@array/immersive_recents_entries"
+        android:entryValues="@array/immersive_recents_values"
+        android:persistent="false" />
 
     <com.android.settings.preference.SystemSettingSwitchPreference
             android:key="recents_search_bar"
