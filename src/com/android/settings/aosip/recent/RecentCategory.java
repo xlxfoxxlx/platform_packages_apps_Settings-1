@@ -64,6 +64,7 @@ public class RecentCategory extends SettingsPreferenceFragment
     private static final String KEY_OMNI_SWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String IMMERSIVE_RECENTS = "immersive_recents";
     private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
     private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
     public static final String OMNISWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
@@ -76,6 +77,7 @@ public class RecentCategory extends SettingsPreferenceFragment
     private Preference mOmniSwitchSettings;
     private boolean mOmniSwitchInitCalled;
     private PreferenceScreen mOmniSwitch;
+    private ListPreference mImmersiveRecents;
 
    @Override
     protected int getMetricsCategory() {
@@ -121,6 +123,12 @@ public class RecentCategory extends SettingsPreferenceFragment
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+
+        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
+        mImmersiveRecents.setValue(String.valueOf(Settings.System.getInt(
+                resolver, Settings.System.IMMERSIVE_RECENTS, 0)));
+        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+        mImmersiveRecents.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -139,6 +147,12 @@ public class RecentCategory extends SettingsPreferenceFragment
         } else if (preference == mRecentsClearAllLocation) {
             int location = Integer.valueOf((String) newValue);
             int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+        }
+        if (preference == mImmersiveRecents) {
+            Settings.System.putInt(resolver, Settings.System.IMMERSIVE_RECENTS,
+                    Integer.valueOf((String) newValue));
+            mImmersiveRecents.setValue(String.valueOf(newValue));
+            mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
         }
         if (preference == mRecentsUseOmniSwitch) {
             boolean value = (Boolean) newValue;

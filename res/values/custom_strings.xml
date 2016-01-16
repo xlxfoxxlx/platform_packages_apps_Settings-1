@@ -354,6 +354,13 @@
     <string name="recent_app_sidebar_label_color_title">Label color</string>
     <string name="recent_app_sidebar_bg_color_title">Background color</string>
     <string name="recent_app_sidebar_scale_title">Size</string>
+    <!-- Immersive recents -->
+    <string name="immersive_recents_title">Immersive Recents</string>
+    <string name="immersive_recents_default">Default</string>
+    <string name="immersive_recents_fullscreen">Fullscreen</string>
+    <string name="immersive_recents_statusbar">Statusbar only</string>
+    <string name="immersive_recents_navbar">Navbar only</string>
+
 
     <!--Owlsnest lockscreen-->
     <string name="lockscreen_title">Lockscreen</string>
