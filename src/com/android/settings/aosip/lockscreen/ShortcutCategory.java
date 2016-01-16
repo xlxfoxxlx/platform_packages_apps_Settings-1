@@ -19,6 +19,7 @@ package com.android.settings.aosip.lockscreen;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.preference.Preference;
@@ -34,6 +35,11 @@ import com.android.settings.SettingsPreferenceFragment;
 public class ShortcutCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+
+    private FingerprintManager mFingerprintManager;
+    private SystemSettingSwitchPreference mFingerprintVib;
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.OWLSNEST;
@@ -42,8 +48,13 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(R.xml.aosip_shortcut);
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
+        if (!mFingerprintManager.isHardwareDetected()){
+            secureCategory.removePreference(mFingerprintVib);
+        }
 
     }
 

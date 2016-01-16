@@ -19,7 +19,9 @@ package com.android.settings.aosip.lockscreen;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -34,9 +36,11 @@ public class LockPaperCategory extends SettingsPreferenceFragment {
     public static final int IMAGE_PICK = 1;
     public static final int SET_KEYGUARD_WALLPAPER = 2;
 
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
     private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
 
+    private FingerprintManager mFingerprintManager;
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
 
