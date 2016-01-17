@@ -2574,6 +2574,48 @@
                        android:resource="@id/wireless_settings" />
         </activity>
 
+        <!-- Navigation settings activity. -->
+        <activity android:name="Settings$NavigationSettingsActivity"
+                android:label="@string/navigation_category"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.solo.NavbarSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/owlsnest" />
+        </activity>
+
+       <!-- System action picker -->
+        <activity android:name="com.android.settings.solo.ActionPickerDialogActivity"
+                android:theme="@style/Theme.SettingsDialog"
+                android:label="@string/choose_action_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+       <!-- Icon pack picker -->
+        <activity android:name="com.android.settings.solo.IconPickerActivity"
+                android:theme="@style/Theme.SettingsDialog"
+                android:label="@string/icon_pack_picker_dialog_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+       <!-- Icon pack grid -->
+        <activity android:name="com.android.settings.solo.IconPackGridActivity"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <provider
             android:name=".search.SettingsSearchIndexablesProvider"
             android:authorities="com.android.settings"
