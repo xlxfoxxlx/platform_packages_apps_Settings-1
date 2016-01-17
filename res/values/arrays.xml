@@ -1428,4 +1428,18 @@
         <!-- Do not translate. -->
         <item>0</item>
     </string-array>
+<<<<<<< HEAD
+=======
+
+    <!-- SmartBar context menu position  -->
+    <string-array name="smartbar_context_menu_side_entries">
+        <item>@string/smartbar_right</item>
+        <item>@string/smartbar_left</item>
+    </string-array>
+
+    <string-array name="smartbar_context_menu_side_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+>>>>>>> e3208d6... SmartBar: Settings support bringup
 </resources>
