@@ -31,5 +31,8 @@
     <color name="theme_accent">#ff009688</color>
     <color name="action_picker_fab_background">@color/theme_accent</color>
 
+    <!-- DPI Alert Dialog Text Colors -->
+    <color name="dpi_text_color">@android:color/black</color>
+
 </resources>
 
