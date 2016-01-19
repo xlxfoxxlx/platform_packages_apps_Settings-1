@@ -32,7 +32,6 @@
 
     <Preference
         android:title="@string/app_ops_settings"
-        android:summary="@string/app_ops_settings_summary"
         android:persistent="false"
                 android:fragment="com.android.settings.applications.AppOpsSummary"/>
 

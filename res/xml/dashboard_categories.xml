@@ -199,17 +199,6 @@
             <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
         </dashboard-tile>
 
-        <!-- Google Settings -->
-        <dashboard-tile
-            android:id="@+id/google_settings"
-            android:icon="@drawable/ic_settings_google"
-            android:title="@string/google_title">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.google.android.gms"
-                android:targetClass="com.google.android.gms.app.settings.GoogleSettingsLink" />
-        </dashboard-tile>
-
     </dashboard-category>
 
     <!-- PERSONAL -->
@@ -234,6 +223,17 @@
                 android:icon="@drawable/ic_settings_security"
                 />
 
+        <!-- Google Settings -->
+        <dashboard-tile
+            android:id="@+id/google_settings"
+            android:icon="@drawable/ic_settings_google"
+            android:title="@string/google_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.google.android.gms"
+                android:targetClass="com.google.android.gms.app.settings.GoogleSettingsLink" />
+        </dashboard-tile>
+
         <!-- Account -->
         <dashboard-tile
                 android:id="@+id/account_settings"
@@ -257,7 +257,6 @@
                 android:fragment="com.android.settings.PrivacySettings"
                 android:icon="@drawable/ic_settings_backup"
                 />
-
     </dashboard-category>
 
     <!-- SYSTEM -->
