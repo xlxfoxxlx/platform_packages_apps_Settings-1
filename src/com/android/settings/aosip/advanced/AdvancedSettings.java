@@ -26,6 +26,8 @@ import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.SwitchPreference;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
