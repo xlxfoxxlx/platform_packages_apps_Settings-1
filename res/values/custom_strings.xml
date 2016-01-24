@@ -956,4 +956,8 @@
     <string name="select_contact">Select contact</string>
 
     <string name="omniswitch_category">OmniSwitch</string>
+
+    <!-- QS shade transparency -->
+    <string name="qs_transparent_shade">QS shade transparency</string>
+
 </resources>
