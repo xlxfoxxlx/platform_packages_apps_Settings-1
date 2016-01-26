@@ -368,7 +368,7 @@ public class SettingsActivity extends Activity
             NavbarSettings.class.getName(),
             FlingSettings.class.getName(),
             SmartbarSettings.class.getName(),
-            OwlsNestSettings.class.getName()
+            OwlsNestSettings.class.getName(),
             BlacklistSettings.class.getName()
     };
 
