@@ -1196,6 +1196,11 @@
     <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen</string>
     <string name="lockscreen_blur_radius">Blur effect intensity</string>
 
+    <!-- Hide Lockscreen clock & date -->
+    <string name="hide_lockscreen_items_title">Lockscreen items</string>
+    <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
+    <string name="hide_lockscreen_date_title">Show lockscreen date</string>
+
     <!-- Statusbar AOSIP logo -->
     <string name="aosip_logo">AOSIP logo</string>
     <string name="status_bar_aosip_logo_title">AOSIP logo</string>
