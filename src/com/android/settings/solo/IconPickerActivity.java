@@ -116,7 +116,7 @@ public class IconPickerActivity extends Activity implements DialogInterface.OnCa
             }
         });
         return dialog;
-
+     }
     @Override
     public void onCancel(DialogInterface dialog) {
         dialog.dismiss();

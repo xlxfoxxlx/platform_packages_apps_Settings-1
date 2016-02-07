@@ -35,7 +35,7 @@
         <PreferenceScreen
             android:key="smartbar_settings"
             android:title="@string/smartbar_settings_title"
-            android:fragment="com.dirtyunicorns.dutweaks.fragments.SmartbarSettings" />
+            android:fragment="com.android.settings.solo.SmartbarSettings" />
 
         <PreferenceScreen
             android:key="fling_settings"
