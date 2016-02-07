@@ -159,7 +159,7 @@
                 android:summary="@string/toast_icon_summary"
                 android:defaultValue="false" />
 
-        </PreferenceCategory>
+    </PreferenceCategory>
 
          <PreferenceCategory
              android:key="category_wakeup_options"
