@@ -53,6 +53,11 @@
             android:defaultValue="true" />
 
         <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_alarm"
+            android:title="@string/hide_lockscreen_alarm_title"
+            android:defaultValue="true" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
                 android:key="lockscreen_see_through"
                 android:title="@string/lockscreen_see_through_title"
                 android:summary="@string/lockscreen_see_through_summary"

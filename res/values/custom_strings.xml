@@ -1117,10 +1117,11 @@
     <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen</string>
     <string name="lockscreen_blur_radius">Blur effect intensity</string>
 
-    <!-- Hide Lockscreen clock & date -->
+    <!-- Hide Lockscreen clock, date & alarm -->
     <string name="hide_lockscreen_items_title">Lockscreen items</string>
     <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
     <string name="hide_lockscreen_date_title">Show lockscreen date</string>
+    <string name="hide_lockscreen_alarm_title">Show lockscreen alarm</string>
 
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">About Pulse</string>
