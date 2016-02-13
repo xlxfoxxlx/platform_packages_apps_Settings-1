@@ -150,6 +150,9 @@
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
     <string name="default_string">Default</string>
     <string name="reset">Reset</string>
+    <!-- Keyguard Statusbar Clock -->
+    <string name="keyguard_statusbar_clock_title">Keyguard statusbar clock</string>
+    <string name="keyguard_statusbar_clock_summary">Enables the statusbar clock in the keyguard on the left side</string>
 
     <!-- Carrier label settings -->
     <string name="carrier_label_cat_notification_icons_title">Notification icons</string>

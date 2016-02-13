@@ -74,5 +74,11 @@
             android:entries="@array/clock_date_format_entries_values"
             android:entryValues="@array/clock_date_format_entries_values"
             android:dependency="status_bar_show_clock" />
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="keyguard_show_clock"
+            android:title="@string/keyguard_statusbar_clock_title"
+            android:summary="@string/keyguard_statusbar_clock_summary" />
+
 </PreferenceScreen>
 
