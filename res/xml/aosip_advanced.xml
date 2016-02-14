@@ -21,11 +21,6 @@
     android:title="@string/advanced_title" >
 
     <PreferenceScreen
-        android:key="expanded_desktop"
-        android:title="@string/expanded_desktop_category"
-        android:fragment="com.android.settings.custom.ExpandedDesktop" />
-
-    <PreferenceScreen
         android:key="animation_settings"
         android:title="@string/animation_title"
         android:fragment="com.android.settings.aosip.advanced.AnimationSettings" />
@@ -34,5 +29,22 @@
         android:key="app_circle_bar"
         android:fragment="com.android.settings.benzo.AppCircleBar"
         android:title="@string/app_circle_bar_title" />
+
+    <Preference
+        android:title="@string/app_ops_settings"
+        android:summary="@string/app_ops_settings_summary"
+        android:persistent="false"
+                android:fragment="com.android.settings.applications.AppOpsSummary"/>
+
+    <PreferenceScreen
+        android:key="expanded_desktop"
+        android:title="@string/expanded_desktop_category"
+        android:fragment="com.android.settings.custom.ExpandedDesktop" />
+
+    <PreferenceScreen
+    	android:key="pa_pie_control"
+        android:title="@string/pa_pie_control_title"
+        android:fragment="com.android.settings.paranoid.PieControl" />
+
 </PreferenceScreen>
 
