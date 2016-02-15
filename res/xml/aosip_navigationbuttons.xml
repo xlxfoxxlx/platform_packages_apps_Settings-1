@@ -34,6 +34,11 @@
             android:key="navbar_mode"
             android:title="@string/navbar_mode" />
 
+         <PreferenceScreen
+            android:key="smartbar_settings"
+            android:title="@string/smartbar_settings_title"
+            android:fragment="com.dirtyunicorns.dutweaks.fragments.SmartbarSettings" />
+
         <PreferenceScreen
             android:key="fling_settings"
             android:title="@string/fling_settings"
@@ -58,12 +63,6 @@
             android:key="navigation_bar_left"
             android:title="@string/navigation_bar_left_title"
             android:summary="@string/navigation_bar_left_summary"
-            android:defaultValue="false" />
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="double_tap_sleep_navbar"
-            android:title="@string/double_tap_sleep_nav_bar_title"
-            android:summary="@string/double_tap_sleep_nav_bar_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>

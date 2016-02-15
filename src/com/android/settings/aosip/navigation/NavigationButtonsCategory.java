@@ -32,7 +32,14 @@
 
 package com.android.settings.aosip.navigation;
 
+import java.util.ArrayList;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
@@ -43,7 +50,11 @@ import android.provider.Settings;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
+import com.android.internal.utils.du.ActionConstants;
+import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.DUActionUtils;
+import com.android.internal.utils.du.Config.ButtonConfig;
+
 import com.android.settings.R;
 
 public class NavigationButtonsCategory extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -54,7 +65,7 @@ public class NavigationButtonsCategory extends SettingsPreferenceFragment implem
     private static final String KEY_CATEGORY_NAVIGATION_INTERFACE = "category_navbar_interface";
     private static final String KEY_CATEGORY_NAVIGATION_GENERAL = "category_navbar_general";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
-    private static final String KEY_NAVIGATION_BAR_DT2S = "double_tap_sleep_navbar";
+    private static final String KEY_SMARTBAR_SETTINGS = "smartbar_settings";
     private static final String KEY_NAVIGATION_BAR_SIZE = "navigation_bar_size";
 
     private SwitchPreference mNavbarVisibility;
@@ -62,7 +73,7 @@ public class NavigationButtonsCategory extends SettingsPreferenceFragment implem
     private PreferenceScreen mFlingSettings;
     private PreferenceCategory mNavInterface;
     private PreferenceCategory mNavGeneral;
-    private Preference mNavbarSettings;
+    private PreferenceScreen mSmartbarSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,7 +87,7 @@ public class NavigationButtonsCategory extends SettingsPreferenceFragment implem
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
         mNavbarMode = (ListPreference) findPreference(KEY_NAVBAR_MODE);
         mFlingSettings = (PreferenceScreen) findPreference(KEY_FLING_NAVBAR_SETTINGS);
-        mNavbarSettings = (Preference) findPreference(KEY_NAVIGATION_BAR_DT2S);
+        mSmartbarSettings = (PreferenceScreen) findPreference(KEY_SMARTBAR_SETTINGS);
 
         boolean showing = Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.NAVIGATION_BAR_VISIBLE,
@@ -86,6 +97,10 @@ public class NavigationButtonsCategory extends SettingsPreferenceFragment implem
 
         int mode = Settings.Secure.getInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_MODE,
                 0);
+        // Smartbar moved from 2 to 0, deprecating old navbar
+        if (mode == 2) {
+            mode = 0;
+        }
         updateBarModeSettings(mode);
         mNavbarMode.setOnPreferenceChangeListener(this);
 
@@ -98,8 +113,8 @@ public class NavigationButtonsCategory extends SettingsPreferenceFragment implem
 
     private void updateBarModeSettings(int mode) {
         mNavbarMode.setValue(String.valueOf(mode));
-        mNavbarSettings.setEnabled(mode == 0);
-        mNavbarSettings.setSelectable(mode == 0);
+        mSmartbarSettings.setEnabled(mode == 0);
+        mSmartbarSettings.setSelectable(mode == 0);
         mFlingSettings.setEnabled(mode == 1);
         mFlingSettings.setSelectable(mode == 1);
     }
