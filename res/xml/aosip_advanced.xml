@@ -32,9 +32,8 @@
 
     <Preference
         android:title="@string/app_ops_settings"
-        android:summary="@string/app_ops_settings_summary"
         android:persistent="false"
-                android:fragment="com.android.settings.applications.AppOpsSummary"/>
+        android:fragment="com.android.settings.applications.AppOpsSummary"/>
 
     <PreferenceScreen
         android:key="expanded_desktop"
@@ -42,9 +41,9 @@
         android:fragment="com.android.settings.custom.ExpandedDesktop" />
 
     <PreferenceScreen
-    	android:key="pa_pie_control"
-        android:title="@string/pa_pie_control_title"
-        android:fragment="com.android.settings.paranoid.PieControl" />
+        android:key="multitwindow"
+        android:fragment="com.android.settings.aosip.advanced.MultiWindow"
+        android:title="@string/multiwindow_settings_title"  />
 
 </PreferenceScreen>
 
