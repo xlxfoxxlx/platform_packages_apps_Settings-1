@@ -454,6 +454,10 @@
    <string name="lockscreen_wallpaper_clear_title">Return to default</string>
    <string name="reset_lockscreen_wallpaper">Lockscreen wallpaper set back to default</string>
 
+    <!-- Lockscreen transparency -->
+    <string name="lockscreen_alpha">Lockscreen transparency</string>
+    <string name="lockscreen_security_alpha">Lockscreen bouncer transparency</string>
+
     <!--Owlsnest advanced-->
     <string name="advanced_title">Advanced options</string>
     <string name="advanced_summary">Extra features</string>

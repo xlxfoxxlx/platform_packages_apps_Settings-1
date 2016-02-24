@@ -18,6 +18,7 @@ package com.android.settings.aosip.lockscreen;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
@@ -32,14 +33,20 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.preference.SystemSettingSwitchPreference;
+import com.android.settings.aosip.seekbar.SeekBarPreference;
 
 public class ShortcutCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String KEYGUARD_TORCH = "keyguard_toggle_torch";
+    private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
+    private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
 
     private FingerprintManager mFingerprintManager;
     private SystemSettingSwitchPreference mFingerprintVib;
+    private SeekBarPreference mLsAlpha;
+    private SeekBarPreference mLsSecurityAlpha;
 
     @Override
     protected int getMetricsCategory() {
@@ -52,12 +59,24 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.aosip_shortcut);
 
 	final PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
         if (!mFingerprintManager.isHardwareDetected()){
             prefScreen.removePreference(mFingerprintVib);
         }
+        mLsAlpha = (SeekBarPreference) findPreference(LOCKSCREEN_ALPHA);
+        float alpha = Settings.System.getFloat(resolver,
+                Settings.System.LOCKSCREEN_ALPHA, 0.45f);
+        mLsAlpha.setValue((int)(100 * alpha));
+        mLsAlpha.setOnPreferenceChangeListener(this);
+
+        mLsSecurityAlpha = (SeekBarPreference) findPreference(LOCKSCREEN_SECURITY_ALPHA);
+        float alpha2 = Settings.System.getFloat(resolver,
+                Settings.System.LOCKSCREEN_SECURITY_ALPHA, 0.75f);
+        mLsSecurityAlpha.setValue((int)(100 * alpha2));
+        mLsSecurityAlpha.setOnPreferenceChangeListener(this);
 
     }
 
@@ -66,8 +85,22 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mLsAlpha) {
+            int alpha = (Integer) newValue;
+            Settings.System.putFloat(resolver,
+                    Settings.System.LOCKSCREEN_ALPHA, alpha / 100.0f);
+            return true;
+        } else if (preference == mLsSecurityAlpha) {
+            int alpha2 = (Integer) newValue;
+            Settings.System.putFloat(resolver,
+                    Settings.System.LOCKSCREEN_SECURITY_ALPHA, alpha2 / 100.0f);
+            return true;
+        }
         return false;
     }
+
 }
 
