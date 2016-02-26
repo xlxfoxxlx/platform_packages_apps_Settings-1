@@ -1060,6 +1060,33 @@
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
+<<<<<<< HEAD
+=======
+    <!-- Aosip Extras Title -->
+    <string name="aosip_extras">AOSiP Extras</string>
+
+    <!-- Dashboard columns -->
+    <string name="dashboard_columns_title">Dashboard Columns</string>
+    <string name="dashboard_columns_summary">Change the number of columns displayed in the dashboard</string>
+    <string name="dashboard_columns_dialog_title">Select dashboard columns</string>
+    <string name="dashboard_columns_default">One (default)</string>
+    <string name="dashboard_columns_two">Two</string>
+    <string name="dashboard_columns_three">Three</string>
+
+    <!-- Dashboard tileview double lines -->
+    <string name="dashboard_tileview_double_lines_title">Title view</string>
+    <string name="dashboard_tileview_double_lines_summary">Show dashboard tile titles in 2 lines</string>
+    <string name="dashboard_tileview_dividers_title">Divider lines</string>
+    <string name="dashboard_tileview_dividers_summary">Hide the dashboard tile dividers</string>
+
+    <!-- Optional Dashboard Switches -->
+    <string name="dashboard_switches_title">Dashboard Switches</string>
+    <string name="dashboard_switches_off">Switches Off</string>
+    <string name="dashboard_switches_on">Switches On</string>
+    <string name="dashboard_switches_summary">Change the position of the dashboard switches</string>
+    <string name="dashboard_switches_dialog_title">Select switch state</string>
+
+>>>>>>> 9c42f95... Optional Dashboard switches [2/2]
     <!-- Heads up -->
     <string name="headsup_section_header">Heads up notifications</string>
     <string name="heads_up_notifications">Heads up</string>
