@@ -155,7 +155,6 @@
     <string name="colors_title">Colors</string>
     <string name="disabled_title">Disabled</string>
     <string name="icon_title">Icon</string>
-    <string name="text_title">Text</string>
     <string name="status_bar_network_traffic_settings_title">Network traffic</string>
     <string name="status_bar_network_traffic_settings_summary">Customize the network traffic</string>
     <string name="status_bar_icon_blacklist_title">Icon visibility</string>
@@ -950,7 +949,7 @@
     <string name="lockscreen_owner_info_color">Owner info</string>
     <string name="lockscreen_alarm_color">Alarm</string>
     <string name="icons_title">Weather Icons</string>
-    <string name="text_title">Weather Text</string>
+    <string name="lock_weather_title">Weather Text</string>
     <string name="lock_screen_weather_temp_color">Weather Temperature</string>
     <string name="lock_screen_weather_con_color">Weather Condition</string>
     <string name="lock_screen_weather_stamp_color">Location TimeStamp </string>
