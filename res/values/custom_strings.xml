@@ -1106,7 +1106,7 @@
     <string name="lockscreen_owner_info_color">Owner info</string>
     <string name="lockscreen_alarm_color">Alarm</string>
     <string name="icons_title">Weather Icons</string>
-    <string name="text_title">Weather Text</string>
+    <string name="lock_weather_title">Weather Text</string>
     <string name="lock_screen_weather_temp_color">Weather Temperature</string>
     <string name="lock_screen_weather_con_color">Weather Condition</string>
     <string name="lock_screen_weather_stamp_color">Location TimeStamp </string>

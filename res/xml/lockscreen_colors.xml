@@ -61,7 +61,7 @@
 
    <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="weather_text_color"
-        android:title="@string/text_title"
+        android:title="@string/lock_weather_title"
         android:defaultValue="0xffffffff" />
 
    <net.margaritov.preference.colorpicker.ColorPickerPreference
