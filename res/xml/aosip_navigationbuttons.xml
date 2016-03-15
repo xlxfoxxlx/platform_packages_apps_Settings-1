@@ -20,5 +20,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navigationbuttons_category" >
 
+    <PreferenceCategory
+        android:key="category_navbar_interface"
+        android:title="@string/navbarbar_title" >
+
+        <PreferenceScreen
+                android:key="navigation"
+                android:title="@string/navigation_category"
+                android:fragment="com.android.settings.solo.NavbarSettings"
+                android:summary="@string/navbar_summary"/>
+        
+    </PreferenceCategory>
+
 </PreferenceScreen>
 

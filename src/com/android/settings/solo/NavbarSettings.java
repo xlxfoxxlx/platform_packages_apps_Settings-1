@@ -1,20 +1,4 @@
 /*
- * Copyright (C) 2015 Android Open Source Illusion Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/*
  * Copyright (C) 2014 TeamEos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aosip.navigation;
+package com.android.settings.solo;
 
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -46,7 +30,7 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.utils.du.DUActionUtils;
 import com.android.settings.R;
 
-public class NavigationButtonsCategory extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class NavbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
     private static final String KEY_NAVBAR_MODE = "navbar_mode";
@@ -67,7 +51,7 @@ public class NavigationButtonsCategory extends SettingsPreferenceFragment implem
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.aosip_navigationbuttons);
+        addPreferencesFromResource(R.xml.navbar_settings);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
@@ -130,7 +114,6 @@ public class NavigationButtonsCategory extends SettingsPreferenceFragment implem
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OWLSNEST;
+        return MetricsLogger.TUNER;
     }
 }
-

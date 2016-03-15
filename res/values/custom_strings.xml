@@ -35,7 +35,6 @@
     <string name="attention">Attention</string>
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
-<<<<<<< HEAD
     <string name="reset">Reset</string>
     <string name="dlg_dslv_reset_message">Reset all entries to default?</string>
     <string name="dlg_reset_values_message">Reset values to\nAndroid- or AOSiP default?</string>
@@ -57,12 +56,10 @@
     <string name="choose_app">Choose app</string>
     <string name="allow_lights_title">Lights in do not disturb mode</string>
     <string name="notification_light_screen_on">Lights with screen on</string>
-=======
     <string name="profile_applist_title">Apps</string>
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
->>>>>>> e76c624... navigation: Bring up the Fling
 
     <!-- AOSiP custom settings main -->
     <string name="header_category_personalization">UI settings</string>
@@ -907,6 +904,8 @@
 
         <!-- Navigation Bar -->
     <string name="navigation_category">Navigation Bar</string>
+    <string name="navbarbar_title">System navigation</string>
+    <string name="navbar_summary">Navigation bar options (fling,pulse,height,width etc.)</string>
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
     <string name="navbar_mode">Navigation mode</string>
@@ -1037,7 +1036,6 @@
     <string name="fling_pulse_color">Pulse color</string>
     <string name="eos_fling_lavalamp_title">Turn on Lava Lamp</string>
     <string name="eos_fling_lavalamp_summary">Pulse animates a smooth lava lamp style color blend</string>
-</resources>
 
     <!-- Statusbar AOSIP logo -->
 
