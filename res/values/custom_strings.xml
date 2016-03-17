@@ -881,8 +881,6 @@
     <string name="contexual_header_title">Contexual header</string>
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
-    <string name="status_bar_custom_header_default_title">Use poly HD images</string>
-    <string name="status_bar_custom_header_default_summary">Enable for poly hd images. Disable for original images.</string>
 
     <!-- AOSP MultiWindow -->
     <string name="multiwindow_settings_title">Multi-window</string>
@@ -964,6 +962,4 @@
     <string name="remove_blacklist_number_title">Remove number</string>
     <string name="remove_blacklist_entry">Do you want to remove this blocked phone number?</string>
     <string name="select_contact">Select contact</string>
-
-
 </resources>
