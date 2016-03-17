@@ -71,10 +71,6 @@
     <string name="carrier_category">Carrier label</string>
     <string name="traffic_category">Network traffic</string>
     <string name="extra_category">Extras</string>
-    <!-- Contexual statusbar header-->
-    <string name="contexual_header_title">Contexual header</string>
-    <string name="status_bar_custom_header_title">Custom header image</string>
-    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
     <!-- Battery-->
     <string name="status_bar_battery_percentage_title">Show battery percentage</string>
     <string name="status_bar_battery_percentage_default">Hidden</string>
