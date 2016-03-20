@@ -22,12 +22,10 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.utils.du.ActionConstants;
-import com.android.internal.utils.du.ActionHandler;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
 import com.android.settings.solo.ActionPreference;
 import com.android.settings.solo.IconPickHelper;
-import com.android.settings.solo.ActionPreference;
 
 import android.app.ActionBar;
 import android.content.Context;
