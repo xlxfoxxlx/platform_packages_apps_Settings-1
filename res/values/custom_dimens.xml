@@ -16,6 +16,11 @@
 
 <resources>
 
+    <!-- Color picker -->
+
+    <!-- Width and height of the color picker preference preview -->
+    <dimen name="color_picker_preference_preview_width_height">33dp</dimen>
+
     <!-- navbar height -->
     <integer name="navigation_bar_height_min_percent">65</integer>
     <integer name="navigation_bar_height_max_percent">120</integer>
