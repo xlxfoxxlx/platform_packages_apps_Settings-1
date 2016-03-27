@@ -1132,4 +1132,12 @@
     <string name="double_tap_to_sleep_summary">Double tap status bar to put the device to sleep</string>
     <string name="double_tap_to_sleep_lockscreen_title">DT2S on Lockscreen</string>
     <string name="double_tap_to_sleep_lockscreen_summary">Double tap on the top third or bottom shortcut area of the lock screen to put the device to sleep</string>
+
+    <!-- Setting options for LCD density -->
+    <string name="lcd_density">LCD density</string>
+    <string name="lcd_density_summary">%d DPI</string>
+    <string name="lcd_density_default">default</string>
+    <string name="lcd_density_unsupported">Unsupported</string>
+    <string name="lcd_density_restarting_ui">Restarting UI\u2026</string>
+
 </resources>
