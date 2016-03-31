@@ -2597,7 +2597,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="ccom.android.settings.solo.SmartbarSettings" />
+                android:value="com.android.settings.solo.SmartbarSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/owlsnest_settings" />
         </activity>
