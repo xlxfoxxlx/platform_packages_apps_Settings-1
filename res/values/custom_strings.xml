@@ -61,6 +61,8 @@
     <string name="dlg_reset_colors_message">Reset colors to\nAndroid- or AOSiP default?</string>
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_aosip">AOSiP</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="empty_title">Empty</string>
     <string name="normal_title">Normal</string>
     <string name="hidden_title">Hidden</string>
     <string name="position_title">Position</string>
