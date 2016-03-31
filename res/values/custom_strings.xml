@@ -38,6 +38,25 @@
     <string name="attention">Attention</string>
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
+    <string name="reset">Reset</string>
+    <string name="dlg_dslv_reset_message">Reset all entries to default?</string>
+    <string name="dlg_reset_values_message">Reset values to\nAndroid- or AOSiP default?</string>
+    <string name="dlg_reset_colors_message">Reset colors to\nAndroid- or AOSiP default?</string>
+    <string name="dlg_reset_android">Android</string>
+    <string name="dlg_reset_aosip">AOSiP</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="empty_title">Empty</string>
+    <string name="normal_title">Normal</string>
+    <string name="hidden_title">Hidden</string>
+    <string name="position_title">Position</string>
+    <string name="position_right_title">Right</string>
+    <string name="position_centered_title">Centered</string>
+    <string name="help">Help</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="attention">Attention</string>
+    <string name="profiles_add">Add</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="profile_reset_title">Reset</string>
     <string name="add">Add</string>
     <string name="choose_app">Choose app</string>
 
