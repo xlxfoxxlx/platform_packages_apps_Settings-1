@@ -242,9 +242,6 @@
                 android:icon="@drawable/ic_settings_accounts"
                 />
 
-        <!-- Marker for where to place external tiles in this category -->
-        <external-tiles />
-
         <!-- Language -->
         <dashboard-tile
                 android:id="@+id/language_settings"
