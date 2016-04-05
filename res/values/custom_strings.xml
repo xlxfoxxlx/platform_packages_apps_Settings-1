@@ -971,6 +971,8 @@
     <string name="long_swipe_landscape_title">Landscape</string>
     <string name="right_swipe_title">Right swipe</string>
     <string name="left_swipe_title">Left swipe</string>
+    <string name="fling_right_up_swipe">Right side swipe up</string>
+615	+    <string name="fling_left_up_swipe">Left side swipe up</string>
     <string name="up_swipe_title">Up swipe</string>
     <string name="down_swipe_title">Down swipe</string>
     <string name="long_swipe_reset">Reset</string>
