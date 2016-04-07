@@ -52,11 +52,6 @@ import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
-import android.preference.Preference;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
@@ -93,6 +88,7 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
     private static final String LOCK_CLOCK_PACKAGE="com.cyanogenmod.lockclock";
+    private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
 
     private ListPreference mDaylightHeaderPack;
     private CheckBoxPreference mCustomHeaderImage;
@@ -134,6 +130,13 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
             getAvailableWeatherIconPacks(entries, values);
             mWeatherIconPack.setEntries(entries.toArray(new String[entries.size()]));
             mWeatherIconPack.setEntryValues(values.toArray(new String[values.size()]));
+
+            // header image shadows
+            mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+            final int headerShadow = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
+            mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
+            mHeaderShadow.setOnPreferenceChangeListener(this);
 
             int valueIndex = mWeatherIconPack.findIndexOfValue(settingHeaderPackage);
             if (valueIndex == -1) {
@@ -244,6 +247,12 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     statusQuickPulldown);
             updateQuickPulldownSummary(statusQuickPulldown);
+            return true;
+         } else if (preference == mHeaderShadow) {
+            Integer headerShadow = (Integer) newValue;
+            int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
             return true;
         } else if (preference == mQSHeaderAlpha) {
                 int alpha = (Integer) newValue;
