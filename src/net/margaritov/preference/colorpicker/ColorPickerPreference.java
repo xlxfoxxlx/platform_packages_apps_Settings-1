@@ -186,7 +186,6 @@ public class ColorPickerPreference extends DialogPreference implements
         if (mView == null)
             return;
 
-        ImageView iView = new ImageView(getContext());
         LinearLayout widgetFrameView = ((LinearLayout) mView
                 .findViewById(android.R.id.widget_frame));
         if (widgetFrameView == null)
@@ -202,20 +201,10 @@ public class ColorPickerPreference extends DialogPreference implements
         // remove already create preview image
         int count = widgetFrameView.getChildCount();
         if (count > 0) {
-            View preview = widgetFrameView.findViewWithTag("preview");
-            if (preview != null) {
-                widgetFrameView.removeView(preview);
-            }
+            widgetFrameView.removeViews(0, count);
         }
         widgetFrameView.addView(getPreview());
         widgetFrameView.setMinimumWidth(0);
-        iView.setTag("preview");
-        iView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog(null);
-            }
-        });
     }
 
     private ImageView getPreview() {
