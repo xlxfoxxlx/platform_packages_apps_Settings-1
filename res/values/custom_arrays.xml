@@ -350,4 +350,11 @@
         <item>@color/yellow</item>>
         <item>@color/orange</item>
     </array>
+
+    <array name="color_picker_palette_color_buttons_layouts">
+        <item>@id/color_buttons_aosip</item>
+        <item>@id/color_buttons_material</item>
+        <item>@id/color_buttons_rgb</item>
+    </array>
+
 </resources>
