@@ -1093,5 +1093,11 @@
          <item>3</item>
          <item>4</item>
      </string-array>
+
+    <array name="color_picker_palette_color_buttons_layouts">
+        <item>@id/color_buttons_aosip</item>
+        <item>@id/color_buttons_material</item>
+        <item>@id/color_buttons_rgb</item>
+    </array>
     
 </resources>
