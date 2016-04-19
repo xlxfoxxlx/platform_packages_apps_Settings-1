@@ -109,10 +109,10 @@ public class LockscreenHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new WeatherCategory();
+            frags[0] = new LockColorsCategory();
             frags[1] = new ShortcutCategory();
             frags[2] = new LockPaperCategory();
-            frags[3] = new LockColorsCategory();
+            frags[3] = new WeatherCategory();
         }
 
         @Override
@@ -134,10 +134,10 @@ public class LockscreenHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.weather_category),
+                    getString(R.string.lockcolors_category),
                     getString(R.string.shortcut_category),
                     getString(R.string.lockscreen_wallpaper_title),
-                    getString(R.string.lockcolors_category)};
+                    getString(R.string.weather_category)};
         return titleString;
     }
 }
