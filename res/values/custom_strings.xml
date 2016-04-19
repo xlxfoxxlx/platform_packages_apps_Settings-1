@@ -176,7 +176,7 @@
 
     <!--Owlsnest navigation-->
     <string name="navigation_title">Navigation bar options</string>
-    <string name="navigation_summary">avigation bar options (fling,pulse,height,width etc.)</string>
+    <string name="navigation_summary">Navigation bar options (fling,pulse,height,width etc.)</string>
     <string name="navigationbuttons_category">Layouts</string>
     <string name="navigation_extras_category">Extra options</string>
     <!--Owlsnest Quick settings-->
