@@ -176,7 +176,7 @@
 
     <!--Owlsnest navigation-->
     <string name="navigation_title">Navigation bar options</string>
-    <string name="navigation_summary">Customize Navbar size,buttons,layout,and colors</string>
+    <string name="navigation_summary">avigation bar options (fling,pulse,height,width etc.)</string>
     <string name="navigationbuttons_category">Layouts</string>
     <string name="navigation_extras_category">Extra options</string>
     <!--Owlsnest Quick settings-->
@@ -294,9 +294,9 @@
     <!--Owlsnest lockscreen-->
     <string name="lockscreen_title">Lockscreen</string>
     <string name="lockscreen_summary">Options for weather</string>
-    <string name="weather_category">Lockscreen weather</string>
-    <string name="shortcut_category">Lockscreen shortcuts</string>
-    <string name="lockcolors_category">Lockscreen colors</string>
+    <string name="weather_category">Weather</string>
+    <string name="shortcut_category">Shortcuts</string>
+    <string name="lockcolors_category">Colors</string>
     <!-- CM Lockscreen shortcuts -->
     <string name="lockscreen_targets_message">Bottom corner shortcuts</string>
     <string name="lockscreen_corner_summary">Customize the shortcut icons in the corners</string>
@@ -375,7 +375,7 @@
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
     <!-- Lock screen wallpaper -->
    <string name="lockscreen_category_title">Lockscreen</string>
-   <string name="lockscreen_wallpaper_title">Lockscreen Wallpaper</string>
+   <string name="lockscreen_wallpaper_title">Wallpaper</string>
    <string name="lockscreen_wallpaper_set_title">Set new wallpaper</string>
    <string name="lockscreen_wallpaper_clear_title">Return to default</string>
    <string name="reset_lockscreen_wallpaper">Lockscreen wallpaper set back to default</string>
@@ -950,7 +950,7 @@
 
     <!-- Fling -->
     <string name="fling_settings">Fling settings</string>
-    <string name="fling_interface">Fling gesture interface</string>
+    <string name="fling_interface">Fling</string>
     <string name="fling_enable_title">Enable Fling</string>
     <string name="fling_back_home_policy">Back and Home are required to be set at all times. To change a Back or Home assignment, set the desired assignment first</string>
     <string name="fling_split_bar_policy">When only a right or left action is assigned, the action applies to the full bar</string>
@@ -972,7 +972,7 @@
     <string name="right_swipe_title">Right swipe</string>
     <string name="left_swipe_title">Left swipe</string>
     <string name="fling_right_up_swipe">Right side swipe up</string>
-615	+    <string name="fling_left_up_swipe">Left side swipe up</string>
+    <string name="fling_left_up_swipe">Left side swipe up</string>
     <string name="up_swipe_title">Up swipe</string>
     <string name="down_swipe_title">Down swipe</string>
     <string name="long_swipe_reset">Reset</string>
@@ -1042,7 +1042,7 @@
     <string name="warning_multi_window_text">WARNING: This is a highly experimental feature that allows multiple activities on-screen at the same time through the Recent apps UI. Some apps may crash or not function correctly when used with this feature.</string>
 
     <!-- Lockscreen Colors -->
-    <string name="lockscreen_colors">Lockscreen Colors</string>
+    <string name="lockscreen_colors">Colors</string>
     <string name="lockscreen_phone_icon_color">Lockscreen Bottom Left shortcut</string>
     <string name="lockscreen_lock_icon_color">Lockscreen Lock icon</string>
     <string name="lockscreen_camera_icon_color">Lockscreen Bottom Right shortcut</string>
@@ -1156,6 +1156,31 @@
     <string name="qs_num_columns_title">Number of tiles per row</string>
     <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
 
+<<<<<<< HEAD
+=======
+    <!-- Status bar greeting settings -->
+    <string name="greeting_show_greeting_always_summary">The greeting will be shown after the device gets unlocked</string>
+    <string name="greeting_show_greeting_once_summary">The greeting will be shown only the first time the device gets unlocked after the boot</string>
+    <string name="greeting_show_greeting_never_summary">The greeting will never be shown</string>
+    <string name="greeting_show_greeting_once_title">Once after boot</string>
+    <string name="greeting_custom_text_title">Custom text</string>
+    <string name="greeting_custom_text_dlg_message">Enter a new text, which will be shown as greeting. An empty field will revert the text to:\n\'%s\'</string>
+    <string name="greeting_timeout_title">Time out</string>
+    <string name="greeting_preview_title">Preview</string>
+    <string name="greeting_preview_summary">Click to show a preview</string>
+    <string name="aosip_greeting">Greeting</string>
+    <string name="status_bar_greeting_settings_summary">Customize greeting</string>
+    <string name="never_title">Never</string>
+    <string name="show_title">Show</string>
+
+    <!-- Status bar notification settings -->
+    <string name="notification_show_ticker_title">Show ticker</string>
+    <string name="notification_show_ticker_summary">Enable to show the ticker</string>
+    <string name="notification_ticker_text_color_title">Ticker text</string>
+    <string name="notification_ticker_text_color_dark_mode_title">Ticker text (light status bar)</string>
+    <string name="aosip_ticker">Ticker</string>
+
+>>>>>>> 8342e61... Clean up some strings
     <!-- Keyboard and Input methods  -->
     <string name="title_keyboard_input">Advanced options</string>
     <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string>
