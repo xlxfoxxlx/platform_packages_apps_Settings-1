@@ -1046,7 +1046,7 @@
     <string name="profile_applist_title">Applications</string>
 
     <!-- Circle app bar -->
-    <string name="category_app_circle_bar_title">App launcher</string>
+    <string name="category_app_circle_bar_title">Circle Sidebar</string>
     <string name="app_circle_bar_title">App Circle Bar</string>
     <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
@@ -1202,5 +1202,7 @@
     <string name="block_on_secure_keyguard_summary">Disables quick settings in the keyguard for a secure lock only</string>
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <string name="misc_title">Misc</string>
 
 </resources>

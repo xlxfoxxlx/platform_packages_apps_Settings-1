@@ -54,8 +54,12 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.settings.benzo.gestureanywhere.GestureAnywhereSettings;
 import com.android.settings.aosip.advanced.AppsidebarCategory;
 import com.android.settings.custom.ExpandedDesktop;
+import com.android.settings.aosip.advanced.AppCircleBar;
+import com.android.settings.aosip.advanced.AnimationControls;
+import com.android.settings.aosip.advanced.cLock;
+import com.android.settings.aosip.advanced.MultiWindow;
 import com.android.settings.widget.SwitchBar;
-import com.android.settings.aosip.advanced.AdvancedSettings;
+import com.android.settings.aosip.advanced.MiscSettings;
 import com.android.settings.aosip.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
@@ -110,8 +114,12 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new AdvancedSettings();
-            frags[1] = new GestureAnywhereSettings();
+            frags[0] = new AnimationSettings();
+            frags[1] = new AppCircleBar();
+            frags[2] = new cLock();
+            frags[3] = new GestureAnywhereSettings();
+            frags[4] = new MiscSettings();
+            frags[5] = new MultiWindow();
         }
 
         @Override
@@ -133,8 +141,12 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.advanced_title),
-                    getString(R.string.gestureanywhere_category)};
+                    getString(R.string.animation_title),
+                    getString(R.string.category_app_circle_bar_title),
+                    getString(R.string.lock_clock_title),
+                    getString(R.string.gestureanywhere_category),
+                    getString(R.string.misc_title),
+                    getString(R.string.multiwindow_settings_title)};
         return titleString;
     }
 }
