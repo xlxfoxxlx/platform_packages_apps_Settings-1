@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.benzo;
+package com.android.settings.aosip.advanced;
 
 import android.app.ActivityManagerNative;
 import android.app.Dialog;
