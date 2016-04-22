@@ -1259,4 +1259,7 @@
     <string name="navbar_tint_switch">Navigation Button Tint</string>
     <string name="navbar_button_color">Navigation Bar Buttons</string>
 
+    <string name="lock_screen_show_current">Charging Current</string>
+    <string name="lock_screen_show_current_summary">Show Charging Current rate on lock screen</string>
+
 </resources>
