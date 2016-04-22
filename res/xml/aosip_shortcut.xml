@@ -48,5 +48,11 @@
                 android:title="@string/unlock_quick_unlock_control_title"
                 android:summary="@string/unlock_quick_unlock_control_summary"
                 android:defaultValue="false" />
+
+         <com.android.settings.preference.SystemSettingSwitchPreference
+                android:key="lock_screen_show_current"
+                android:title="@string/lock_screen_show_current"
+                android:summary="@string/lock_screen_show_current_summary"
+                android:defaultValue="false" />
 </PreferenceScreen>
 
