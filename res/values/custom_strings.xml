@@ -1206,4 +1206,6 @@
     <string name="misc_title">Misc</string>
 
     <string name="color_picker_label">Color Picker</string>
+    <string name="navbar_tint_switch">Navigation Button Tint</string>
+    <string name="navbar_button_color">Navigation Bar Buttons</string>
 </resources>
