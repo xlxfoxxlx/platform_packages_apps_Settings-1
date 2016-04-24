@@ -76,6 +76,7 @@ import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.solo.FlingSettings;
 import com.android.settings.solo.NavbarSettings;
 import com.android.settings.solo.SmartbarSettings;
+import com.android.settings.solo.PulseSettings;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ManageAssist;
@@ -368,6 +369,7 @@ public class SettingsActivity extends Activity
             NavbarSettings.class.getName(),
             FlingSettings.class.getName(),
             SmartbarSettings.class.getName()
+            PulseSettings.class.getName(),
     };
 
 
