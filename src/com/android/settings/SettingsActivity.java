@@ -82,6 +82,7 @@ import com.android.settings.applications.WriteSettingsDetails;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.custom.BatteryBarSettings;
+import com.android.settings.custom.nav.PulseSettings;
 import com.android.settings.custom.nav.FlingSettings;
 import com.android.settings.aosip.navigation.NavbarSettings;
 import com.android.settings.custom.nav.SmartbarSettings;
@@ -369,7 +370,8 @@ public class SettingsActivity extends Activity
             FlingSettings.class.getName(),
             SmartbarSettings.class.getName(),
             OwlsNestSettings.class.getName(),
-            BlacklistSettings.class.getName()
+            BlacklistSettings.class.getName(),
+            PulseSettings.class.getName()
     };
 
 

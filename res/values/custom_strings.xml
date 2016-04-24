@@ -1205,4 +1205,5 @@
 
     <string name="misc_title">Misc</string>
 
+    <string name="color_picker_label">Color Picker</string>
 </resources>
