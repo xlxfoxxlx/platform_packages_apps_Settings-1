@@ -60,8 +60,6 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mNavbuttoncolor;
   
     static final int DEFAULT = 0xffffffff;
-
-    private static final int MENU_RESET = Menu.FIRST;
     private static final int DIALOG_RESET_CONFIRM = 1;
 
     Context mContext;
@@ -210,29 +208,11 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     protected int getMetricsCategory() {
         return MetricsLogger.APPLICATION;
     }
-    
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RESET, 0, R.string.reset)
-                .setIcon(R.drawable.ic_settings_reset)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case MENU_RESET:
-                resetToDefault();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
 
     private void resetToDefault() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
-        alertDialog.setTitle(R.string.header_colors_reset_title);
-        alertDialog.setMessage(R.string.header_colors_reset_message);
+        alertDialog.setTitle(R.string.reset);
+        alertDialog.setMessage(R.string.reset_message);
         alertDialog.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 resetValues();

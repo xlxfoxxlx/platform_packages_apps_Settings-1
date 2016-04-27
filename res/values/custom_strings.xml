@@ -659,6 +659,19 @@
     <string name="fling_pulse_color">Pulse color</string>
     <string name="eos_fling_lavalamp_title">Turn on Lava Lamp</string>
     <string name="eos_fling_lavalamp_summary">Pulse animates a smooth lava lamp style color blend</string>
+    <string name="pulse_custom_dimen">Pulse Bar Width</string>
+    <string name="pulse_dimen0">Default</string>
+    <string name="pulse_dimen1">15dp</string>
+    <string name="pulse_dimen2">16dp</string>
+    <string name="pulse_dimen3">17dp</string>
+    <string name="pulse_dimen4">18dp</string>
+    <string name="pulse_dimen5">19dp</string>
+    <string name="pulse_dimen6">20dp</string>
+    <string name="pulse_dimen7">21dp</string>
+    <string name="pulse_dimen8">22dp</string>
+    <string name="pulse_dimen9">23dp</string>
+    <string name="pulse_dimen10">24dp</string>
+    <string name="pulse_dimen11">25dp</string>
 
     <!-- SmartBar -->
     <string name="smartbar_category">Smartbar</string>
@@ -1208,4 +1221,5 @@
     <string name="color_picker_label">Color Picker</string>
     <string name="navbar_tint_switch">Navigation Button Tint</string>
     <string name="navbar_button_color">Navigation Bar Buttons</string>
+
 </resources>
