@@ -368,8 +368,8 @@ public class SettingsActivity extends Activity
             BlacklistSettings.class.getName(),
             NavbarSettings.class.getName(),
             FlingSettings.class.getName(),
-            SmartbarSettings.class.getName()
-            PulseSettings.class.getName(),
+            SmartbarSettings.class.getName(),
+            PulseSettings.class.getName()
     };
 
 
