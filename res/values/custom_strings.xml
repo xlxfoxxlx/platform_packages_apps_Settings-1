@@ -1364,4 +1364,14 @@
     <!-- CMTE Header Switch -->
     <string name="status_bar_theme_header_title">CMTE header enabler</string>	
     <string name="status_bar_theme_header_summary">Enable installed CMTE headers.</string>
+
+    <!-- Lock screen visualizer settings -->
+    <string name="show_title">Show</string>
+    <string name="visualizer_show_summary">Enable to show the music visualizer on the lock screen</string>
+    <string name="visualizer_use_custom_color_title">Customize the color</string>
+    <string name="visualizer_use_custom_color_summary">Enable to use a custom color, disable to create the color from the lock screen background automatically</string>
+     <!-- Lock screen (preference screen) -->
+    <string name="lock_screen_visualizer_settings_title">Music visualizer</string>
+    <string name="lock_screen_visualizer_settings_summary">Customize the music visualizer</string>
+
 </resources>
