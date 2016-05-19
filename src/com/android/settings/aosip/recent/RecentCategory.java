@@ -147,6 +147,9 @@ public class RecentCategory extends SettingsPreferenceFragment
         } else if (preference == mRecentsClearAllLocation) {
             int location = Integer.valueOf((String) newValue);
             int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
         }
         if (preference == mImmersiveRecents) {
             Settings.System.putInt(resolver, Settings.System.IMMERSIVE_RECENTS,
