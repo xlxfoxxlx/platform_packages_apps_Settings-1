@@ -45,6 +45,13 @@
         android:summary="@string/status_bar_custom_header_summary"
         android:defaultValue="false"/>
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="theme_custom_header"
+        android:title="@string/status_bar_theme_header_title"
+        android:summary="@string/status_bar_theme_header_summary"
+        android:defaultValue="false"
+        android:persistent="false" />
+
     <ListPreference
         android:key="daylight_header_pack"
         android:title="@string/daylight_header_pack_title"

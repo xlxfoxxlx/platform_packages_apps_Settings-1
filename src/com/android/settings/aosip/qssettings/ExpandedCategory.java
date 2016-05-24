@@ -88,13 +88,15 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
     private static final String LOCK_CLOCK_PACKAGE="com.cyanogenmod.lockclock";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
+    private static final String THEME_CUSTOM_HEADER = "theme_custom_header";
 
     private ListPreference mDaylightHeaderPack;
     private SwitchPreference mCustomHeaderImage;
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
     private SwitchPreference mHeaderWeather;
-    private SeekBarPreference mHeaderShadow;    
+    private SeekBarPreference mHeaderShadow;
+    private SwitchPreference mThemeswitch;
 
     private ListPreference mQuickPulldown;
     private SeekBarPreference mQSHeaderAlpha; 
@@ -200,6 +202,13 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
                 Settings.System.QS_TRANSPARENT_HEADER, 255);
         mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
         mQSHeaderAlpha.setOnPreferenceChangeListener(this);
+
+        // Status bar custom header hd
+        mThemeswitch = (SwitchPreference) findPreference(THEME_CUSTOM_HEADER);
+        mThemeswitch.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.THEME_CUSTOM_HEADER, 0) == 1));
+        mThemeswitch.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -234,14 +243,13 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
             int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
             mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
-        }
-        if (preference == mWeatherIconPack) {
+        } if (preference == mWeatherIconPack) {
             String value = (String) newValue;
             Settings.System.putString(getContentResolver(),
                     Settings.System.STATUS_BAR_WEATHER_ICON_PACK, value);
             int valueIndex = mWeatherIconPack.findIndexOfValue(value);
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
-        }if (preference == mQuickPulldown) {
+        } if (preference == mQuickPulldown) {
             int statusQuickPulldown = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
@@ -255,10 +263,15 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
             return true;
         } else if (preference == mQSHeaderAlpha) {
-                int alpha = (Integer) newValue;
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.QS_TRANSPARENT_HEADER, alpha * 1);
-                return true;
+            int alpha = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_TRANSPARENT_HEADER, alpha * 1);
+           return true;
+        } else if (preference == mThemeswitch) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.THEME_CUSTOM_HEADER, value ? 1 : 0);
+            return true;
         }
          return false;
 }

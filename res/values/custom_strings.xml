@@ -1367,4 +1367,9 @@
     <!-- Battery saver color -->
     <string name="battery_saver_color_title">Warning color</string>
     <string name="battery_saver_color_summary">Enable orange status and navigation bars when battery saver is activated</string>
+
+    <!-- CMTE Header Switch -->
+    <string name="status_bar_theme_header_title">CMTE header enabler</string>	
+    <string name="status_bar_theme_header_summary">Enable installed CMTE headers.</string>
+
 </resources>
