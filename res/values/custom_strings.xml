@@ -268,16 +268,30 @@
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
     <!-- Tiles animation style  -->
+    <string name="quicksettings_tiles_category">Tile animation options</string>
     <string name="qs_tile_animation_style_title">Tiles animation style</string>
     <string name="qs_tile_animation_duration_title">Tiles animation duration</string>
-    <string name="qs_tile_animation_style_off">no animation</string>
-    <string name="qs_tile_animation_style_flip">flip</string>
-    <string name="qs_tile_animation_style_rotate">rotate</string>
-    <string name="qs_tile_animation_duration_low">low</string>
-    <string name="qs_tile_animation_duration_default">default</string>
-    <string name="qs_tile_animation_duration_fast">fast</string>
-    <string name="qs_set_animation_style">Animation is set to %1$s</string>
-    <string name="qs_set_animation_duration">Animation duration is set to %1$s</string>
+    <string name="qs_tile_animation_interpolator_title">Tiles animation interpolator</string>
+    <string name="qs_tile_animation_style_off">No animation</string>
+    <string name="qs_tile_animation_style_flip">Flip</string>
+    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_duration_low">Low</string>
+    <string name="qs_tile_animation_duration_default">Default</string>
+    <string name="qs_tile_animation_duration_fast">Fast</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_set_animation_style">%1$s</string>
+    <string name="qs_set_animation_duration">%1$s</string>
+    <string name="qs_set_animation_interpolator">%1$s</string>
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_title">Number of tiles per row</string>
+    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
 
     <!--Owlsnest buttons-->
     <string name="buttons_title">Hardware buttons</string>
@@ -1235,7 +1249,6 @@
     <string name="pulse_custom_fudge_factor">Visualizer Sanity Level</string>
 
     <!-- Statusbar AOSIP logo -->
-
     <string name="aosip_logo">AOSIP logo</string>
     <string name="status_bar_aosip_logo_title">AOSIP logo</string>
     <string name="status_bar_aosip_logo_summary">Enable to show AOSIP logo on the left side of statusbar</string>
@@ -1305,10 +1318,6 @@
     <string name="lock_clock_weather_section_summary">View or change how the weather of the \'cLock\' Home  widget will display</string>
     <string name="lock_clock_calendar_section_title">Calendar events</string>
     <string name="lock_clock_calendar_section_summary">View or change how the calendar of the \'cLock\' Home  widget will display</string>
-
-    <!-- QS Tiles Columns -->
-    <string name="qs_num_columns_title">Number of tiles per row</string>
-    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
 
     <!-- Keyboard and Input methods  -->
     <string name="title_keyboard_input">Advanced options</string>
