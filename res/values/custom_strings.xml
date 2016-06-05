@@ -23,6 +23,9 @@
     <!--  BitSyko Layers header name -->
     <string name="bitsyko_layers">Layers</string>
 
+    <!--  Substratum header name -->
+    <string name="substratum_title">Substratum</string>
+
     <!-- Expanded desktop -->
     <string name="expanded_desktop_category">Expanded Desktop</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
