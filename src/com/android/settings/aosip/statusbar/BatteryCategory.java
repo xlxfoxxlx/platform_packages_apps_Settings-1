@@ -283,8 +283,8 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             return frag;
         }
 
-        StatusBarBatteryStatusSettings getOwner() {
-            return (StatusBarBatteryStatusSettings) getTargetFragment();
+        BatteryCategory getOwner() {
+            return (BatteryCategory) getTargetFragment();
         }
 
         @Override
@@ -320,7 +320,7 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
                             getOwner().refreshSettings();
                         }
                     })
-                    .setPositiveButton(R.string.dlg_reset_darkkat,
+                    .setPositiveButton(R.string.dlg_reset_aosip,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,

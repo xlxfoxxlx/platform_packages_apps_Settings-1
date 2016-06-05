@@ -315,8 +315,8 @@ public class CarrierlabelCategory extends SettingsPreferenceFragment implements
             return frag;
         }
 
-        StatusBarCarrierLabelSettings getOwner() {
-            return (StatusBarCarrierLabelSettings) getTargetFragment();
+        CarrierlabelCategory getOwner() {
+            return (CarrierlabelCategory) getTargetFragment();
         }
 
         @Override
@@ -350,7 +350,7 @@ public class CarrierlabelCategory extends SettingsPreferenceFragment implements
                             getOwner().refreshSettings();
                         }
                     })
-                    .setPositiveButton(R.string.dlg_reset_darkkat,
+                    .setPositiveButton(R.string.dlg_reset_aosip,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,

@@ -92,11 +92,6 @@ public class IconsCategory extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.aosip_icons);
         mResolver = getActivity().getContentResolver();
 
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsLogger.OWLSNEST;
-    }
-
         int intColor;
         String hexColor;
 
@@ -303,8 +298,8 @@ public class IconsCategory extends SettingsPreferenceFragment implements
             return frag;
         }
 
-        StatusBarNetworkStatusIconsSettings getOwner() {
-            return (StatusBarNetworkStatusIconsSettings) getTargetFragment();
+        IconsCategory getOwner() {
+            return (IconsCategory) getTargetFragment();
         }
 
         @Override
@@ -346,7 +341,7 @@ public class IconsCategory extends SettingsPreferenceFragment implements
                             getOwner().refreshSettings();
                         }
                     })
-                    .setPositiveButton(R.string.dlg_reset_darkkat,
+                    .setPositiveButton(R.string.dlg_reset_aosip,
                             new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
@@ -385,6 +380,10 @@ public class IconsCategory extends SettingsPreferenceFragment implements
         public void onCancel(DialogInterface dialog) {
 
         }
+    }
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.OWLSNEST;
     }
 }
 
