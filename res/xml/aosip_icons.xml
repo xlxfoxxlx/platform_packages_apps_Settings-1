@@ -20,24 +20,53 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/icon_category" >
 
-    <PreferenceScreen
-        android:title="@string/status_bar_icon_blacklist_title"
-        android:summary="@string/status_bar_icon_blacklist_summary" >
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.TunerActivity" />
-    </PreferenceScreen>
-
     <PreferenceCategory
-        android:key="notification_icons_colors"
-        android:title="@string/status_bar_notification_icons">
+        android:key="network_status_icons_cat_signal_colors"
+        android:title="@string/network_status_icons_cat_signal_colors_title">
 
          <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="notification_icons_color"
+            android:key="network_status_icons_signal_color"
             android:title="@string/color_title"
             android:defaultValue="#ffffffff" />
 
-    </PreferenceCategory>
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="network_status_icons_signal_color_dark_mode"
+            android:title="@string/color_dark_mode_title"
+            android:defaultValue="#99000000" />
+
+	</PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="network_status_icons_cat_no_sim_colors"
+        android:title="@string/network_status_icons_cat_no_sim_colors_title">
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="network_status_icons_no_sim_color"
+            android:title="@string/color_title"
+            android:defaultValue="#ffffffff" />
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="network_status_icons_no_sim_color_dark_mode"
+            android:title="@string/color_dark_mode_title"
+            android:defaultValue="#99000000" />
+
+	</PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="network_status_icons_cat_airplane_mode_colors"
+        android:title="@string/network_status_icons_cat_airplane_mode_colors_title">
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="network_status_icons_airplane_mode_color"
+            android:title="@string/color_title"
+            android:defaultValue="#ffffffff" />
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="network_status_icons_airplane_mode_color_dark_mode"
+            android:title="@string/color_dark_mode_title"
+            android:defaultValue="#99000000" />
+
+	</PreferenceCategory>
 
     <PreferenceCategory
         android:key="network_status_icons_cat_status_colors"
@@ -48,38 +77,10 @@
             android:title="@string/color_title"
             android:defaultValue="#ffffffff" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="network_icons_cat_signal_colors"
-        android:title="@string/network_icons_cat_signal_colors_title">
-
          <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="network_icons_signal_color"
-            android:title="@string/color_title"
-            android:defaultValue="#ffffffff" />
-
-	</PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="network_icons_cat_no_sim_colors"
-        android:title="@string/network_icons_cat_no_sim_colors_title">
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="network_icons_no_sim_color"
-            android:title="@string/color_title"
-            android:defaultValue="#ffffffff" />
-
-	</PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="network_icons_cat_airplane_mode_colors"
-        android:title="@string/network_icons_cat_airplane_mode_colors_title">
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="network_icons_airplane_mode_color"
-            android:title="@string/color_title"
-            android:defaultValue="#ffffffff" />
+            android:key="network_status_icons_status_color_dark_mode"
+            android:title="@string/color_dark_mode_title"
+            android:defaultValue="#99000000" />
 
 	</PreferenceCategory>
 </PreferenceScreen>
