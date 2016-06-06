@@ -85,13 +85,27 @@
             android:icon="@drawable/ic_settings_illusion"
             />
 
-        <!-- Custom settings -->
+        <!-- Substratum -->
         <dashboard-tile
-                android:id="@+id/custom_settings"
-                android:title="@string/custom_settings_title"
-                android:fragment="com.android.settings.custom.CustomSettings"
-                android:icon="@drawable/ic_advanced_settings"
-                />
+                android:id="@+id/substratum"
+                android:icon="@drawable/ic_substratum"
+                android:title="@string/substratum_title">     
+		<intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="projekt.substratum"
+                android:targetClass="projekt.substratum.LaunchActivity" />
+        </dashboard-tile>
+
+        <!-- Layers -->
+        <dashboard-tile
+                android:id="@+id/bitsyko_layers"
+                android:icon="@drawable/ic_bitsyko_layers"
+                android:title="@string/bitsyko_layers">     
+		<intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.lovejoy777.rroandlayersmanager"
+                android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
+        </dashboard-tile>
 
         <!-- Display -->
         <dashboard-tile
@@ -108,17 +122,6 @@
                 android:fragment="com.android.settings.notification.NotificationSettings"
                 android:icon="@drawable/ic_settings_notifications"
                 />
-
-        <!-- Substratum -->
-        <dashboard-tile
-                android:id="@+id/substratum"
-                android:icon="@drawable/ic_substratum"
-                android:title="@string/substratum_title">     
-		<intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="projekt.substratum"
-                android:targetClass="projekt.substratum.LaunchActivity" />
-        </dashboard-tile>
     </dashboard-category>
 
     <!-- DEVICE -->
@@ -134,17 +137,6 @@
                 android:fragment="com.android.settings.HomeSettings"
                 android:icon="@drawable/ic_settings_home"
                 />
-
-        <!-- Layers -->
-        <dashboard-tile
-                android:id="@+id/bitsyko_layers"
-                android:icon="@drawable/ic_bitsyko_layers"
-                android:title="@string/bitsyko_layers">     
-		<intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.lovejoy777.rroandlayersmanager"
-                android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
-        </dashboard-tile>
 
         <!-- Application Settings -->
         <dashboard-tile

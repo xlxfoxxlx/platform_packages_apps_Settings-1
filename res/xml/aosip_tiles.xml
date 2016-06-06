@@ -20,12 +20,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/tile_category" >
 
-    <PreferenceScreen
-        android:title="@string/quick_settings_title"
-        android:summary="@string/quick_settings_summary" >
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.QsActivity" />
+        <PreferenceScreen
+            android:title="@string/quick_settings_title" >
+                <intent android:action="android.intent.action.MAIN"
+                        android:targetPackage="com.android.systemui"
+                        android:targetClass="com.android.systemui.tuner.QsTunerActivity" />
         </PreferenceScreen>
 
     <com.android.settings.preference.SystemSettingSwitchPreference
