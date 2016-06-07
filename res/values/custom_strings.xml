@@ -206,6 +206,8 @@
     <string name="status_bar_network_icons_settings_title">Network icons</string>
     <string name="status_bar_network_icons_settings_summary">Customize the Network icons</string>
     <string name="notification_colors_title">Notificatrion colors</string>
+    <string name="status_bar_notification_icons_settings_title">Notification icons</string>
+    <string name="status_bar_notification_icons_settings_summary">Customize the notification icons</string>
     <string name="network_status_icons_cat_signal_colors_title">Signal colors</string>
     <string name="network_status_icons_cat_no_sim_colors_title">No sim card colors</string>
     <string name="network_status_icons_cat_airplane_mode_colors_title">Airplane mode colors</string>

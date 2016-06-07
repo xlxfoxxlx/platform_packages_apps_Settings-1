@@ -29,6 +29,22 @@
     </PreferenceScreen>
 
     <PreferenceCategory
+        android:key="notification_colors"
+        android:title="@string/notification_colors_title">
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="notification_icons_color"
+            android:title="@string/color_title"
+            android:defaultValue="#ffffffff" />
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="notification_icons_color_dark_mode"
+            android:title="@string/color_dark_mode_title"
+            android:defaultValue="#99000000" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="network_status_icons_cat_signal_colors"
         android:title="@string/network_status_icons_cat_signal_colors_title">
 
