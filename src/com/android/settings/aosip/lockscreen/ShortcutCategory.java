@@ -31,6 +31,7 @@ import android.preference.SwitchPreference;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.preference.SystemSettingSwitchPreference;
 
 public class ShortcutCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -50,10 +51,12 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.aosip_shortcut);
 
+	final PreferenceScreen prefScreen = getPreferenceScreen();
+
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
         if (!mFingerprintManager.isHardwareDetected()){
-            secureCategory.removePreference(mFingerprintVib);
+            prefScreen.removePreference(mFingerprintVib);
         }
 
     }
