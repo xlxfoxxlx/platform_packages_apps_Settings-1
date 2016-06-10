@@ -44,7 +44,6 @@ import android.os.UserHandle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -52,15 +51,6 @@ import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
-<<<<<<< HEAD
-import android.preference.Preference;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
-=======
->>>>>>> 76e6b2a... Settings: add config to apply custom shadow on header images [2/2]
 import android.provider.Settings;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
@@ -100,10 +90,11 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
 
     private ListPreference mDaylightHeaderPack;
-    private CheckBoxPreference mCustomHeaderImage;
+    private SwitchPreference mCustomHeaderImage;
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
-    private CheckBoxPreference mHeaderWeather;
+    private SwitchPreference mHeaderWeather;
+    private SeekBarPreference mHeaderShadow;    
 
     private ListPreference mQuickPulldown;
     private SeekBarPreference mQSHeaderAlpha; 
@@ -159,12 +150,12 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
             mWeatherIconPack.setOnPreferenceChangeListener(this);
 
-            mHeaderWeather = (CheckBoxPreference) findPreference(STATUS_BAR_HEADER_WEATHER);
+            mHeaderWeather = (SwitchPreference) findPreference(STATUS_BAR_HEADER_WEATHER);
         }
 
         final boolean customHeaderImage = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1;
-        mCustomHeaderImage = (CheckBoxPreference) findPreference(CUSTOM_HEADER_IMAGE);
+        mCustomHeaderImage = (SwitchPreference) findPreference(CUSTOM_HEADER_IMAGE);
         mCustomHeaderImage.setChecked(customHeaderImage);
 
         String settingHeaderPackage = Settings.System.getString(getContentResolver(),
@@ -225,7 +216,7 @@ public class ExpandedCategory extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mCustomHeaderImage) {
-            final boolean value = ((CheckBoxPreference)preference).isChecked();
+            final boolean value = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
             mDaylightHeaderPack.setEnabled(value);
