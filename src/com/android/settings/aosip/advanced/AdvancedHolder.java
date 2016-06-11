@@ -53,7 +53,7 @@ import com.android.internal.logging.MetricsLogger;
 
 import com.android.settings.aosip.advanced.GestureanywhereCategory;
 import com.android.settings.aosip.advanced.AppsidebarCategory;
-import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
+import com.android.settings.custom.ExpandedDesktop;
 import com.android.settings.widget.SwitchBar;
 import com.android.settings.aosip.advanced.AdvancedSettings;
 import com.android.settings.aosip.PagerSlidingTabStrip;
