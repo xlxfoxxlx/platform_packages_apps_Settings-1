@@ -142,14 +142,14 @@ public class TileCategory extends SettingsPreferenceFragment implements
             updateNumColumnsSummary(numColumns);
             return true;
         } else if (preference == mTileAnimationStyle) {
-            int tileAnimationStyle = Integer.valueOf((String) newValue);
+            int tileAnimationStyle = Integer.valueOf((String) objValue);
             Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_STYLE,
                     tileAnimationStyle, UserHandle.USER_CURRENT);
             updateTileAnimationStyleSummary(tileAnimationStyle);
             updateAnimTileDuration(tileAnimationStyle);
             return true;
         } else if (preference == mTileAnimationDuration) {
-            int tileAnimationDuration = Integer.valueOf((String) newValue);
+            int tileAnimationDuration = Integer.valueOf((String) objValue);
             Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_DURATION,
                     tileAnimationDuration, UserHandle.USER_CURRENT);
             updateTileAnimationDurationSummary(tileAnimationDuration);
