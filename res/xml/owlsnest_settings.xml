@@ -56,6 +56,12 @@
        android:summary="@string/lockscreen_summary" />
 
     <PreferenceScreen
+       android:key="gesture"
+       android:fragment="com.android.settings.aosip.gesture.GestureHolder"
+       android:title="@string/gesture_category" 
+       android:summary="@string/gesture_summary" />
+
+    <PreferenceScreen
        android:key="advanced"
        android:fragment="com.android.settings.aosip.advanced.AdvancedHolder"
        android:title="@string/advanced_title" 

@@ -1903,8 +1903,8 @@
                 android:value="com.android.settings.wfd.WifiDisplaySettings" />
         </activity>
 
-        <activity android:name=".benzo.gestureanywhere.GestureAnywhereBuilderActivity" />
-        <activity android:name=".benzo.gestureanywhere.GestureAnywhereCreateGestureActivity" />   
+        <activity android:name=".aosip.gesture.GestureAnywhereBuilderActivity" />
+        <activity android:name=".aosip.gesture.GestureAnywhereCreateGestureActivity" />   
 
 	<!-- Navigation settings activity. -->
         <activity android:name="Settings$PulseSettingsActivity"
