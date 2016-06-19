@@ -229,6 +229,14 @@
     <string name="navigationbuttons_category">Layouts</string>
     <string name="navigation_extras_category">Extra options</string>
 
+    <!--Owlsnest Gestures-->
+    <string name="gesture_category">Gesture options</string>
+    <string name="gesture_summary">Options such as Gesture Anywhere, 3 finger swip, etc.</string>
+
+    <!-- Three finger swipe gesture -->
+    <string name="three_finger_gesture_info">After selecting a target from below, swipe vertically with 3 fingers in a single motion from top to bottom to trigger the action you selected.</string>
+    <string name="three_finger_swipe_gesture_title">Three finger swipe gesture</string>
+    <string name="doubletap_gestures_category">Double tap gestures</string>
 
     <!--Owlsnest Quick settings-->
     <string name="quicksettings_title">Quick settings</string>

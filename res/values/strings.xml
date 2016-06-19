@@ -7107,4 +7107,8 @@
     <!-- Toast message letting the user know the color temperature setting is not immediate -->
     <string name="color_temperature_toast">To apply color change, turn off screen</string>
 
+    <!-- Three finger swipe gesture -->
+    <string name="three_finger_gesture_info">After selecting a target from below, swipe vertically with 3 fingers in a single motion from top to bottom to trigger the action you selected.</string>
+    <string name="three_finger_swipe_gesture_title">Three finger swipe gesture</string>
+
 </resources>

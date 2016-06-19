@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aosip.advanced;
+package com.android.settings.aosip.gesture;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -51,21 +51,14 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 
-import com.android.settings.aosip.advanced.AppsidebarCategory;
-import com.android.settings.aosip.advanced.AppCircleBar;
-import com.android.settings.aosip.advanced.AnimationControls;
-import com.android.settings.aosip.advanced.cLock;
-import com.android.settings.aosip.advanced.MultiWindow;
-import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
-import com.android.settings.paranoid.PieControl;
-import com.android.settings.widget.SwitchBar;
-import com.android.settings.aosip.advanced.MiscSettings;
+import com.android.settings.aosip.gesture.GestureCategory;
+
 import com.android.settings.aosip.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdvancedHolder extends SettingsPreferenceFragment {
+public class GestureHolder extends SettingsPreferenceFragment {
 
     ViewPager mViewPager;
     String titleString[];
@@ -114,13 +107,7 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new AnimationSettings();
-            frags[1] = new AppCircleBar();
-            frags[2] = new cLock();
-            frags[3] = new MiscSettings();
-            frags[4] = new MultiWindow();
-            frags[5] = new PieControl();
-
+            frags[0] = new GestureCategory();
         }
 
         @Override
@@ -142,13 +129,7 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-
-                    getString(R.string.animation_title),
-                    getString(R.string.category_app_circle_bar_title),
-                    getString(R.string.lock_clock_title),
-                    getString(R.string.misc_title),
-                    getString(R.string.multiwindow_settings_title),
-                    getString(R.string.pa_pie_control_title)};
+                    getString(R.string.gesture_category)};
         return titleString;
     }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.benzo.gestureanywhere;
+package com.android.settings.aosip.gesture;
 
 import android.app.Activity;
 import android.content.Intent;
