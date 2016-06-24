@@ -110,7 +110,7 @@ public class QsSettingsHolder extends SettingsPreferenceFragment {
             super(fm);
             frags[0] = new BlurPersonalizations();
             frags[1] = new ExpandedCategory();
-            frags[0] = new TileCategory();
+            frags[2] = new TileCategory();
         }
 
         @Override
