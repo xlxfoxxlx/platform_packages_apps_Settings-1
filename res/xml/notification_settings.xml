@@ -156,7 +156,7 @@
         android:summary="@string/battery_low_notif_summary"
         android:defaultValue="true" />
 
-        <com.android.settings.preference.GlobalSettingSwitchPreference
+        <com.android.settings.preference.SystemSettingSwitchPreference
         android:key="zen_disable_ducking_during_media_playback"
         android:title="@string/interruptions_ignore_while_media_title"
         android:summary="@string/interruptions_ignore_while_media_summary"
@@ -164,10 +164,10 @@
 
 	<!-- Heads up -->
         <com.android.settings.preference.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"
-            android:summaryOn="@string/summary_heads_up_enabled"
-            android:summaryOff="@string/summary_heads_up_disabled" />
+        android:key="heads_up_notifications_enabled"
+        android:title="@string/heads_up_notifications"
+        android:summaryOn="@string/summary_heads_up_enabled"
+        android:summaryOff="@string/summary_heads_up_disabled" />
 
     </PreferenceCategory>
 
