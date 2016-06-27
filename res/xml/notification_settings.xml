@@ -154,6 +154,13 @@
                     android:name="classname"
                     android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </PreferenceScreen>
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="flashlight_notification"
+        android:title="@string/flashlight_notification_title"
+        android:summary="@string/flashlight_notification_summary"
+        android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

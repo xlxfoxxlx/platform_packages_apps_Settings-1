@@ -37,12 +37,6 @@
         android:summary="@string/interruptions_ignore_while_media_summary"
         android:defaultValue="false" />
 
-        <com.android.settings.preference.SystemSettingSwitchPreference
-        android:key="flashlight_notification"
-        android:title="@string/flashlight_notification_title"
-        android:summary="@string/flashlight_notification_summary"
-        android:defaultValue="false" />
-
 	<!-- Heads up -->
         <com.android.settings.preference.GlobalSettingSwitchPreference
         android:key="heads_up_notifications_enabled"
