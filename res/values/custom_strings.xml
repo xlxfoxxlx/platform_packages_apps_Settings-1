@@ -1409,13 +1409,6 @@
      <!-- Volume settings - Volume adjustment sound -->
     <string name="volume_adjust_sounds_title">Volume adjustment sounds</string>
 
-    <!-- Setting options for LCD density -->
-    <string name="lcd_density">LCD density</string>
-    <string name="lcd_density_summary">%d DPI</string>
-    <string name="lcd_density_default">default</string>
-    <string name="lcd_density_unsupported">Unsupported</string>
-    <string name="lcd_density_restarting_ui">Restarting UI\u2026</string>
-
     <!-- Battery saver notification toggle -->
     <string name="battery_saver_notif_title">Battery saver notification</string>
     <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
