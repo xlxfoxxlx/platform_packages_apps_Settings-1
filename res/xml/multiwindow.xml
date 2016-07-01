@@ -27,11 +27,5 @@
             android:title="@string/enable_multi_window"
             android:summary="@string/enable_multi_window_summary"/>
 
-        <com.dirtyunicorns.dutweaks.preference.SystemSettingSwitchPreference
-            android:key="disable_fc_notifications"
-            android:title="@string/disable_fc_notifications_title"
-            android:summary="@string/disable_fc_notifications_summary"
-            android:defaultValue="false" />
-
 </PreferenceScreen>
 
