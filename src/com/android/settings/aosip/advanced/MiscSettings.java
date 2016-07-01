@@ -57,8 +57,6 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.aosip_misc);
-
-        final ContentResolver resolver = getActivity().getContentResolver();
  
         mMsob = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
         mMsob.setValue(String.valueOf(Settings.System.getInt(getActivity().getContentResolver(),
@@ -77,7 +75,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object NewValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
          if (preference == mMsob) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MEDIA_SCANNER_ON_BOOT,

@@ -45,8 +45,6 @@
 
     </PreferenceCategory>
 
-
-
     <PreferenceCategory
         android:key="notification_icons_colors"
         android:title="@string/status_bar_notification_icons">
