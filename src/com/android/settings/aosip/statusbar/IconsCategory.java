@@ -25,6 +25,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException; 
 import android.view.Menu;
@@ -88,6 +89,9 @@ public class IconsCategory extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        addPreferencesFromResource(R.xml.aosip_icons);
+
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mStatusBarBrightnessControl = (SwitchPreference) findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
@@ -103,7 +107,6 @@ public class IconsCategory extends SettingsPreferenceFragment implements
             }
         } catch (SettingNotFoundException e) {
         }
-        refreshSettings();
     }
 
     public void refreshSettings() {
@@ -112,7 +115,6 @@ public class IconsCategory extends SettingsPreferenceFragment implements
             prefs.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.aosip_icons);
         mResolver = getActivity().getContentResolver();
 
         int intColor;
