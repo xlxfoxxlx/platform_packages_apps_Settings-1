@@ -31,7 +31,7 @@
             android:summary="@string/three_finger_gesture_info"
             android:selectable="false" />
 
-        <com.android.settings.solo.ActionPreference
+        <com.android.settings.preference.ActionPreference
             android:key="three_finger_gesture_action"
             android:title="@string/three_finger_swipe_gesture_title" />
 

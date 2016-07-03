@@ -143,17 +143,12 @@
                 android:summary="@string/dashboard_tileview_dividers_summary"
                 android:defaultValue="false" />
 
-         <com.android.settings.preference.SystemSettingSwitchPreference
-               android:key="double_tap_sleep_gesture"
-               android:title="@string/double_tap_to_sleep_title"
-               android:summary="@string/double_tap_to_sleep_summary"
-               android:defaultValue="false" />
-
-            <SwitchPreference
+         <SwitchPreference
                 android:key="wakeup_when_plugged_unplugged"
                 android:title="@string/wakeup_when_plugged_unplugged_title"
                 android:summary="@string/wakeup_when_plugged_unplugged_summary"
                 android:defaultValue="true"
                 android:persistent="false" />
+
          </PreferenceCategory>
 </PreferenceScreen>

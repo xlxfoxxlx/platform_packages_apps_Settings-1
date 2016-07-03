@@ -27,12 +27,6 @@
                         android:targetClass="com.android.systemui.tuner.QsTunerActivity" />
         </PreferenceScreen>
 
-    <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_show_brightness_slider"
-            android:title="@string/qs_brightness_slider_title"
-            android:summary="@string/qs_brightness_slider_summary"
-            android:defaultValue="true"/>
-
     <ListPreference
         android:key="sysui_qs_num_columns"
         android:title="@string/qs_num_columns_title"
@@ -41,11 +35,29 @@
         android:persistent="false" />
 
     <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="sysui_qs_main_tiles"
-            android:title="@string/qs_main_tiles_title"
-            android:summaryOn="@string/qs_main_tiles_summary_on"
-            android:summaryOff="@string/qs_main_tiles_summary_off"
-            android:defaultValue="true" />
+        android:key="sysui_qs_main_tiles"
+        android:title="@string/qs_main_tiles_title"
+        android:summaryOn="@string/qs_main_tiles_summary_on"
+        android:summaryOff="@string/qs_main_tiles_summary_off"
+        android:defaultValue="true" />
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="qs_show_brightness_slider"
+        android:title="@string/qs_brightness_slider_title"
+        android:summary="@string/qs_brightness_slider_summary"
+        android:defaultValue="true"/>
+
+    <com.android.settings.preference.SecureSettingSwitchPreference
+        android:key="status_bar_locked_on_secure_keyguard"
+        android:title="@string/block_on_secure_keyguard_title"
+        android:summary="@string/block_on_secure_keyguard_summary"
+        android:defaultValue="false"/>
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false"/>
 
     <ListPreference
         android:key="qs_tile_animation_style"
@@ -68,23 +80,11 @@
         android:entryValues="@array/qs_tile_animation_interpolator_values"
         android:persistent="false" />
 
-    <com.android.settings.preference.SecureSettingSwitchPreference
-        android:key="status_bar_locked_on_secure_keyguard"
-        android:title="@string/block_on_secure_keyguard_title"
-        android:summary="@string/block_on_secure_keyguard_summary"
-        android:defaultValue="false"/>
-
-    <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="quick_settings_vibrate"
-            android:title="@string/quick_settings_vibrate_title"
-            android:summary="@string/quick_settings_vibrate_summary"
-            android:defaultValue="false"/>
-
     <com.android.settings.aosip.seekbar.SeekBarPreference
-            android:key="qs_transparent_shade"
-            android:title="@string/qs_transparent_shade"
-            android:max="255"
-            settings:minimum="0"
-            android:persistent="false" />
+        android:key="qs_transparent_shade"
+        android:title="@string/qs_transparent_shade"
+        android:max="255"
+        settings:minimum="0"
+        android:persistent="false" />
 </PreferenceScreen>
 

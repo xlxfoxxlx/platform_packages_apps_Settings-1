@@ -46,8 +46,8 @@ import com.android.internal.utils.du.Config.ActionConfig;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.solo.ActionPreference;
-import com.android.settings.solo.ActionFragment;
+import com.android.settings.preference.ActionPreference;
+import com.android.settings.custom.nav.ActionFragment;
 
 public class OptionsCategory extends ActionFragment implements OnPreferenceChangeListener {
 

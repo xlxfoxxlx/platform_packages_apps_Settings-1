@@ -20,10 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/gesture_category" >
 
-        <PreferenceCategory
-            android:key="doubletap_gestures_anywhere_category"
-            android:title="@string/gesture_anywhere_title" />
-
         <SwitchPreference
             android:key="gesture_anywhere_enabled"
             android:title="@string/gesture_anywhere_enabled_title"
