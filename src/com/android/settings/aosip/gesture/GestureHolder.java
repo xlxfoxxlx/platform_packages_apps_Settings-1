@@ -50,9 +50,8 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
-
 import com.android.settings.aosip.gesture.GestureCategory;
-
+import com.android.settings.aosip.gesture.OptionsCategory;
 import com.android.settings.aosip.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
@@ -108,6 +107,7 @@ public class GestureHolder extends SettingsPreferenceFragment {
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new GestureCategory();
+            frags[1] = new OptionsCategory();
         }
 
         @Override
@@ -129,7 +129,8 @@ public class GestureHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.gesture_category)};
+                    getString(R.string.gestureanywhere_category),
+                    getString(R.string.options_category)};
         return titleString;
     }
 }

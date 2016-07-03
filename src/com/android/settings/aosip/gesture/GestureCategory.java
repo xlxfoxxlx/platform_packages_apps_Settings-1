@@ -54,7 +54,6 @@ public class GestureCategory extends ActionFragment implements OnPreferenceChang
 
     private static final String TAG = "Gestures";
 
-    private static final String THREE_FINGER_GESTURE = "three_finger_gesture_action";
     private static final String KEY_ENABLED = "gesture_anywhere_enabled";
     private static final String KEY_POSITION = "gesture_anywhere_position";
     private static final String KEY_GESTURES = "gesture_anywhere_gestures";
@@ -63,12 +62,10 @@ public class GestureCategory extends ActionFragment implements OnPreferenceChang
     private static final String KEY_TRIGGER_BOTTOM = "gesture_anywhere_trigger_bottom";
 
     private ListPreference mPositionPref;
-    private ActionPreference mThreeFingerSwipeGestures;
-    private SwitchPreference mEnabledPref;
-
     private SeekBarPreference mTriggerWidthPref;
     private SeekBarPreference mTriggerTopPref;
     private SeekBarPreference mTriggerBottomPref;
+    private SwitchPreference mEnabledPref;
 
     private CharSequence mPreviousTitle;
 
@@ -79,11 +76,6 @@ public class GestureCategory extends ActionFragment implements OnPreferenceChang
         addPreferencesFromResource(R.xml.aosip_gesture);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        mThreeFingerSwipeGestures = (ActionPreference) findPreference(THREE_FINGER_GESTURE);
-        mThreeFingerSwipeGestures.setTag(THREE_FINGER_GESTURE);
-        mThreeFingerSwipeGestures.setActionConfig(getSwipeThreeFingerGestures());
-        mThreeFingerSwipeGestures.setDefaultActionConfig(new ActionConfig(getActivity()));
 
         mEnabledPref = (SwitchPreference) findPreference(KEY_ENABLED);
         mEnabledPref.setChecked((Settings.System.getInt(getContentResolver(),
@@ -165,40 +157,6 @@ public class GestureCategory extends ActionFragment implements OnPreferenceChang
         return false;
     }
 
-    @Override
-    protected void findAndUpdatePreference(ActionConfig action, String tag) {
-        if (TextUtils.equals(THREE_FINGER_GESTURE, tag)) {
-            ActionConfig newAction;
-            if (action == null) {
-                newAction = mThreeFingerSwipeGestures.getDefaultActionConfig();
-            } else {
-                newAction = action;
-            }
-            mThreeFingerSwipeGestures.setActionConfig(newAction);
-            setSwipeThreeFingerGestures(newAction);
-        } else {
-            super.findAndUpdatePreference(action, tag);
-        }
-    }
-
-    private ActionConfig getSwipeThreeFingerGestures() {
-        ButtonConfig config = ButtonConfig.getButton(mContext,
-                Settings.Secure.THREE_FINGER_GESTURE, true);
-        ActionConfig action;
-        if (config == null) {
-            action = new ActionConfig(getActivity());
-        } else {
-            action = config.getActionConfig(ActionConfig.PRIMARY);
-        }
-        return action;
-    }
-
-    private void setSwipeThreeFingerGestures(ActionConfig action) {
-        ButtonConfig config = new ButtonConfig(getActivity());
-        config.setActionConfig(action, ActionConfig.PRIMARY);
-        ButtonConfig.setButton(getActivity(), config, Settings.Secure.THREE_FINGER_GESTURE, true);
-    }
-
     private void updatePositionSummary(int value) {
         mPositionPref.setSummary(mPositionPref.getEntries()[mPositionPref.findIndexOfValue("" + value)]);
         Settings.System.putInt(getContentResolver(),
@@ -208,19 +166,5 @@ public class GestureCategory extends ActionFragment implements OnPreferenceChang
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.OWLSNEST;
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Settings.System.putInt(getContentResolver(),
-                Settings.System.GESTURE_ANYWHERE_SHOW_TRIGGER, 0);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Settings.System.putInt(getContentResolver(),
-                Settings.System.GESTURE_ANYWHERE_SHOW_TRIGGER, 1);
     }
 }
