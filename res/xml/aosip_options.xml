@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2015 Android Open Source Illusion Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/options_category" >
+
+   <SwitchPreference
+        android:key="status_bar_brightness_control"
+        android:summary="@string/status_bar_brightness_control_summary"
+        android:title="@string/status_bar_brightness_control_title" />
+
+        <Preference
+            style="?android:preferenceInformationStyle"
+            android:key="three_finger_gesture_info"
+            android:summary="@string/three_finger_gesture_info"
+            android:selectable="false" />
+
+        <com.android.settings.solo.ActionPreference
+            android:key="three_finger_gesture_action"
+            android:title="@string/three_finger_swipe_gesture_title" />
+
+        <PreferenceCategory
+            android:key="doubletap_gestures_category"
+            android:title="@string/doubletap_gestures_category" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_to_sleep_title"
+            android:summary="@string/double_tap_to_sleep_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_lock_screen"
+            android:title="@string/double_tap_to_sleep_lockscreen_title"
+            android:summary="@string/double_tap_to_sleep_lockscreen_summary"
+            android:defaultValue="false" />
+
+</PreferenceScreen>
+

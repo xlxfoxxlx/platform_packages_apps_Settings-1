@@ -263,12 +263,13 @@
 
     <!--Owlsnest navigation-->
     <string name="navigation_title">NavBar</string>
-    <string name="navigation_summary">Navigation bar options (fling,pulse,height,width etc.)</string>
+    <string name="navigation_summary">NavBar options (fling,pulse,height,width etc.)</string>
 
     <!--Owlsnest Gestures-->
     <string name="gesture_category">Gesture options</string>
     <string name="gesture_summary">Options such as Gesture Anywhere, 3 finger swip, etc.</string>
-
+    <string name="gestureanywhere_category">Gesture anywhere</string>
+    <string name="options_category">Misc Options</string>
     <!-- Three finger swipe gesture -->
     <string name="three_finger_gesture_info">After selecting a target from below, swipe vertically with 3 fingers in a single motion from top to bottom to trigger the action you selected.</string>
     <string name="three_finger_swipe_gesture_title">Three finger swipe gesture</string>
@@ -516,19 +517,13 @@
     <!--Owlsnest advanced-->
     <string name="advanced_title">Advanced options</string>
     <string name="advanced_summary">Extra features</string>
-    <string name="gestureanywhere_category">Gesture anywhere</string>
     <string name="sidebar_category">App sidebar</string>
-    <string name="gesture_summary">Use custom gestures to open apks</string>
 
     <!-- Custom menus -->
-    <string name="custom_settings_title">Tweaks</string>
     <string name="smartbar_interface">SmartBar</string>
     <string name="icon_pack_picker_dialog_title">Icon packs</string>
     <string name="status_bar_misc_title">Miscellaneous</string>
     <string name="status_bar_title">Status bar</string>
-
-    <!--  BitSyko Layers header name -->
-    <string name="bitsyko_layers">Layers</string>
 
     <!--  Substratum header name -->
     <string name="substratum_title">Substratum</string>
@@ -1345,7 +1340,6 @@
     <string name="block_on_secure_keyguard_summary">Disables quick settings on secure lockscreen</string>
     <string name="lock_screen_show_current">Charging Current</string>
     <string name="lock_screen_show_current_summary">Show Charging Current rate on lock screen</string>
-
     <!-- OmniSwitch -->
     <string name="omniswitch_category">OmniSwitch</string>
     <string name="recents_use_omniswitch_title">Use for recents</string>
@@ -1357,11 +1351,9 @@
     <string name="omniswitch_settings_title">OmniSwitch</string>
     <string name="omniswitch_category">OmniSwitch</string>
     <string name="stock_recents">Stock Recents</string>
-
     <!-- Battery saver color -->
     <string name="battery_saver_color_title">Warning color</string>
     <string name="battery_saver_color_summary">Enable orange status and navigation bars when battery saver is activated</string>
-
     <!-- Lock screen visualizer settings -->
     <string name="show_title">Show</string>
     <string name="visualizer_show_summary">Enable to show the music visualizer on the lock screen</string>
@@ -1370,30 +1362,24 @@
      <!-- Lock screen (preference screen) -->
     <string name="lock_screen_visualizer_settings_title">Music visualizer</string>
     <string name="lock_screen_visualizer_settings_summary">Customize the music visualizer</string>
-
      <!-- Volume settings - Volume adjustment sound -->
     <string name="volume_adjust_sounds_title">Volume adjustment sounds</string>
-
     <!-- Battery saver notification toggle -->
     <string name="battery_saver_notif_title">Battery saver notification</string>
     <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
     <!-- low battery notification toggle -->
     <string name="battery_low_notif_title">Low battery notification</string>
     <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
-
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Screenshot sound</string>
     <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
-
     <!-- Flashlight notification -->
     <string name="flashlight_notification_title">Flashlight notification</string>
     <string name="flashlight_notification_summary">Enable notificiation for when the flashlight is on</string>
-
     <!-- Camera sound -->
     <string name="camera_sounds_title">Camera shutter sound</string>
     <string name="camera_sounds_summary">Enable camera shutter sound</string>
     <string name="camera_sound_warning_dialog_text">Disabling the camera shutter sound is illegal in some areas! Please check the applicable law in your country</string>
-
     <!-- Density Changer -->
     <string name="dpi">DPI</string>
     <string name="su_dialog_error_title">Warning</string>
@@ -1416,13 +1402,11 @@
     <string name="custom_density_dialog_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device"</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
-
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
     <string name="media_scanner_on_boot_enabled">Scan media</string>
     <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
-
     <!-- Scrolling Cache -->
     <string name="pref_scrollingcache_title">Scrolling cache</string>
     <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
@@ -1430,11 +1414,9 @@
     <string name="pref_scrollingcache_default_enable">Default enable</string>
     <string name="pref_scrollingcache_default_disable">Default disable</string>
     <string name="pref_scrollingcache_force_disable">Force disable</string>
-
     <!-- Disabling FC notifications -->
     <string name="disable_fc_notifications_title">Diable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
-
     <!-- SlimSizer  -->
     <string name="listsystem">list</string>
     <string name="sizer_title">App remover</string>
@@ -1454,7 +1436,6 @@
     <string name="sizer_message_filefail">Failed to create profile.</string>
     <string name="sizer_message_noselect">Nothing selected.</string>
     <string name="system_app_remover">System App Remover</string>
-
     <!-- Wakelock blocker -->
     <string name="wakelockblocker_category">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Block system wakelocks</string>
@@ -1463,7 +1444,6 @@
     <string name="wakelock_blocker_reload">Reload</string>
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
-
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Power menu animation</string>
     <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
