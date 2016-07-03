@@ -57,7 +57,6 @@ import com.android.settings.aosip.advanced.AnimationControls;
 import com.android.settings.aosip.advanced.cLock;
 import com.android.settings.aosip.advanced.MultiWindow;
 import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
-import com.android.settings.paranoid.PieControl;
 import com.android.settings.widget.SwitchBar;
 import com.android.settings.aosip.advanced.MiscSettings;
 import com.android.settings.aosip.PagerSlidingTabStrip;
@@ -119,7 +118,6 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
             frags[2] = new cLock();
             frags[3] = new MiscSettings();
             frags[4] = new MultiWindow();
-            frags[5] = new PieControl();
 
         }
 
@@ -147,8 +145,7 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
                     getString(R.string.category_app_circle_bar_title),
                     getString(R.string.lock_clock_title),
                     getString(R.string.misc_title),
-                    getString(R.string.multiwindow_settings_title),
-                    getString(R.string.pa_pie_control_title)};
+                    getString(R.string.multiwindow_settings_title)};
         return titleString;
     }
 }
