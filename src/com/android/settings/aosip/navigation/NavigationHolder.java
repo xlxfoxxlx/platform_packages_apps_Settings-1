@@ -129,7 +129,7 @@ public class NavigationHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.navigationbuttons_category)};
+                    getString(R.string.navigation_title)};
         return titleString;
     }
 }

@@ -243,7 +243,7 @@
     <string name="status_bar_icon_blacklist_summary">Adjust visible icons</string>
 
     <!--Owlsnest navigation-->
-    <string name="navigation_title">Navigation bar options</string>
+    <string name="navigation_title">NavBar</string>
     <string name="navigation_summary">Customize Navbar size,buttons,layout,and colors</string>
 
     <!--Owlsnest Quick settings-->

@@ -1336,11 +1336,6 @@ public class SettingsActivity extends Activity
                     boolean supported = false;
                     try {
                         supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
-                } else if (id == R.id.google_settings) {
-                    // Embedding into Settings is supported from Google Settings
-                    boolean supported = false;
-                    try {
-                        supported = (getPackageManager().getPackageInfo("com.google.android.gms", 0).versionCode >= 1);
                     } catch (PackageManager.NameNotFoundException e) {
                     }
                     if (!supported) {
@@ -1350,6 +1345,16 @@ public class SettingsActivity extends Activity
                     boolean supported = false;
                     try {
                         supported = (getPackageManager().getPackageInfo("projekt.substratum", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.google_settings) {
+                    // Embedding into Settings is supported from Google Settings
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.google.android.gms", 0).versionCode >= 1);
                     } catch (PackageManager.NameNotFoundException e) {
                     }
                     if (!supported) {
