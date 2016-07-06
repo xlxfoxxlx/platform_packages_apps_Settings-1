@@ -244,7 +244,7 @@
 
     <!--Owlsnest navigation-->
     <string name="navigation_title">NavBar</string>
-    <string name="navigation_summary">Customize Navbar size,buttons,layout,and colors</string>
+    <string name="navigation_summary">Navigation bar options (fling,pulse,height,width etc.)</string>
 
     <!--Owlsnest Quick settings-->
     <string name="quicksettings_title">Quick settings</string>
@@ -358,9 +358,9 @@
     <!--Owlsnest lockscreen-->
     <string name="lockscreen_title">Lockscreen</string>
     <string name="lockscreen_summary">Options for weather</string>
-    <string name="weather_category">Lockscreen weather</string>
-    <string name="shortcut_category">Lockscreen shortcuts</string>
-    <string name="lockcolors_category">Lockscreen colors</string>
+    <string name="weather_category">Weather</string>
+    <string name="shortcut_category">Shortcuts</string>
+    <string name="lockcolors_category">Colors</string>
     <!-- CM Lockscreen shortcuts -->
     <string name="lockscreen_targets_message">Bottom corner shortcuts</string>
     <string name="lockscreen_corner_summary">Customize the shortcut icons in the corners</string>
@@ -439,7 +439,7 @@
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
     <!-- Lock screen wallpaper -->
    <string name="lockscreen_category_title">Lockscreen</string>
-   <string name="lockscreen_wallpaper_title">Lockscreen Wallpaper</string>
+   <string name="lockscreen_wallpaper_title">Wallpaper</string>
    <string name="lockscreen_wallpaper_set_title">Set new wallpaper</string>
    <string name="lockscreen_wallpaper_clear_title">Return to default</string>
    <string name="reset_lockscreen_wallpaper">Lockscreen wallpaper set back to default</string>
@@ -1115,7 +1115,7 @@
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
 
     <!-- Lockscreen Colors -->
-    <string name="lockscreen_colors">Lockscreen Colors</string>
+    <string name="lockscreen_colors">Colors</string>
     <string name="lockscreen_phone_icon_color">Lockscreen Bottom Left shortcut</string>
     <string name="lockscreen_lock_icon_color">Lockscreen Lock icon</string>
     <string name="lockscreen_camera_icon_color">Lockscreen Bottom Right shortcut</string>
