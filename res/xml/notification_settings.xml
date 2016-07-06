@@ -156,7 +156,7 @@
         </PreferenceScreen>
 
 	<!-- Heads up -->
-        <com.android.settings.prefrence.GlobalSettingSwitchPreference
+        <com.android.settings.preference.GlobalSettingSwitchPreference
             android:key="heads_up_notifications_enabled"
             android:title="@string/heads_up_notifications"
             android:summaryOn="@string/summary_heads_up_enabled"
@@ -189,7 +189,7 @@
         android:title="@string/headsup_section_header" >
 
         <!-- Heads up -->
-        <com.android.settings.cyanogenmod.GlobalSettingSwitchPreference
+        <com.android.settings.preference.GlobalSettingSwitchPreference
             android:key="heads_up_notifications_enabled"
             android:title="@string/heads_up_notifications"
             android:summaryOn="@string/summary_heads_up_enabled"
