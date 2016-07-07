@@ -247,6 +247,7 @@
 
     <!--Owlsnest navigation-->
     <string name="navigation_title">NavBar</string>
+    <string name="navigation_summary">Navigation bar options (fling,pulse,height,width etc.)</string>
 
     <!--Owlsnest Quick settings-->
     <string name="quicksettings_title">Quick settings</string>
