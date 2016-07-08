@@ -227,4 +227,13 @@
         <item name="android:windowAnimationStyle">@style/Animation.SuwWindowAnimation</item>
     </style>
 
+    <style name="Theme.ColorPickerDialog" parent="@android:style/Theme.Material">
+        <item name="android:colorBackground">@*android:color/darkkat_blue_grey</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="android:colorAccent">@color/theme_accent</item>
+    </style>
 </resources>
