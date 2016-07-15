@@ -361,14 +361,14 @@
         <item>@string/battery_status_icon_indicator_battery_portrait</item>
         <item>@string/battery_status_icon_indicator_battery_landscape</item>
         <item>@string/battery_status_icon_indicator_circle</item>
-        <item>@string/hidden_title</item>
+        <!--<item>@string/hidden_title</item>-->
     </string-array>
 
     <string-array name="battery_status_icon_indicator_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
+        <!--<item>3</item>-->
     </string-array>
 
     <string-array name="battery_status_circle_dot_entries">
