@@ -54,6 +54,10 @@
     <string name="changelog_summary">Since the last update</string>
     <string name="changelog_error">Unable to load changelog</string>
 
+    <!-- Vendor version -->
+    <string name="vendor_version">Vendor version</string>
+    <string name="vendor_version_default">Unknown</string>
+
     <!-- Color picker -->
     <string name="dialog_color_picker_title">Color Picker</string>
     <string name="edit_hex_title">HEX Value</string>
