@@ -59,10 +59,7 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
     private static final String PREF_ICON_COLOR = "weather_icon_color";	
     private static final String LOCKSCREEN_TEMP_COLOR = "lock_screen_weather_temp_color";
     private static final String LOCKSCREEN_CONDITION_COLOR = "lock_screen_weather_con_color";
-    private static final String LOCKSCREEN_STAMP_COLOR = "lock_screen_weather_stamp_color";
-    private static final String LOCKSCREEN_HUMID_COLOR = "lock_screen_weather_hum_color";
     private static final String LOCKSCREEN_CITY_COLOR = "lock_screen_weather_city_color";
-    private static final String LOCKSCREEN_WIND_COLOR = "lock_screen_weather_wind_color";	
 
     static final int DEFAULT = 0xffffffff;
     private static final int MENU_RESET = Menu.FIRST;
@@ -78,11 +75,8 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
     private ColorPickerPreference mTextColor;
     private ColorPickerPreference mIconColor;
     private ColorPickerPreference mTempColor;
-    private ColorPickerPreference mStampColor;
     private ColorPickerPreference mConditionColor;
-    private ColorPickerPreference mHumidityColor;
     private ColorPickerPreference mCityColor;
-    private ColorPickerPreference mWindColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -203,22 +197,6 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
        mConditionColor.setSummary(hexColor);
        mConditionColor.setNewPreviewColor(intColor);
 
-       mStampColor = (ColorPickerPreference) findPreference(LOCKSCREEN_STAMP_COLOR);
-       mStampColor.setOnPreferenceChangeListener(this);
-       intColor = Settings.System.getInt(resolver,
-                  Settings.System.LOCK_SCREEN_WEATHER_STAMP_COLOR, DEFAULT);
-       hexColor = String.format("#%08x", (0xffffffff & intColor));
-       mStampColor.setSummary(hexColor);
-       mStampColor.setNewPreviewColor(intColor);
-
-       mHumidityColor= (ColorPickerPreference) findPreference(LOCKSCREEN_HUMID_COLOR);
-       mHumidityColor.setOnPreferenceChangeListener(this);
-       intColor = Settings.System.getInt(resolver,
-                  Settings.System.LOCK_SCREEN_WEATHER_HUM_COLOR, DEFAULT);
-       hexColor = String.format("#%08x", (0xffffffff & intColor));
-       mHumidityColor.setSummary(hexColor);
-       mHumidityColor.setNewPreviewColor(intColor);
-
        mCityColor= (ColorPickerPreference) findPreference(LOCKSCREEN_CITY_COLOR);
        mCityColor.setOnPreferenceChangeListener(this);
        intColor = Settings.System.getInt(resolver,
@@ -226,14 +204,6 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
        hexColor = String.format("#%08x", (0xffffffff & intColor));
        mCityColor.setSummary(hexColor);
        mCityColor.setNewPreviewColor(intColor);
-
-       mWindColor= (ColorPickerPreference) findPreference(LOCKSCREEN_WIND_COLOR);
-       mWindColor.setOnPreferenceChangeListener(this);
-       intColor = Settings.System.getInt(resolver,
-                  Settings.System.LOCK_SCREEN_WEATHER_WIND_COLOR, DEFAULT);
-       hexColor = String.format("#%08x", (0xffffffff & intColor));
-       mWindColor.setSummary(hexColor);
-       mWindColor.setNewPreviewColor(intColor);
 
        setHasOptionsMenu(true);
     }
@@ -338,22 +308,6 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
                 Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                         Settings.System.LOCK_SCREEN_WEATHER_CON_COLOR, intHex);
                 return true;
-	}  else if (preference == mStampColor) {
-                String hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
-                preference.setSummary(hex);
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.LOCK_SCREEN_WEATHER_STAMP_COLOR, intHex);
-                return true;
-        } else if (preference ==  mHumidityColor) {
-                String hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
-                preference.setSummary(hex);
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.LOCK_SCREEN_WEATHER_HUM_COLOR, intHex);
-                return true;
 	}   else if (preference == mCityColor) {
                 String hex = ColorPickerPreference.convertToARGB(
                         Integer.valueOf(String.valueOf(newValue)));
@@ -361,14 +315,6 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
                 int intHex = ColorPickerPreference.convertToColorInt(hex);
                 Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                         Settings.System.LOCK_SCREEN_WEATHER_CITY_COLOR, intHex);
-                return true;
-        } else if (preference ==  mWindColor) {
-                String hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
-                preference.setSummary(hex);
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.LOCK_SCREEN_WEATHER_WIND_COLOR, intHex);
                 return true;
 	}
          return false;
@@ -447,7 +393,6 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
                  Settings.System.LOCK_SCREEN_WEATHER_TEXT_COLOR, -2);
         mTextColor.setNewPreviewColor(-2);
         mTextColor.setSummary(R.string.default_string);
-
         Settings.System.putInt(resolver,
                  Settings.System.LOCK_SCREEN_WEATHER_TEMP_COLOR, DEFAULT);
         mTempColor.setNewPreviewColor(DEFAULT);
@@ -457,21 +402,9 @@ public class LockColorsCategory extends SettingsPreferenceFragment implements Pr
         mConditionColor.setNewPreviewColor(DEFAULT);
         mConditionColor.setSummary(R.string.default_string);   
         Settings.System.putInt(resolver,
-                 Settings.System.LOCK_SCREEN_WEATHER_STAMP_COLOR, DEFAULT);
-        mStampColor.setNewPreviewColor(DEFAULT);
-        mStampColor.setSummary(R.string.default_string);   
-        Settings.System.putInt(resolver,
-                 Settings.System.LOCK_SCREEN_WEATHER_HUM_COLOR, DEFAULT);
-        mHumidityColor.setNewPreviewColor(DEFAULT);
-        mHumidityColor.setSummary(R.string.default_string);   
-        Settings.System.putInt(resolver,
                  Settings.System.LOCK_SCREEN_WEATHER_CITY_COLOR, DEFAULT);
         mCityColor.setNewPreviewColor(DEFAULT);
         mCityColor.setSummary(R.string.default_string);   
-        Settings.System.putInt(resolver,
-                 Settings.System.LOCK_SCREEN_WEATHER_WIND_COLOR, DEFAULT);
-        mWindColor.setNewPreviewColor(DEFAULT);
-        mWindColor.setSummary(R.string.default_string); 
     }
 
     @Override
