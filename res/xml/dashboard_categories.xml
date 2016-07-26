@@ -129,39 +129,6 @@
                 />
     </dashboard-category>
 
-        <!-- Viper4Android -->
-        <dashboard-tile
-                android:id="@+id/equalizer_settings"
-                android:title="@string/equalizer_settings_title"
-                android:icon="@drawable/ic_xd_eq" >
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
-                    android:targetPackage="com.vipercn.viper4android_v2" />
-        </dashboard-tile>
-
-        <!-- Kernel -->
-        <dashboard-tile
-                android:id="@+id/kernel_auditor"
-                android:icon="@drawable/ic_xd_kernel"
-                android:title="@string/kernel_settings_title">
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.grarak.kerneladiutor"
-                    android:targetClass="com.grarak.kerneladiutor.MainActivity" />
-        </dashboard-tile>
-  
-          <!-- Kernel Mod -->
-        <dashboard-tile
-                android:id="@+id/kernel_auditor_mod"
-                android:icon="@drawable/ic_xd_kernel"
-                android:title="@string/kernel_mod_title">
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.kerneladiutor.mod"
-                    android:targetClass="com.kerneladiutor.mod.MainActivity" />
-        </dashboard-tile>
-
     <!-- DEVICE -->
     <dashboard-category
             android:id="@+id/device_section"
