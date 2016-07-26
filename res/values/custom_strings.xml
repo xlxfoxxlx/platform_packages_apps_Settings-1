@@ -253,7 +253,7 @@
     <string name="status_bar_icon_blacklist_summary">Adjust visible icons</string>
     <string name="status_bar_network_icons_settings_title">Network icons</string>
     <string name="status_bar_network_icons_settings_summary">Customize the Network icons</string>
-    <string name="notification_colors_title">Notificatrion colors</string>
+    <string name="notification_colors_title">Notification colors</string>
     <string name="status_bar_notification_icons_settings_title">Notification icons</string>
     <string name="status_bar_notification_icons_settings_summary">Customize the notification icons</string>
     <string name="network_status_icons_cat_signal_colors_title">Signal colors</string>
