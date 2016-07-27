@@ -599,6 +599,21 @@
     <string name="listview_overshoot_interpolator">Overshoot</string>
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
+    <!-- Power menu Animations  -->
+    <string name="power_menu_animation_title">Power menu animation</string>
+    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
+    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
+    <string name="power_menu_animation_aosp">AOSP (default)</string>
+    <string name="power_menu_animation_bottom">Bottom</string>
+    <string name="power_menu_animation_top">Top</string>
+    <string name="power_menu_animation_rotate">Rotation</string>
+    <string name="power_menu_animation_xylon">Fly</string>
+    <string name="power_menu_animation_slide">Slide</string>
+    <string name="power_menu_animation_turn">Turn</string>
+    <string name="power_menu_animation_fly">Glow</string>
+    <string name="power_menu_animation_card">3D</string>
+    <string name="power_menu_animation_translucent_top">Translucent (top)</string>
+    <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
 
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
@@ -1417,13 +1432,6 @@
     <string name="wakelock_blocker_reload">Reload</string>
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
-    <!-- Power menu Animations  -->
-    <string name="power_menu_animation_title">Power menu animation</string>
-    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
-    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
-    <string name="power_menu_animation_aosp">AOSP (default)</string>
-    <string name="power_menu_animation_bottom">Bottom</string>
-    <string name="power_menu_animation_top">Top</string>
     <!-- Selinux Switch -->
     <string name="selinux_switch_title">Selinux Switch options</string>
     <string name="selinux_switch_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk.</string>
