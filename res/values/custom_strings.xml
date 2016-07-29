@@ -1447,21 +1447,11 @@
     <string name="wakelock_blocker_reload">Reload</string>
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
-<<<<<<< HEAD
     <!-- Themes Settings -->
     <!-- Settings main menu entry -->
     <string name="themes_settings_title">Themes</string>
     <!-- Button dashboard title -->
     <string name="button_pref_title">Buttons</string>
     <string name="hardware_keys_power_key_title">Power button</string>
-=======
-    <!-- Selinux Switch -->
-    <string name="selinux_switch_title">Selinux Switch options</string>
-    <string name="selinux_switch_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk.</string>
-    <string name="selinux_title">Selinux Mode</string>
-    <string name="selinux_permissive_title">Permissive</string>
-    <string name="selinux_enforcing_title">Enforcing</string>
-    <string name="selinux_permissive_toast_title">Selinux set to permissive</string>
-
->>>>>>> 6e7cd83... Settings : Add 7 more power menu animations (2 of 2)
+	
 </resources>
