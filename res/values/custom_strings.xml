@@ -19,7 +19,7 @@
     <string name="build_date">Build date</string>
 
     <!-- AOSiP custom settings main -->
-    <string name="header_category_personalization">UI settings</string>
+    <string name="header_category_personalization">AOSiP Settings</string>
     <string name="custom_title">OwlsNest</string>
     <string name="owlsnest_settings_title">Categories</string>
 
