@@ -18,6 +18,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/battery_category">
 
+    <PreferenceCategory
+        android:key="battery_status_cat_icon"
+        android:title="@string/icon_title">
+
         <ListPreference
             android:key="battery_status_icon_indicator"
             android:title="@string/battery_status_icon_indicator_title"
@@ -28,6 +32,8 @@
             android:key="battery_status_show_text"
             android:title="@string/battery_status_show_text_title"
             android:summary="@string/battery_status_show_text_summary" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="battery_status_cat_circle_dotted"
@@ -55,6 +61,16 @@
             android:key="battery_status_cut_out_text"
             android:title="@string/battery_status_cut_out_title"
             android:summary="@string/battery_status_cut_out_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="battery_status_cat_charge_animation"
+        android:title="@string/battery_status_cat_charge_animation_title">
+
+        <SwitchPreference
+            android:key="battery_status_show_charge_animation"
+            android:title="@string/show_title"
+            android:summary="@string/battery_status_show_charge_animation_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
