@@ -1382,15 +1382,6 @@ public class SettingsActivity extends Activity
                     if (!supported) {
                         removeTile = true;
                     }
-                } else if (id == R.id.kernel_auditor_mod) {
-                    boolean supported = false;
-                    try {
-                        supported = (getPackageManager().getPackageInfo("com.kerneladiutor.mod", 0).versionCode > 0);
-                    } catch (PackageManager.NameNotFoundException e) {
-                    }
-                    if (!supported) {
-                        removeTile = true;
-                    }
                 }
 
                 if (UserHandle.MU_ENABLED && UserHandle.myUserId() != 0
