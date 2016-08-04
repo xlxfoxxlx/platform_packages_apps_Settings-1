@@ -1499,6 +1499,9 @@
     <string name="app_halo_label_black">Blacklist from HALO</string>
     <string name="app_halo_label_white">Whitelist from HALO</string>
 
+    <string name="halo_color_title">Halo color</string>
+    <string name="halo_color_summary">Defines what color the Halo bubble is</string>
+
     <!-- Halo blacklist -->
     <string name="app_notification_halo_title">Show notification in HALO</string>
     <string name="app_notification_halo_summary">Let this app show notifications in HALO</string>
