@@ -7041,7 +7041,6 @@
     <!-- Summary of app not allowed to draw overlay [CHAR LIMIT=60] -->
     <string name="system_alert_window_off">No</string>
 
-
     <!-- Write Settings settings -->
     <!-- Settings title in main settings screen for WRITE_SETTINGS [CHAR LIMIT=30] -->
     <string name="write_settings">Modify system settings</string>
