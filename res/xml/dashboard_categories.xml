@@ -138,9 +138,6 @@
                     android:targetClass="com.grarak.kerneladiutor.MainActivity" />
         </dashboard-tile>
 
-
-    </dashboard-category>
-
         <!-- Themes -->
         <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
         <dashboard-tile
@@ -153,7 +150,7 @@
             </intent>
         </dashboard-tile>
 
-        </dashboard-category>
+    </dashboard-category>
 
         <!-- DEVICE -->
         <dashboard-category
