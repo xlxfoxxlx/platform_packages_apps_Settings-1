@@ -169,6 +169,17 @@
             android:title="@string/fling_trails_color_title"
             android:defaultValue="0xffffff"
             android:dependency="eos_fling_trails_enable" />
+
+        <com.android.settings.aosip.seekbar.SeekBarPreference
+            android:key="du_fling_trails_width"
+            android:title="@string/fling_trails_width_title"
+            settings:defaultValue="15"
+            android:max="25"
+            settings:min="1"
+            settings:unitsLeft=""
+            settings:unitsRight="dp"
+            android:dependency="eos_fling_trails_enable"
+            android:persistent="false" />
      </PreferenceCategory>
 
     <PreferenceCategory
