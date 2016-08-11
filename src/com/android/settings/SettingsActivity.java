@@ -1354,16 +1354,6 @@ public class SettingsActivity extends Activity
                     if (!supported) {
                         removeTile = true;
                     }
-                } else if (id == R.id.google_settings) {
-                    // Embedding into Settings is supported from Google Settings
-                    boolean supported = false;
-                    try {
-                        supported = (getPackageManager().getPackageInfo("com.google.android.gms", 0).versionCode >= 1);
-                    } catch (PackageManager.NameNotFoundException e) {
-                    }
-                    if (!supported) {
-                        removeTile = true;
-                    }
                 } else if (id == R.id.equalizer_settings) {
                     boolean supported = false;
                     try {
