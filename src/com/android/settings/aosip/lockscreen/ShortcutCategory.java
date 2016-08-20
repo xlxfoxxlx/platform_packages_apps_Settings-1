@@ -22,6 +22,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
+import android.os.UserManager;
 import android.provider.Settings;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -42,11 +43,13 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
     private static final String KEYGUARD_TORCH = "keyguard_toggle_torch";
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
+    private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private FingerprintManager mFingerprintManager;
     private SystemSettingSwitchPreference mFingerprintVib;
     private SeekBarPreference mLsAlpha;
     private SeekBarPreference mLsSecurityAlpha;
+    private SeekBarPreference mBlurLockRadius;
 
     @Override
     protected int getMetricsCategory() {
@@ -60,6 +63,11 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
 
 	final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mBlurLockRadius = (SeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
+        mBlurLockRadius.setValue(Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_BLUR_RADIUS, 14));
+        mBlurLockRadius.setOnPreferenceChangeListener(this);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -88,7 +96,12 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mLsAlpha) {
+         if (preference == mBlurLockRadius) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(resolver,
+            Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
+            return true;
+        } else if (preference == mLsAlpha) {
             int alpha = (Integer) newValue;
             Settings.System.putFloat(resolver,
                     Settings.System.LOCKSCREEN_ALPHA, alpha / 100.0f);

@@ -74,9 +74,7 @@
             android:title="@string/lockscreen_blur_radius"
             android:max="25"
             settings:minimum="0"
-            settings:unitsLeft=""
-            settings:unitsRight=""
-            android:persistent="false"
+            android:defaultValue="14"
             android:dependency="lockscreen_see_through" /> -->
 
         <com.android.settings.preference.SystemSettingSwitchPreference
