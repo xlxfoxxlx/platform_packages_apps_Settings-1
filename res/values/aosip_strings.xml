@@ -64,4 +64,7 @@
     <string name="screenshot_sound_title">Screenshot sound</string>
     <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
 
+    <!-- Density category -->
+    <string name="density_category">Density options</string>
+
 </resources>
