@@ -28,6 +28,10 @@
     <string name="add">Add</string>
     <string name="choose_app">Choose app</string>
 
+    <!-- OwlsNest -->
+    <string name="owlsnest_title">OwlsNest</string>
+    <string name="header_category_owlsnest">AOSiP Tweaks</string>
+
     <!-- About AOSiP -->
     <string name="aosip_about_title">About AOSiP</string>
     <string name="aosip_about_info">ROM</string>
