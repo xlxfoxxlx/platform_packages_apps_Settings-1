@@ -27,6 +27,10 @@
     <string name="volbtn_music_controls_title">Volume rocker music controls</string>
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
 
+    <!-- OwlsNest -->
+    <string name="owlsnest_title">OwlsNest</string>
+    <string name="header_category_owlsnest">AOSiP Tweaks</string>
+
     <!-- AOSiP device info settings -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memory</string>
