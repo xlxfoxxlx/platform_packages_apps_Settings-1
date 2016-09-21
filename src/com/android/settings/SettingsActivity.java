@@ -131,6 +131,10 @@ import com.android.settingslib.drawer.SettingsDrawerActivity;
 import com.android.settingslib.drawer.Tile;
 
 import com.aosip.owlsnest.OwlsNestSettings;
+import com.aosip.owlsnest.navigation.FlingSettings;
+import com.aosip.owlsnest.navigation.NavbarSettings;
+import com.aosip.owlsnest.navigation.SmartbarSettings;
+import com.aosip.owlsnest.navigation.PulseSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -353,7 +357,11 @@ public class SettingsActivity extends SettingsDrawerActivity
             WifiAPITest.class.getName(),
             WifiInfo.class.getName(),
             OwlsNestSettings.class.getName(),
-            AmbientSettings.class.getName()
+            AmbientSettings.class.getName(),
+            NavbarSettings.class.getName(),
+            FlingSettings.class.getName(),
+            SmartbarSettings.class.getName(),
+            PulseSettings.class.getName()
     };
 
 
