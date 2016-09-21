@@ -141,6 +141,10 @@ import com.android.settingslib.drawer.Tile;
 
 import java.net.URISyntaxException;
 import com.aosip.owlsnest.OwlsNestSettings;
+import com.aosip.owlsnest.navigation.FlingSettings;
+import com.aosip.owlsnest.navigation.NavbarSettings;
+import com.aosip.owlsnest.navigation.SmartbarSettings;
+import com.aosip.owlsnest.navigation.PulseSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -389,7 +393,11 @@ public class SettingsActivity extends SettingsDrawerActivity
             NightDisplaySettings.class.getName(),
             ManageDomainUrls.class.getName(),
             AutomaticStorageManagerSettings.class.getName(),
-            OwlsNestSettings.class.getName()
+            OwlsNestSettings.class.getName(),
+            NavbarSettings.class.getName(),
+            FlingSettings.class.getName(),
+            SmartbarSettings.class.getName(),
+            PulseSettings.class.getName()
     };
 
 
