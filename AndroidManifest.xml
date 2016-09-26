@@ -1035,7 +1035,7 @@
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="4">
+            <intent-filter android:priority="5">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
@@ -1051,7 +1051,7 @@
             android:icon="@drawable/ic_settings_substratum"
             android:taskAffinity=""
             android:parentActivityName="Settings">
-            <intent-filter android:priority="3">
+            <intent-filter android:priority="4">
                 <action android:name="com.android.settings.action.SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -1079,7 +1079,7 @@
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="2">
+            <intent-filter android:priority="3">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
@@ -1099,7 +1099,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="1">
+            <intent-filter android:priority="2">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
@@ -1108,6 +1108,27 @@
                 android:value="com.android.settings.SuperSU" />
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/supersu_dashboard_summary" />
+        </activity>
+
+        <activity android:name="Settings$SuperUserActivity"
+            android:label="@string/superuser_title"
+            android:icon="@drawable/ic_settings_superuser"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.owlsnest" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.SuperUser" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/superuser_summary" />
         </activity>
 
         <activity android:name="Settings$DisplaySettingsActivity"
@@ -3022,6 +3043,7 @@
         <activity android:name="Settings$DisplayRotationActivity"
                 android:label="@string/display_rotation_title"
                 android:excludeFromRecents="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.DISPLAY_ROTATION_SETTINGS" />
