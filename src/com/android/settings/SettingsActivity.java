@@ -250,7 +250,10 @@ public class SettingsActivity extends SettingsDrawerActivity
     private static final String PROFILEMGR_MAIN_FRAGMENT = "com.android.settings.ProfileMgrMain";
     private static final String MOBILENETWORK_FRAGMENT = "com.android.settings.MobileNetworkMain";
     private static final String SYSTEM_UPDATE = "android.settings.SystemUpdateActivity";
+
     private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
+    private static final String SUPERUSER_FRAGMENT = "com.android.settings.SuperUser";
+    private static final String SUBSTRATUM_FRAGMENT = "com.android.settings.Substratum";
 
     private String mFragmentClass;
     private String mActivityAction;
@@ -1126,6 +1129,14 @@ public class SettingsActivity extends SettingsDrawerActivity
             return null;
         }
 
+        if (SUPERUSER_FRAGMENT.equals(fragmentName)) {
+            Intent superuserIntent = new Intent();
+            superuserIntent.setClassName("me.phh.superuser", "com.koushikdutta.superuser.MainActivity");
+            startActivity(superuserIntent);
+            finish();
+            return null;
+        }
+
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
                     + fragmentName);
@@ -1308,6 +1319,16 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.DevelopmentSettingsActivity.class.getName()),
                 showDev, isAdmin, pm);
+
+        // SuperUser
+        boolean phhSupported = false;
+        try {
+            phhSupported = (getPackageManager().getPackageInfo("me.phh.superuser", 0).versionCode > 0);
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        setTileEnabled(new ComponentName(packageName,
+                        Settings.SuperUserActivity.class.getName()),
+                phhSupported, isAdmin, pm);
 
         // Embedding into Settings is supported from SuperSU v1.85 and up
         boolean suSupported = false;
