@@ -72,6 +72,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_MBN_VERSION = "mbn_version";
     private static final String PROPERTY_MBN_VERSION = "persist.mbn.version";
     private static final String KEY_DEV_INFO = "dev_info";
+    private static final String KEY_QGP_VERSION = "qgp_version";
+    private static final String PROPERTY_QGP_VERSION = "persist.qgp.version";
+
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
     long[] mHits = new long[3];
@@ -118,6 +121,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.ID);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
+        setValueSummary(KEY_QGP_VERSION, PROPERTY_QGP_VERSION);
+        // Remove QGP Version if property is not present
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_QGP_VERSION,
+                PROPERTY_QGP_VERSION);
         findPreference(KEY_KERNEL_VERSION).setSummary(DeviceInfoUtils.customizeFormatKernelVersion(
                 getResources().getBoolean(R.bool.def_hide_kernel_version_name)));
         setValueSummary(KEY_MBN_VERSION, PROPERTY_MBN_VERSION);
