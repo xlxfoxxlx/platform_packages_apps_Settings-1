@@ -71,7 +71,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
     private static final String KEY_MBN_VERSION = "mbn_version";
     private static final String PROPERTY_MBN_VERSION = "persist.mbn.version";
-    private static final String KEY_DEV_INFO = "dev_info";
     private static final String KEY_QGP_VERSION = "qgp_version";
     private static final String PROPERTY_QGP_VERSION = "persist.qgp.version";
 
