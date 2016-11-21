@@ -19,7 +19,7 @@
     <!-- AOSiP device info settings -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memory</string>
-    <string name="aosip_version">Rom Version</string>
+    <string name="aosip_version">AOSiP Version</string>
     <string name="build_date">Build date</string>
 
     <!-- About AOSiP -->
@@ -193,7 +193,7 @@
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
 
     <!-- Wakeup options -->
-    <string name="display_category_wakeup_options_title">Wakeup options</string>
+    <string name="display_category_wakeup_options_title">Wake up options</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
 
