@@ -53,7 +53,7 @@
     <string name="gesture_double_twist_sensor_vendor" translatable="false"></string>
 
     <!-- When true enable gesture setting. -->
-    <bool name="config_gesture_settings_enabled">false</bool>
+    <bool name="config_gesture_settings_enabled">true</bool>
 
    <!-- Volume Rocker Wake Support. Some devices do not support (PMU) this.
         Setting to false will disable Volume Rocker Wake support -->
