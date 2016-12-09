@@ -42,5 +42,6 @@ limitations under the License.
     <color name="storage_summary_title_color">@*android:color/accent_device_default_light</color>
     <!-- Gesture settings switchbar background -->
     <color name="gestures_switchbar_color">@android:color/white</color>
+    <color name="switchbar_background_color">#ff37474f</color>
 
 </resources>
