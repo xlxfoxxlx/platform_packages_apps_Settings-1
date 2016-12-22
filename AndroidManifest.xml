@@ -3300,6 +3300,12 @@
             android:permission="android.permission.DUMP"
             android:enabled="@bool/config_has_help" />
 
-        <!-- This is the longest AndroidManifest.xml ever. -->
+        <!-- Hotspot idle -->
+        <service android:name=".wifi.HotspotService" >
+            <intent-filter>
+                <action android:name="com.android.settings.wifi.HotspotService" />
+            </intent-filter>
+        </service>
+
     </application>
 </manifest>
