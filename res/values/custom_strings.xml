@@ -31,25 +31,25 @@
     <!-- About AOSiP -->
     <string name="aosip_about_title">About AOSiP</string>
     <string name="aosip_about_info">ROM</string>
-    <string name="aosip_gplus_title">AOSiP G+</string>
-    <string name="aosip_gplus_summary">Visit AOSiP G+ Community</string>
-    <string name="aosip_about_info_summary">AOSiP stands for Android Open Source illusion Project. We\'re an AOSP based custom ROM, twisted with the latest features from all over the Android development community. Quality and stability is our first priority as we\'re dedicated to bringing you the very best that Android has to offer.</string>
+    <string name="aosip_gplus_title">AOSiP G+ Community</string>
+    <string name="aosip_gplus_summary">Tap here to open our wonderful community!</string>
+    <string name="aosip_about_info_summary">AOSiP stands for Android Open Source illusion Project. We are an AOSP based custom ROM, twisted with the latest features from all over the Android development community. Quality and stability is our first priority as we are dedicated to bringing you the very best that Android has to offer.</string>
     <string name="aosip_about_devs">Developer</string>
-    <string name="aosip_about_dev_title">Josh Fox(xlxfoxxlx)</string>
-    <string name="aosip_about_dev_summary">Lead dev and N6P maintainer.</string>
+    <string name="aosip_about_dev_title">Josh Fox (xlxfoxxlx)</string>
+    <string name="aosip_about_dev_summary">Lead dev</string>
     <string name="aosip_about_mentions">Team Illusion</string>
-    <string name="aosip_about_mention1_title">Mike Williams(sdroyds)</string>
+    <string name="aosip_about_mention1_title">Mike Williams (sdroyds)</string>
     <string name="aosip_about_mention1_summary">Founder of AOSiP</string>
     <string name="aosip_about_mention2_title">Sean Grondin</string>
     <string name="aosip_about_mention2_summary">AOSiP visionary, the man behind the owl logo/images.</string>
-    <string name="aosip_about_mention3_title">Paul Clark(dabug123)</string>
-    <string name="aosip_about_mention3_summary">Servers R Us/Graphics/helper/Kronic kernel dev/N6-N6P Co-Maintainer</string>
+    <string name="aosip_about_mention3_title">Paul Clark (dabug123)</string>
+    <string name="aosip_about_mention3_summary">Servers R Us/Graphics/helper/Kronic kernel dev/OP3 Maintainer</string>
     <string name="aosip_about_mention4_title">Akhil Narang</string>
-    <string name="aosip_about_mention4_summary">Pizza lover/Caf-Dev/N5X Maintainer</string>
-    <string name="aosip_about_mention5_title">Alex Couderc(AlX31)</string>
+    <string name="aosip_about_mention4_summary">Pizza lover/Local Derper</string>
+    <string name="aosip_about_mention5_title">Alex Couderc (AlX31)</string>
     <string name="aosip_about_mention5_summary">N5/N6 Maintainer and Local Drunk</string>
-    <string name="aosip_about_mention6_title">Sri Harsha(srisurya95)</string>
-    <string name="aosip_about_mention6_summary">Caf-Dev and GT-I9515 Maintainer</string>
+    <string name="aosip_about_mention6_title">Sri Harsha (srisurya95)</string>
+    <string name="aosip_about_mention6_summary">Caf-Dev and Kenzo Maintainer</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -67,7 +67,7 @@
     <string name="substratum_settings_title">Substratum</string>
 
     <string name="substratum_settings_summary">Theme your device</string>
-    <string name="appops_settings_summary">Control Apps permissions</string>
+    <string name="appops_settings_summary">Control app permissions</string>
 
     <!-- Heads up -->
     <string name="headsup_section_header">Heads up notifications</string>
@@ -292,7 +292,7 @@
     <string name="qs_night_bright_medium">Set medium brightness</string>
     <string name="qs_night_bright_min">Set minimum brightness</string>
 
-<!-- Display Settings -->
+    <!-- Display Settings -->
     <!-- Rotation Modes  -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_disabled">Disabled</string>
