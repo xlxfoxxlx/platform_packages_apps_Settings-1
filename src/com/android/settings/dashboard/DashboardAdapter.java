@@ -24,6 +24,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
+import android.graphics.PorterDuff.Mode;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -216,7 +217,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
                         mContext.getTheme().resolveAttribute(tintColorValue.data,
                                 tintColorValue, true);
                     }
-                    tile.icon.setTint(tintColorValue.data);
+                    tile.icon.setTint(tintColorValue.data).setTintMode(Mode.SRC_ATOP);
                 }
             }
         }
