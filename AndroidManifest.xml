@@ -1035,7 +1035,7 @@
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="5">
+            <intent-filter android:priority="6">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
@@ -1051,7 +1051,7 @@
             android:icon="@drawable/ic_settings_substratum"
             android:taskAffinity=""
             android:parentActivityName="Settings">
-            <intent-filter android:priority="4">
+            <intent-filter android:priority="5">
                 <action android:name="com.android.settings.action.SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -1079,7 +1079,7 @@
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="3">
+            <intent-filter android:priority="4">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
@@ -1088,6 +1088,27 @@
                 android:value="com.android.settings.applications.AppOpsSummary" />
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/appops_settings_summary" />
+        </activity>
+
+        <activity android:name="Settings$MagiskActivity"
+            android:label="@string/magisk_title"
+            android:icon="@drawable/ic_settings_magisk"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="3">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.owlsnest" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.MagiskManager" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/magisk_summary" />
         </activity>
 
         <activity android:name="Settings$SuperSUActivity"
