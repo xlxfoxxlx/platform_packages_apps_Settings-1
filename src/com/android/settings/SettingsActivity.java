@@ -255,6 +255,7 @@ public class SettingsActivity extends SettingsDrawerActivity
     private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
     private static final String SUPERUSER_FRAGMENT = "com.android.settings.SuperUser";
     private static final String SUBSTRATUM_FRAGMENT = "com.android.settings.Substratum";
+    private static final String MAGISK_FRAGMENT = "com.android.settings.MagiskManager";
 
     private String mFragmentClass;
     private String mActivityAction;
@@ -1109,6 +1110,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             finish();
             return null;
         }
+
         if (MOBILENETWORK_FRAGMENT.equals(fragmentName)) {
             Intent mobileNetworkIntent = new Intent();
             mobileNetworkIntent.setAction("android.settings.DATA_ROAMING_SETTINGS");
@@ -1118,9 +1120,16 @@ public class SettingsActivity extends SettingsDrawerActivity
             return null;
         }
 
-
         if (SYSTEM_UPDATE.equals(fragmentName)) {
             SystemUpdateHandle ();
+            return null;
+        }
+
+        if (MAGISK_FRAGMENT.equals(fragmentName)) {
+            Intent magiskIntent = new Intent();
+            magiskIntent.setClassName("com.topjohnwu.magisk", "com.topjohnwu.magisk.SplashActivity");
+            startActivity(magiskIntent);
+            finish();
             return null;
         }
 
@@ -1306,6 +1315,25 @@ public class SettingsActivity extends SettingsDrawerActivity
                 Settings.ProfileMgrMainActivity.class.getName()),
                 getResources().getBoolean(R.bool.config_profilemgrmain_enabled), isAdmin, pm);
 
+        final boolean showDev = mDevelopmentPreferences.getBoolean(
+                    DevelopmentSettings.PREF_SHOW, android.os.Build.TYPE.equals("eng")
+                    || android.os.Build.TYPE.equals("userdebug") || android.os.Build.TYPE.equals("user"))
+                && !um.hasUserRestriction(UserManager.DISALLOW_DEBUGGING_FEATURES);
+        setTileEnabled(new ComponentName(packageName,
+                        Settings.DevelopmentSettingsActivity.class.getName()),
+                showDev, isAdmin, pm);
+
+        // Magisk Manager
+        boolean magiskSupported = false;
+        try {
+            magiskSupported = (getPackageManager().getPackageInfo("com.topjohnwu.magisk", 0).versionCode > 0);
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        setTileEnabled(new ComponentName(packageName,
+                        Settings.MagiskActivity.class.getName()),
+                magiskSupported, isAdmin, pm);
+
+        // Substratum
         boolean substratumSupported = false;
         try {
             substratumSupported = (pm.getPackageInfo("projekt.substratum", 0).versionCode > 0);
@@ -1314,14 +1342,6 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                 Settings.SubstratumLaunchActivity.class.getName()),
                 substratumSupported, isAdmin, pm);
-
-        final boolean showDev = mDevelopmentPreferences.getBoolean(
-                    DevelopmentSettings.PREF_SHOW, android.os.Build.TYPE.equals("eng")
-                    || android.os.Build.TYPE.equals("userdebug") || android.os.Build.TYPE.equals("user"))
-                && !um.hasUserRestriction(UserManager.DISALLOW_DEBUGGING_FEATURES);
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.DevelopmentSettingsActivity.class.getName()),
-                showDev, isAdmin, pm);
 
         // SuperUser
         boolean phhSupported = false;
