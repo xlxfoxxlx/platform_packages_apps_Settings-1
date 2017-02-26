@@ -38,7 +38,7 @@ import com.android.settings.R;
 public class AppOpsSummary extends InstrumentedFragment {
     // layout inflater object used to inflate views
     private LayoutInflater mInflater;
-    
+
     private ViewGroup mContentContainer;
     private View mRootView;
     private ViewPager mViewPager;
@@ -117,13 +117,12 @@ public class AppOpsSummary extends InstrumentedFragment {
 
         // HACK - https://code.google.com/p/android/issues/detail?id=213359
         ((ViewPager.LayoutParams)tabs.getLayoutParams()).isDecor = true;
-
         Resources.Theme theme = tabs.getContext().getTheme();
         TypedValue typedValue = new TypedValue();
         theme.resolveAttribute(android.R.attr.colorAccent, typedValue, true);
         final int colorAccent = typedValue.resourceId != 0
                 ? getContext().getColor(typedValue.resourceId)
-                : getContext().getColor(R.color.appops_accent_color);
+                : getContext().getColor(R.color.switch_accent_color);
         tabs.setTabIndicatorColor(colorAccent);
 
         // We have to do this now because PreferenceFrameLayout looks at it
