@@ -46,6 +46,8 @@
     <string name="aosip_about_mention3_summary">Graphics/Kronic kernel dev/OP3 Maintainer</string>
     <string name="aosip_about_mention4_title">Akhil Narang</string>
     <string name="aosip_about_mention4_summary">Pizza lover/Local Derper</string>
+    <string name="aosip_about_mention5_title">Sri Harsha (srisurya95)</string>
+    <string name="aosip_about_mention5_summary">Caf-Dev and Kenzo Maintainer</string>
 
     <!-- About phone screen, AOSiP device maintainer name -->
     <string name="device_maintainer">Device maintainer</string>
