@@ -3270,6 +3270,18 @@
                 android:value="com.aosip.owlsnest.navigation.PulseSettings" />
         </activity>
 
+        <!-- Hardware nav settings -->
+        <activity android:name="Settings$ButtonSettingsSettingsActivity"
+                android:label="@string/buttons_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.aosip.owlsnest.buttons.ButtonSettings" />
+        </activity>
+
        <!-- System action picker -->
         <activity android:name="com.aosip.owlsnest.utils.ActionPickerDialogActivity"
                 android:theme="@style/Theme.SmartBar.Dialog"

@@ -144,6 +144,7 @@ import com.android.settingslib.drawer.Tile;
 
 import java.net.URISyntaxException;
 import com.aosip.owlsnest.OwlsNestSettings;
+import com.aosip.owlsnest.buttons.ButtonSettings;
 import com.aosip.owlsnest.navigation.FlingSettings;
 import com.aosip.owlsnest.navigation.NavbarSettings;
 import com.aosip.owlsnest.navigation.SmartbarSettings;
@@ -414,7 +415,8 @@ public class SettingsActivity extends SettingsDrawerActivity
             AutomaticStorageManagerSettings.class.getName(),
             HeadsUpSettings.class.getName(),
             DataSaverSummary.class.getName(),
-            TileCategory.class.getName()
+            TileCategory.class.getName(),
+            ButtonSettings.class.getName()
     };
 
 
